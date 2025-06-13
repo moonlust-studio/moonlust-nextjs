@@ -5,8 +5,10 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="bg-gray-100 min-h-screen">
-      <h1 className="text-center pt-10 text-xl font-semibold">✅ Đã render từ index.tsx</h1>
+    <main className="bg-gray-100 min-h-screen font-sans">
+      <h1 className="text-center pt-10 text-2xl font-bold text-green-600 flex items-center justify-center">
+        ✅ <span className="ml-2">Đã render từ index.tsx</span>
+      </h1>
 
       {/* HEADER */}
       <header className="bg-white shadow-md sticky top-0 z-50 mt-6">
@@ -14,7 +16,7 @@ export default function Home() {
           <Link href="/" legacyBehavior>
             <a className="text-2xl font-bold text-pink-600">Moonlust</a>
           </Link>
-          <nav className="space-x-4">
+          <nav className="space-x-4 text-sm">
             <Link href="/" legacyBehavior><a className="hover:text-pink-600">Trang chủ</a></Link>
             <Link href="/the-loai" legacyBehavior><a className="hover:text-pink-600">Thể loại</a></Link>
             <Link href="/truyen-moi" legacyBehavior><a className="hover:text-pink-600">Truyện mới</a></Link>
@@ -31,7 +33,7 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[1,2,3,4].map((i) => (
               <Link key={i} href={`/truyen/noi-bat-${i}`} legacyBehavior>
-                <a className="bg-gray-50 rounded shadow hover:shadow-lg transition block">
+                <a className="bg-white rounded shadow hover:shadow-lg transition block overflow-hidden">
                   <Image src="/demo.jpg" alt="Hot" width={300} height={400} className="w-full h-auto rounded-t" />
                   <div className="p-2">
                     <h3 className="text-sm font-bold text-gray-700">Cô Thư Ký Bất Trị</h3>
@@ -51,7 +53,7 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
             {[1,2,3,4,5,6,7,8,9,10].map((i) => (
               <Link key={i} href={`/truyen/moi-${i}`} legacyBehavior>
-                <a className="bg-white rounded shadow hover:shadow-lg block">
+                <a className="bg-white rounded shadow hover:shadow-lg block overflow-hidden">
                   <Image src="/demo.jpg" alt="Truyện mới" width={300} height={400} className="w-full h-auto rounded-t" />
                   <div className="p-2">
                     <h3 className="text-sm font-bold text-gray-800 truncate">Chồng Cô Giáo Thảo</h3>
