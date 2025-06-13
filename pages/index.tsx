@@ -34,75 +34,41 @@ export default function Home() {
         </div>
       </div>
 
-      {/* BODY */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 mt-6 px-4">
-        {/* MAIN CONTENT */}
-        <div className="md:col-span-3 space-y-10">
-          {/* SECTION: TOP TRUYỆN HAY */}
-          <section>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="bg-[#ef4444] px-3 py-1 text-white font-bold text-sm rounded-tl-md rounded-tr-md relative">
-                Top Truyện Hay
-                <div className="w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-t-[10px] border-t-[#ef4444] absolute left-1/2 transform -translate-x-1/2 bottom-[-10px]" />
-              </div>
-            </div>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {["top-1.jpg", "top-2.jpg", "top-3.jpg", "top-4.jpg"].map((img, idx) => (
-                <div key={idx} className="bg-white rounded shadow overflow-hidden">
-                  <Image src={`/${img}`} alt="Top Truyện" width={300} height={400} className="w-full h-auto" />
-                  <div className="p-2">
-                    <h3 className="text-sm font-bold text-gray-800">Cô Giáo Thảo Siêu Phẩm</h3>
-                    <p className="text-xs text-gray-500">Chương 81 • Chương 80</p>
-                  </div>
+      {/* BODY CHÍNH */}
+      <section className="max-w-7xl mx-auto px-4 py-6">
+        {/* Top Truyện Hay */}
+        <h2 className="text-xl font-bold mb-4 text-[#f23847]">🔥 Top Truyện Hay</h2>
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {[1,2,3,4].map((i) => (
+            <Link key={i} href={`/truyen/co-giao-thao-sieu-pham`} legacyBehavior>
+              <a className="bg-white rounded shadow hover:shadow-lg transition block overflow-hidden">
+                <Image src="/demo.jpg" alt="Truyện hot" width={300} height={400} className="w-full h-auto" />
+                <div className="p-2">
+                  <h3 className="text-sm font-bold text-gray-800">Cô Giáo Thảo Siêu Phẩm</h3>
+                  <p className="text-xs text-gray-500">Chương 81 • Chương 80</p>
                 </div>
-              ))}
-            </div>
-          </section>
-
-          {/* SECTION: TRUYỆN MỚI */}
-          <section>
-            <h2 className="text-xl font-bold mb-2">TRUYỆN MỚI</h2>
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-              {[...Array(8)].map((_, idx) => (
-                <div key={idx} className="bg-white rounded shadow overflow-hidden">
-                  <div className="relative">
-                    <Image src="/demo.jpg" alt="New" width={300} height={400} className="w-full h-auto" />
-                  </div>
-                  <div className="p-2">
-                    <h3 className="text-sm font-bold text-gray-800 truncate">Một lần cuối đời... tổn đến chết</h3>
-                    <p className="text-xs text-gray-400 mb-1">1 ngày ago</p>
-                    <div className="text-xs font-bold flex gap-2">
-                      <span className="bg-gray-200 rounded-full px-2 py-1">Phần 8</span>
-                      <span className="bg-gray-200 rounded-full px-2 py-1">Phần 7</span>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
+              </a>
+            </Link>
+          ))}
         </div>
 
-        {/* SIDEBAR: TRUYỆN ĐỀ CỬ */}
-        <aside className="space-y-4">
-          <div>
-            <div className="bg-[#ef4444] text-white px-3 py-1 text-sm font-bold inline-block rounded-tl-md rounded-tr-md relative">
-              Truyện Gợi Đề Cử
-              <div className="w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-t-[10px] border-t-[#ef4444] absolute left-1/2 transform -translate-x-1/2 bottom-[-10px]" />
-            </div>
-            <div className="bg-white shadow rounded p-3 mt-3 space-y-4">
-              {["side-1.jpg", "side-2.jpg"].map((img, i) => (
-                <div key={i} className="flex gap-2 border-b pb-2">
-                  <Image src={`/${img}`} alt="Đề cử" width={60} height={80} className="rounded" />
-                  <div>
-                    <h4 className="text-sm font-semibold text-gray-800">Gò Ô Môi</h4>
-                    <p className="text-xs text-gray-500">Chương 47 • Tháng 7 2022</p>
-                  </div>
+        {/* Truyện Mới */}
+        <h2 className="text-xl font-bold mt-10 mb-4 text-gray-800">📚 TRUYỆN MỚI</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          {[1,2,3,4].map((i) => (
+            <Link key={i} href={`/truyen/mot-lan-cuoi`} legacyBehavior>
+              <a className="bg-white rounded shadow hover:shadow-lg transition block overflow-hidden">
+                <Image src="/demo.jpg" alt="Truyện mới" width={300} height={400} className="w-full h-auto" />
+                <div className="p-2">
+                  <h3 className="text-sm font-bold text-gray-800 truncate">Một lần cuối đời... tổn đến chết</h3>
+                  <p className="text-xs text-gray-500">1 ngày ago</p>
+                  <p className="text-xs font-semibold text-gray-700">Phần 8 • Phần 7</p>
                 </div>
-              ))}
-            </div>
-          </div>
-        </aside>
-      </div>
+              </a>
+            </Link>
+          ))}
+        </div>
+      </section>
 
       {/* FOOTER */}
       <footer className="bg-white text-center text-sm text-gray-500 border-t mt-10 py-6">
