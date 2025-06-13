@@ -1,1 +1,1 @@
-/* index.tsx file */
+// Mock content for index.tsx

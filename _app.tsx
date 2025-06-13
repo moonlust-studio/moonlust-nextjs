@@ -1,1 +1,1 @@
-/* _app.tsx file */
+// Mock content for _app.tsx
