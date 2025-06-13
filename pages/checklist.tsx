@@ -1,7 +1,5 @@
-// pages/checklist.tsx
-
 import React from 'react';
-import moonlustChecklist from '@/lib/moonlustChecklist';
+import moonlustChecklist from '../lib/moonlustChecklist'; // ✅ Đổi từ '@/lib' sang '../lib'
 
 const ChecklistPage = () => {
   return (
