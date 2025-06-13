@@ -31,10 +31,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-xl font-semibold mb-4 text-pink-700">🔥 Truyện nổi bật</h2>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[1,2,3,4].map((i) => (
-              <Link key={i} href={`/truyen/noi-bat-${i}`} legacyBehavior>
+            {["thu-huong-1.jpg", "thu-huong-2.jpg", "thu-huong-3.jpg", "thu-huong-4.jpg"].map((img, i) => (
+              <Link key={i} href={`/truyen/noi-bat-${i + 1}`} legacyBehavior>
                 <a className="bg-white rounded shadow hover:shadow-lg transition block overflow-hidden">
-                  <Image src="/demo.jpg" alt="Hot" width={300} height={400} className="w-full h-auto rounded-t" />
+                  <Image src={`/${img}`} alt="Hot" width={300} height={400} className="w-full h-auto rounded-t" />
                   <div className="p-2">
                     <h3 className="text-sm font-bold text-gray-700">Cô Thư Ký Bất Trị</h3>
                     <p className="text-xs text-gray-500">Chap 20 - Full</p>
@@ -51,10 +51,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-xl font-semibold mb-4 text-pink-700">📚 Truyện mới cập nhật</h2>
           <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-            {[1,2,3,4,5,6,7,8,9,10].map((i) => (
-              <Link key={i} href={`/truyen/moi-${i}`} legacyBehavior>
+            {["demo-1.jpg", "demo-2.jpg", "demo-3.jpg", "demo-4.jpg", "demo-5.jpg", "demo-6.jpg", "demo-7.jpg", "demo-8.jpg", "demo-9.jpg", "demo-10.jpg"].map((img, i) => (
+              <Link key={i} href={`/truyen/moi-${i + 1}`} legacyBehavior>
                 <a className="bg-white rounded shadow hover:shadow-lg block overflow-hidden">
-                  <Image src="/demo.jpg" alt="Truyện mới" width={300} height={400} className="w-full h-auto rounded-t" />
+                  <Image src={`/${img}`} alt="Truyện mới" width={300} height={400} className="w-full h-auto rounded-t" />
                   <div className="p-2">
                     <h3 className="text-sm font-bold text-gray-800 truncate">Chồng Cô Giáo Thảo</h3>
                     <p className="text-xs text-gray-500">Chap 15 - Đang ra</p>
