@@ -6,8 +6,10 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main className="bg-gray-100 min-h-screen">
+      <h1 className="text-center pt-10 text-xl font-semibold">✅ Đã render từ index.tsx</h1>
+
       {/* HEADER */}
-      <header className="bg-white shadow-md sticky top-0 z-50">
+      <header className="bg-white shadow-md sticky top-0 z-50 mt-6">
         <div className="max-w-7xl mx-auto flex justify-between items-center p-4">
           <Link href="/" legacyBehavior>
             <a className="text-2xl font-bold text-pink-600">Moonlust</a>
