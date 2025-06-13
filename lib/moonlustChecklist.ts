@@ -1,12 +1,4 @@
-// lib/moonlustChecklist.ts
-
-export type ChecklistItem = {
-  area: string;
-  passed: boolean;
-  notes: string;
-};
-
-const moonlustChecklist: ChecklistItem[] = [
+const moonlustChecklist = [
   {
     area: "SEO & Social Sharing",
     passed: true,
