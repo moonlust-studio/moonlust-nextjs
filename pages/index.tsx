@@ -6,94 +6,107 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main className="bg-[#f7f7f7] min-h-screen font-sans text-base antialiased text-gray-800">
-      {/* HEADER */}
-      <header className="bg-[#fbfbfb] shadow sticky top-0 z-50 border-b border-gray-200">
+      {/* HEADER TẦNG 1 */}
+      <header className="bg-gradient-to-r from-[#f23847] to-[#f8593b] shadow sticky top-0 z-50 border-b border-gray-200">
         <div className="max-w-7xl mx-auto flex justify-between items-center p-4">
-          <Link href="/" legacyBehavior>
-            <a className="text-2xl font-bold text-[#dd0000]">Moonlust</a>
-          </Link>
-          <nav className="space-x-4 text-sm">
-            <Link href="/" legacyBehavior><a className="hover:text-[#dd0000] transition">Trang chủ</a></Link>
-            <Link href="/the-loai" legacyBehavior><a className="hover:text-[#dd0000] transition">Thể loại</a></Link>
-            <Link href="/truyen-moi" legacyBehavior><a className="hover:text-[#dd0000] transition">Truyện mới</a></Link>
-            <Link href="/truyen-full" legacyBehavior><a className="hover:text-[#dd0000] transition">Truyện full</a></Link>
-            <Link href="/gioi-thieu" legacyBehavior><a className="hover:text-[#dd0000] transition">Giới thiệu</a></Link>
-          </nav>
+          <div className="flex items-center gap-4">
+            <Image src="/logo-moonlust.png" width={120} height={40} alt="Moonlust logo" />
+            <nav className="hidden md:flex gap-6 text-white font-semibold">
+              <Link href="/" legacyBehavior><a className="hover:underline">Trang Chủ</a></Link>
+              <Link href="/nguoi-lon" legacyBehavior><a className="hover:underline">Truyện Người Lớn</a></Link>
+              <Link href="/nghe-thuat-yeu" legacyBehavior><a className="hover:underline">Nghệ Thuật Yêu</a></Link>
+              <Link href="/audio-truyen" legacyBehavior><a className="hover:underline">Nghe Audio Truyện Sex</a></Link>
+            </nav>
+          </div>
+          <div className="flex items-center gap-4">
+            <button className="bg-white rounded-full p-2 text-red-600"><span className="text-lg">🔍</span></button>
+            <button className="px-4 py-1 rounded-full border border-white text-white hover:bg-white hover:text-red-600">Đăng nhập</button>
+            <button className="px-4 py-1 rounded-full border border-white text-white hover:bg-white hover:text-red-600">Đăng Ký</button>
+          </div>
         </div>
       </header>
 
-      {/* MAIN LAYOUT */}
-      <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-4 mt-6">
+      {/* HEADER TẦNG 2 */}
+      <div className="bg-white border-b py-2 shadow-sm">
+        <div className="max-w-7xl mx-auto flex gap-8 text-sm text-gray-700 font-semibold">
+          <Link href="/nghe-thuat-yeu" legacyBehavior><a className="hover:text-[#dd0000]">NGHỆ THUẬT YÊU</a></Link>
+          <Link href="/suc-khoe" legacyBehavior><a className="hover:text-[#dd0000]">SỨC KHỎE TÌNH DỤC</a></Link>
+        </div>
+      </div>
+
+      {/* BODY */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6 mt-6 px-4">
         {/* MAIN CONTENT */}
-        <div className="md:col-span-3">
-          {/* HOT SECTION */}
-          <section className="bg-white py-4 border border-red-200 rounded">
-            <h2 className="text-lg font-semibold mb-4 px-4 text-[#dd0000] border-b pb-2">🔥 Truyện nổi bật</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 px-4">
-              {["thu-huong-1.jpg", "thu-huong-2.jpg", "thu-huong-3.jpg", "thu-huong-4.jpg"].map((img, i) => (
-                <Link key={i} href={`/truyen/noi-bat-${i + 1}`} legacyBehavior>
-                  <a className="bg-white rounded-lg shadow hover:shadow-lg transition block overflow-hidden">
-                    <Image src={`/${img}`} alt="Hot" width={300} height={400} className="w-full h-auto rounded-t" />
-                    <div className="p-2">
-                      <h3 className="text-sm font-bold text-gray-700 hover:text-[#dd0000]">Cô Thư Ký Bất Trị</h3>
-                      <p className="text-xs text-gray-500">Chap 20 - Full</p>
-                    </div>
-                  </a>
-                </Link>
+        <div className="md:col-span-3 space-y-10">
+          {/* SECTION: TOP TRUYỆN HAY */}
+          <section>
+            <div className="flex items-center gap-2 mb-4">
+              <div className="bg-[#ef4444] px-3 py-1 text-white font-bold text-sm rounded-tl-md rounded-tr-md relative">
+                Top Truyện Hay
+                <div className="w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-t-[10px] border-t-[#ef4444] absolute left-1/2 transform -translate-x-1/2 bottom-[-10px]" />
+              </div>
+            </div>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+              {["top-1.jpg", "top-2.jpg", "top-3.jpg", "top-4.jpg"].map((img, idx) => (
+                <div key={idx} className="bg-white rounded shadow overflow-hidden">
+                  <Image src={`/${img}`} alt="Top Truyện" width={300} height={400} className="w-full h-auto" />
+                  <div className="p-2">
+                    <h3 className="text-sm font-bold text-gray-800">Cô Giáo Thảo Siêu Phẩm</h3>
+                    <p className="text-xs text-gray-500">Chương 81 • Chương 80</p>
+                  </div>
+                </div>
               ))}
             </div>
           </section>
 
-          {/* NEW UPDATE SECTION */}
-          <section className="bg-white py-4 mt-6 border border-red-200 rounded">
-            <h2 className="text-lg font-semibold mb-4 px-4 text-[#dd0000] border-b pb-2">📚 Truyện mới cập nhật</h2>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 px-4">
-              {["demo-1.jpg", "demo-2.jpg", "demo-3.jpg", "demo-4.jpg", "demo-5.jpg", "demo-6.jpg", "demo-7.jpg", "demo-8.jpg"].map((img, i) => (
-                <Link key={i} href={`/truyen/moi-${i + 1}`} legacyBehavior>
-                  <a className="bg-white rounded-lg shadow hover:shadow-lg block overflow-hidden">
-                    <Image src={`/${img}`} alt="Truyện mới" width={300} height={400} className="w-full h-auto rounded-t" />
-                    <div className="p-2">
-                      <h3 className="text-sm font-bold text-gray-800 hover:text-[#dd0000] truncate">Chồng Cô Giáo Thảo</h3>
-                      <p className="text-xs text-gray-500">Chap 15 - Đang ra</p>
+          {/* SECTION: TRUYỆN MỚI */}
+          <section>
+            <h2 className="text-xl font-bold mb-2">TRUYỆN MỚI</h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {[...Array(8)].map((_, idx) => (
+                <div key={idx} className="bg-white rounded shadow overflow-hidden">
+                  <div className="relative">
+                    <Image src="/demo.jpg" alt="New" width={300} height={400} className="w-full h-auto" />
+                  </div>
+                  <div className="p-2">
+                    <h3 className="text-sm font-bold text-gray-800 truncate">Một lần cuối đời... tổn đến chết</h3>
+                    <p className="text-xs text-gray-400 mb-1">1 ngày ago</p>
+                    <div className="text-xs font-bold flex gap-2">
+                      <span className="bg-gray-200 rounded-full px-2 py-1">Phần 8</span>
+                      <span className="bg-gray-200 rounded-full px-2 py-1">Phần 7</span>
                     </div>
-                  </a>
-                </Link>
+                  </div>
+                </div>
               ))}
             </div>
           </section>
         </div>
 
-        {/* SIDEBAR */}
-        <aside className="space-y-6">
-          <div className="bg-white rounded shadow p-4 border border-gray-200">
-            <h3 className="font-semibold text-sm text-[#dd0000] mb-2">🔍 Tìm kiếm nhanh</h3>
-            <input type="text" placeholder="Nhập tên truyện..." className="w-full p-2 border border-gray-300 rounded text-sm" />
-          </div>
-
-          <div className="bg-white rounded shadow p-4 border border-gray-200">
-            <h3 className="font-semibold text-sm text-[#dd0000] mb-2">📊 Xếp hạng tuần</h3>
-            <ul className="text-sm space-y-1 text-gray-700">
-              <li>1. Cô Thư Ký Bất Trị</li>
-              <li>2. Chồng Cô Giáo Thảo</li>
-              <li>3. Gái Hư & Anh Trưởng Phòng</li>
-            </ul>
-          </div>
-
-          <div className="bg-white rounded shadow p-4 border border-gray-200">
-            <h3 className="font-semibold text-sm text-[#dd0000] mb-2">📂 Danh mục</h3>
-            <ul className="text-sm list-disc list-inside space-y-1 text-gray-700">
-              <li>Ngôn tình</li>
-              <li>Drama người lớn</li>
-              <li>Cấm trẻ em</li>
-              <li>Ngoại tình</li>
-            </ul>
+        {/* SIDEBAR: TRUYỆN ĐỀ CỬ */}
+        <aside className="space-y-4">
+          <div>
+            <div className="bg-[#ef4444] text-white px-3 py-1 text-sm font-bold inline-block rounded-tl-md rounded-tr-md relative">
+              Truyện Gợi Đề Cử
+              <div className="w-0 h-0 border-l-[10px] border-l-transparent border-r-[10px] border-r-transparent border-t-[10px] border-t-[#ef4444] absolute left-1/2 transform -translate-x-1/2 bottom-[-10px]" />
+            </div>
+            <div className="bg-white shadow rounded p-3 mt-3 space-y-4">
+              {["side-1.jpg", "side-2.jpg"].map((img, i) => (
+                <div key={i} className="flex gap-2 border-b pb-2">
+                  <Image src={`/${img}`} alt="Đề cử" width={60} height={80} className="rounded" />
+                  <div>
+                    <h4 className="text-sm font-semibold text-gray-800">Gò Ô Môi</h4>
+                    <p className="text-xs text-gray-500">Chương 47 • Tháng 7 2022</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </aside>
       </div>
 
       {/* FOOTER */}
-      <footer className="bg-white border-t py-6 mt-10 text-center text-sm text-gray-500">
-        © 2025 Moonlust. All rights reserved. | Liên hệ: contact@moonlust.io
+      <footer className="bg-white text-center text-sm text-gray-500 border-t mt-10 py-6">
+        Toàn bộ nội dung của website Moonlust đều được sưu tầm trên mạng. Nghiêm cấm người dưới 18 tuổi truy cập.
       </footer>
     </main>
   );
