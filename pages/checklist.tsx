@@ -1,15 +1,14 @@
-// pages/checklist.tsx
 import React from 'react';
 import moonlustChecklist from '../lib/moonlustChecklist';
 
 export default function ChecklistPage() {
   return (
-    <div>
-      <h1>Checklist</h1>
+    <div style={{ padding: '2rem' }}>
+      <h1>✅ Moonlust Checklist</h1>
       <ul>
         {moonlustChecklist.map((item, index) => (
           <li key={index}>
-            ✅ <strong>{item.area}</strong> – {item.notes}
+            <strong>{item.area}:</strong> {item.passed ? '✅' : '❌'} - {item.notes}
           </li>
         ))}
       </ul>
