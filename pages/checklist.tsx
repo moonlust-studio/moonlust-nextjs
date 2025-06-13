@@ -1,6 +1,6 @@
 // pages/checklist.tsx
 import React from 'react'
-import moonlustChecklist from '@/lib/moonlustChecklist'
+import moonlustChecklist from '../lib/moonlustChecklist'
 
 export default function ChecklistPage() {
   return (
