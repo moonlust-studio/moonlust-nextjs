@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="bg-[#f7f7f7] min-h-screen font-sans text-base antialiased text-gray-800">
+    <main className="bg-[#fff5f7] min-h-screen font-sans text-base antialiased text-gray-800">
       {/* HEADER TẦNG 1 */}
       <header className="bg-gradient-to-r from-[#f23847] to-[#f8593b] shadow sticky top-0 z-50 border-b border-gray-200">
         <div className="max-w-7xl mx-auto flex justify-between items-center p-4">
@@ -37,15 +37,17 @@ export default function Home() {
       {/* BODY CHÍNH */}
       <section className="max-w-7xl mx-auto px-4 py-6">
         {/* Top Truyện Hay */}
-        <h2 className="text-xl font-bold mb-4 text-[#f23847]">🔥 Top Truyện Hay</h2>
+        <div className="mb-6">
+          <div className="inline-block bg-[#f23847] text-white font-bold px-4 py-2 rounded-t-lg shadow-md">🔥 Top Truyện Hay</div>
+        </div>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
           {[1,2,3,4].map((i) => (
             <Link key={i} href={`/truyen/co-giao-thao-sieu-pham`} legacyBehavior>
-              <a className="bg-white rounded shadow hover:shadow-lg transition block overflow-hidden">
-                <Image src="/demo.jpg" alt="Truyện hot" width={300} height={400} className="w-full h-auto" />
+              <a className="bg-white rounded-lg border border-[#ffe4e6] hover:shadow-lg transition block overflow-hidden">
+                <Image src="/demo.jpg" alt="Truyện hot" width={300} height={400} className="w-full h-auto rounded-t" />
                 <div className="p-2">
                   <h3 className="text-sm font-bold text-gray-800">Cô Giáo Thảo Siêu Phẩm</h3>
-                  <p className="text-xs text-gray-500">Chương 81 • Chương 80</p>
+                  <p className="text-xs text-[#f23847] font-semibold">Chương 81 • Chương 80</p>
                 </div>
               </a>
             </Link>
@@ -53,16 +55,18 @@ export default function Home() {
         </div>
 
         {/* Truyện Mới */}
-        <h2 className="text-xl font-bold mt-10 mb-4 text-gray-800">📚 TRUYỆN MỚI</h2>
+        <div className="mt-10 mb-6">
+          <div className="inline-block bg-[#f8593b] text-white font-bold px-4 py-2 rounded-t-lg shadow-md">📚 TRUYỆN MỚI</div>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {[1,2,3,4].map((i) => (
             <Link key={i} href={`/truyen/mot-lan-cuoi`} legacyBehavior>
-              <a className="bg-white rounded shadow hover:shadow-lg transition block overflow-hidden">
-                <Image src="/demo.jpg" alt="Truyện mới" width={300} height={400} className="w-full h-auto" />
+              <a className="bg-white rounded-lg border border-[#ffe4e6] hover:shadow-md transition block overflow-hidden">
+                <Image src="/demo.jpg" alt="Truyện mới" width={300} height={400} className="w-full h-auto rounded-t" />
                 <div className="p-2">
                   <h3 className="text-sm font-bold text-gray-800 truncate">Một lần cuối đời... tổn đến chết</h3>
                   <p className="text-xs text-gray-500">1 ngày ago</p>
-                  <p className="text-xs font-semibold text-gray-700">Phần 8 • Phần 7</p>
+                  <span className="inline-block mt-1 text-xs font-medium text-[#f23847]">Phần 8 • Phần 7</span>
                 </div>
               </a>
             </Link>
