@@ -1,34 +1,34 @@
-// components/Header.tsx
-import React from 'react';
-import Image from 'next/image';
+'use client';
+
 import Link from 'next/link';
-import LanguageSwitcher from './LanguageSwitcher';
+import { useTranslation } from 'next-i18next';
+import { useRouter } from 'next/router';
+import { Globe } from 'lucide-react';
 
 export default function Header() {
+  const { t } = useTranslation('common');
+  const router = useRouter();
+  const { locale, locales, asPath } = router;
+
+  const handleChange = (newLocale: string) => {
+    if (newLocale !== locale) {
+      router.push(asPath, asPath, { locale: newLocale });
+    }
+  };
+
   return (
-    <header className="bg-gradient-to-r from-pink-600 to-orange-400 text-white py-4 shadow-md">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between px-4 gap-4">
-        {/* Logo */}
-        <Link href="/">
-          <Image src="/banner.png" alt="Moonlust Logo" width={160} height={60} className="object-contain" />
-        </Link>
-
-        {/* Main Nav */}
-        <nav className="flex flex-wrap justify-center md:justify-end items-center gap-6 font-semibold text-sm">
-          <Link href="/" className="hover:underline">Trang Chủ</Link>
-          <Link href="/truyen-nguoi-lon" className="hover:underline">Truyện Người Lớn</Link>
-          <Link href="/nghe-thuat-yeu" className="hover:underline">Nghệ Thuật Yêu</Link>
-          <Link href="/da-ngon-ngu" className="hover:underline">Đa Ngôn Ngữ</Link>
-
-          {/* Search Icon */}
-          <Link href="/tim-truyen" className="rounded-full bg-white text-pink-600 p-2 hover:bg-pink-100 transition">🔍</Link>
-
-          {/* Global Button */}
-          <div className="ml-2">
-            <LanguageSwitcher />
-          </div>
-        </nav>
-      </div>
-    </header>
-  );
-}
+    <header className="w-full bg-gradient-to-r from-pink-500 to-orange-400 text-white">
+      <div className="max-w-7xl mx-auto flex items-center justify-between p-4">
+        <div className="flex items-center gap-4">
+          <Link href="/">
+            <img src="/moonlust-logo.png" alt="Moonlust Logo" className="h-12 w-auto" />
+          </Link>
+          <nav className="hidden md:flex gap-6 text-sm font-medium">
+            <Link href="/">{t('menu.home')}</Link>
+            <Link href="/adult">{t('menu.adult')}</Link>
+            <Link href="/art">{t('menu.art')}</Link>
+            <Link href="/health">{t('menu.health')}</Link>
+            <Link href="/languages">{t('menu.multilang')}</Link>
+          </nav>
+        </div>
+        <div className="flex items-center gap-2">

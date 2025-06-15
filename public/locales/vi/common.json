@@ -1,6 +1,21 @@
 {
-  "site_title": "Moonlust - Web Truyện Người Lớn Tinh Tế",
-  "site_description": "Moonlust là website đọc truyện người lớn tinh tế, gợi cảm, nội dung sâu sắc và hấp dẫn.",
-  "welcome": "Chào mừng bạn đến với Moonlust",
-  "intro_text": "Truyện người lớn tinh tế, sống động, mang chiều sâu cảm xúc."
+  "meta": {
+    "site_title": "Moonlust - Web Truyện Người Lớn Tinh Tế",
+    "site_description": "Moonlust là website đọc truyện người lớn tinh tế, gợi cảm, nội dung sâu sắc và hấp dẫn."
+  },
+  "intro": {
+    "welcome": "Chào mừng bạn đến với Moonlust",
+    "text": "Truyện người lớn tinh tế, sống động, mang chiều sâu cảm xúc."
+  },
+  "menu": {
+    "home": "Trang Chủ",
+    "adult": "Truyện Người Lớn",
+    "art": "Nghệ Thuật Yêu",
+    "health": "Sức Khỏe Tình Dục",
+    "multilang": "Đa Ngôn Ngữ"
+  },
+  "button": {
+    "login": "Đăng nhập",
+    "register": "Đăng Ký"
+  }
 }

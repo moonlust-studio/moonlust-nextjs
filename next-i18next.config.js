@@ -4,5 +4,5 @@ module.exports = {
     defaultLocale: 'vi',
     locales: ['vi', 'en', 'ja', 'zh'],
   },
-  reloadOnPrerender: process.env.NODE_ENV === 'development',
+  localePath: './public/locales',
 };
