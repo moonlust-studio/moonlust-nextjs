@@ -1,10 +1,41 @@
 {
   "meta": {
-    "site_title": "Moonlust - Sophisticated Adult Stories",
-    "site_description": "Moonlust is a platform for sophisticated, emotional, and sensual adult stories."
+    "site_title": "Moonlust - Sensual Stories",
+    "site_description": "Explore deeply emotional and artistically sensual stories on Moonlust."
   },
   "intro": {
-    "welcome": "Welcome to Moonlust",
-    "text": "Explore our deeply emotional and artistically sensual stories."
+    "hero_title": "Welcome to Moonlust",
+    "hero_text": "Explore our deeply emotional and artistically sensual stories."
+  },
+  "button": {
+    "explore": "Explore",
+    "learn_more": "Learn more",
+    "login": "Login",
+    "register": "Register"
+  },
+  "menu": {
+    "home": "Home",
+    "adult": "Adult Stories",
+    "art": "Love Art",
+    "health": "Sexual Health",
+    "multilang": "Languages"
+  },
+  "filter": {
+    "all_categories": "All Categories",
+    "search_placeholder": "Search by title..."
+  },
+  "section": {
+    "latest": "Latest Stories",
+    "hot": "Hottest Stories"
+  },
+  "status": {
+    "ongoing": "Ongoing",
+    "completed": "Completed"
+  },
+  "footer": {
+    "about": "About",
+    "contact": "Contact",
+    "policy": "Policy",
+    "copyright": "All rights reserved."
   }
 }

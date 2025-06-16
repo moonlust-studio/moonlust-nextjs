@@ -33,3 +33,4 @@ export const mockStories: Story[] = [
     cover: '/covers/dem-nong.jpg'
   }
 ];
+export default mockStories;
