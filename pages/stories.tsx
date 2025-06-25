@@ -1,7 +1,9 @@
+// ✅ File: pages/stories.tsx
+
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { mockStories } from '../lib/mock/mockStories';
+import mockStories from '../lib/mock/mockStories';
 
 export default function StoriesPage() {
   return (
@@ -15,7 +17,7 @@ export default function StoriesPage() {
           Danh Sách Truyện
         </h1>
         <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
-          {mockStories.map((story) => (
+          {mockStories.vi.map((story) => (
             <div
               key={story.id}
               className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden"
