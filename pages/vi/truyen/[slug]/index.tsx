@@ -1,3 +1,5 @@
+// ✅ File: pages/vi/truyen/[slug]/index.tsx
+
 import { GetStaticPaths, GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -46,7 +48,7 @@ export default function StoryPage({ story }: StoryPageProps) {
           {story.cover && (
             <Image
               src={story.cover}
-              alt={story.title}
+              alt={story.title || 'Cover'}
               width={200}
               height={300}
               className="rounded shadow"
@@ -57,7 +59,7 @@ export default function StoryPage({ story }: StoryPageProps) {
               <strong>📖 {t('summary')}:</strong> {story.description || story.summary}
             </p>
             <p className="mb-1">
-              <strong>🗂 {t('genre')}:</strong> {story.genre.join(', ')}
+              <strong>🗂 {t('genre')}:</strong> {(story.genre || []).join(', ')}
             </p>
             <p className="mb-1">
               <strong>📌 {t('statusLabel')}:</strong> {t(`status.${story.status}`)}
@@ -68,7 +70,7 @@ export default function StoryPage({ story }: StoryPageProps) {
 
             <div className="mt-6">
               <Link
-                href={`/truyen/${story.slug}/toc`}
+                href={`/vi/truyen/${story.slug}/toc`}
                 className="bg-pink-600 text-white px-4 py-2 rounded hover:bg-pink-700 font-medium"
               >
                 {t('readFromStart')} →

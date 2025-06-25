@@ -1,5 +1,3 @@
-// ✅ File: pages/truyen/[slug]/chapters/[id].tsx – Trang đọc chương hoàn chỉnh
-
 import { GetStaticPaths, GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -25,7 +23,7 @@ export default function ChapterPage({ story, chapter, chapterList }) {
     );
   }
 
-  const { id: chapterId, content, title } = chapter;
+  const { id: chapterId, content } = chapter;
   const slug = story.slug;
 
   const sortedIds = chapterList.map((c) => c.id).sort((a, b) => a - b);
@@ -33,14 +31,14 @@ export default function ChapterPage({ story, chapter, chapterList }) {
   const prevId = currentIndex > 0 ? sortedIds[currentIndex - 1] : null;
   const nextId = currentIndex < sortedIds.length - 1 ? sortedIds[currentIndex + 1] : null;
 
-  const pageTitle = `${t('chapter')} ${chapterId} – ${story.title} | Moonlust`;
+  const pageTitle = `${t('chapter')} ${String(chapterId).padStart(2, '0')} – ${story.title} | Moonlust`;
 
   return (
     <>
       <Head>
         <title>{pageTitle}</title>
         <meta name="description" content={story.description || story.summary} />
-        <meta name="keywords" content={`${story.title}, chapter ${chapterId}, Moonlust`} />
+        <meta name="keywords" content={`${story.title}, chương ${chapterId}, Moonlust`} />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={story.description || story.summary} />
         <meta property="og:type" content="article" />
@@ -48,7 +46,7 @@ export default function ChapterPage({ story, chapter, chapterList }) {
 
       <main className="max-w-3xl mx-auto px-4 py-10">
         <div className="text-center mb-6">
-          <Link href={`/truyen/${slug}`} className="text-sm text-pink-600 underline mb-2 block">
+          <Link href={`/truyen/${slug}`} className="text-sm text-pink-600 underline block mb-2">
             ← {t('button.back_to_story')}
           </Link>
           <h1 className="text-2xl font-bold text-pink-700">
@@ -67,7 +65,8 @@ export default function ChapterPage({ story, chapter, chapterList }) {
               href={`/truyen/${slug}/chapters/${prevId}`}
               className="hover:underline flex items-center gap-1"
             >
-              <ArrowLeft className="w-4 h-4" /> {t('nav.prev')}
+              <ArrowLeft className="w-4 h-4" />
+              {t('nav.prev')}
             </Link>
           ) : (
             <div />
@@ -78,7 +77,8 @@ export default function ChapterPage({ story, chapter, chapterList }) {
               href={`/truyen/${slug}/chapters/${nextId}`}
               className="hover:underline flex items-center gap-1"
             >
-              {t('nav.next')} <ArrowRight className="w-4 h-4" />
+              {t('nav.next')}
+              <ArrowRight className="w-4 h-4" />
             </Link>
           ) : (
             <div />
@@ -99,7 +99,7 @@ export async function getStaticProps({ locale, params }: GetStaticPropsContext) 
   const lang = locale || 'vi';
 
   const story = getMockStoryBySlug(slug, lang);
-  const chapter = await getMockChapter(slug, id, lang);
+  const chapter = getMockChapter(slug, id, lang);
   const chapterList = getMockChapterList(slug, lang) || [];
 
   return {

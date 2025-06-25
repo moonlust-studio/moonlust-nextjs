@@ -1,5 +1,3 @@
-// ✅ File: pages/truyen/[slug]/toc.tsx – UI danh sách chương đa ngôn ngữ hoàn chỉnh
-
 import { GetStaticPaths, GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -11,7 +9,12 @@ import { getMockChapterList } from '@/lib/api/chapters';
 import mockStories from '@/lib/mock/mockStories';
 import { BookOpen } from 'lucide-react';
 
-export default function ChapterListPage({ story, chapterList }) {
+type ChapterListPageProps = {
+  story: any;
+  chapterList: { id: number; tag?: string }[];
+};
+
+export default function ChapterListPage({ story, chapterList }: ChapterListPageProps) {
   const { t } = useTranslation('common');
 
   if (!story) {
@@ -26,10 +29,10 @@ export default function ChapterListPage({ story, chapterList }) {
   }
 
   const pageTitle = `${story.title} – ${t('chapter')} | Moonlust`;
-  const description = `${t('chapter_list_desc', {
+  const description = t('chapter_list_desc', {
     title: story.title,
     count: chapterList.length,
-  })}`;
+  });
 
   return (
     <>
@@ -44,7 +47,7 @@ export default function ChapterListPage({ story, chapterList }) {
 
       <main className="max-w-3xl mx-auto px-4 py-10">
         <div className="mb-4 text-center">
-          <Link href={`/truyen/${story.slug}`} className="text-pink-600 underline text-sm">
+          <Link href={`/vi/truyen/${story.slug}`} className="text-pink-600 underline text-sm">
             ← {t('button.back_to_story')}
           </Link>
         </div>
@@ -58,7 +61,7 @@ export default function ChapterListPage({ story, chapterList }) {
             {chapterList.map((chapter) => (
               <li key={chapter.id}>
                 <Link
-                  href={`/truyen/${story.slug}/chapters/${chapter.id}`}
+                  href={`/vi/truyen/${story.slug}/chapters/${chapter.id}`}
                   className="group block px-5 py-3 bg-white rounded-2xl border border-pink-200 shadow-md hover:shadow-lg hover:border-pink-400 transition duration-200"
                 >
                   <div className="flex justify-between items-center">
@@ -84,7 +87,7 @@ export default function ChapterListPage({ story, chapterList }) {
   );
 }
 
-ChapterListPage.getLayout = function getLayout(page) {
+ChapterListPage.getLayout = function getLayout(page: React.ReactNode) {
   return <Layout>{page}</Layout>;
 };
 
