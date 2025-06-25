@@ -1,8 +1,19 @@
-/* styles/globals.css */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 body {
   @apply font-sans bg-[#f9f9f9] text-gray-800 m-0 p-0;
+}
+
+.dark body {
+  @apply bg-[#121212] text-gray-200;
+}
+
+h1, h2, h3 {
+  font-family: 'Playfair Display', serif;
+}
+
+article {
+  font-family: 'Lora', serif;
 }

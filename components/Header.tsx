@@ -9,9 +9,11 @@ import { useState } from 'react';
 export default function Header() {
   const router = useRouter();
   const { locale, locales, asPath } = router;
-  const { t } = useTranslation('common');
+  const { t, ready } = useTranslation('common');
   const [showLangs, setShowLangs] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+
+  if (!ready) return null;
 
   const handleChange = (newLocale: string) => {
     setShowLangs(false);
@@ -21,17 +23,14 @@ export default function Header() {
   };
 
   return (
-    <header key={locale} className="w-full bg-gradient-to-r from-pink-500 to-orange-400 text-white shadow">
+    <header className="w-full bg-gradient-to-r from-pink-500 to-orange-400 text-white shadow">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
-        {/* Logo + Toggle */}
-        <div className="flex items-center gap-3">
-          <Link href="/" className="flex items-center gap-2">
-            <img src="/moonlust-logo.png" alt="Moonlust Logo" className="h-8 w-auto rounded-full shadow" />
-            <span className="text-lg font-semibold">Moonlust</span>
-          </Link>
-        </div>
+        <Link href="/" className="flex items-center gap-2">
+          <img src="/moonlust-logo.png" alt="Moonlust Logo" className="h-8 w-auto rounded-full shadow" />
+          <span className="text-lg font-semibold">Moonlust</span>
+        </Link>
 
-        {/* Desktop Menu */}
+        {/* Desktop menu */}
         <nav className="hidden md:flex gap-5 text-sm font-medium">
           <Link href="/">{t('menu.home')}</Link>
           <Link href="/stories">{t('menu.adult')}</Link>
@@ -40,7 +39,7 @@ export default function Header() {
           <Link href="/languages">{t('menu.multilang')}</Link>
         </nav>
 
-        {/* Right-side controls */}
+        {/* Desktop buttons */}
         <div className="hidden md:flex items-center gap-3 relative">
           <button onClick={() => setShowLangs(!showLangs)} className="p-2 rounded-full hover:bg-white/20">
             <Globe className="w-5 h-5" />
@@ -72,7 +71,7 @@ export default function Header() {
           </button>
         </div>
 
-        {/* Mobile Toggle */}
+        {/* Mobile menu toggle */}
         <div className="md:hidden">
           <button onClick={() => setShowMobileMenu(!showMobileMenu)} className="text-white">
             {showMobileMenu ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
@@ -80,7 +79,7 @@ export default function Header() {
         </div>
       </div>
 
-      {/* Mobile Menu Items */}
+      {/* Mobile menu items */}
       {showMobileMenu && (
         <div className="md:hidden px-4 pb-4 flex flex-col gap-3 text-sm font-medium">
           <Link href="/">{t('menu.home')}</Link>
@@ -88,14 +87,16 @@ export default function Header() {
           <Link href="/art">{t('menu.art')}</Link>
           <Link href="/health">{t('menu.health')}</Link>
           <Link href="/languages">{t('menu.multilang')}</Link>
+
           <div className="flex gap-2 mt-2">
-            <button className="flex-1 bg-white text-pink-600 px-3 py-1 rounded-xl text-sm font-semibold">
+            <button className="flex-1 bg-white text-pink-600 px-3 py-1 rounded-xl font-semibold">
               {t('button.login')}
             </button>
-            <button className="flex-1 bg-white text-pink-600 px-3 py-1 rounded-xl text-sm font-semibold">
+            <button className="flex-1 bg-white text-pink-600 px-3 py-1 rounded-xl font-semibold">
               {t('button.register')}
             </button>
           </div>
+
           <div className="flex gap-2 mt-2">
             {locales?.map((lng) => (
               <button

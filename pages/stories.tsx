@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { mockStories } from '../lib/mockStories';
+import { mockStories } from '../lib/mock/mockStories';
 
 export default function StoriesPage() {
   return (
@@ -16,7 +16,10 @@ export default function StoriesPage() {
         </h1>
         <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
           {mockStories.map((story) => (
-            <div key={story.id} className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden">
+            <div
+              key={story.id}
+              className="bg-white rounded-xl shadow hover:shadow-lg transition overflow-hidden"
+            >
               <Image
                 src={story.cover}
                 alt={story.title}
@@ -26,12 +29,12 @@ export default function StoriesPage() {
               />
               <div className="p-4">
                 <h2 className="text-lg font-semibold text-pink-700">{story.title}</h2>
-                <p className="text-sm text-gray-600">{story.genre}</p>
+                <p className="text-sm text-gray-600">{story.genre.join(', ')}</p>
                 <p className="text-xs mt-1 text-gray-500">
                   {story.chapters} chương • {story.status === 'completed' ? 'Hoàn thành' : 'Đang ra'}
                 </p>
                 <Link
-                  href={`/stories/${story.id}`}
+                  href={`/truyen/${story.slug}`}
                   className="inline-block mt-3 text-sm text-pink-600 hover:underline font-medium"
                 >
                   Đọc ngay →
