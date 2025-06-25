@@ -1,8 +1,9 @@
+// ✅ File: pages/art.tsx
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import { appWithTranslation } from 'next-i18next';
 import Head from 'next/head';
-import nextI18NextConfig from '@/next-i18next.config'; // ✅ Dùng alias `@/`
+import nextI18NextConfig from '../next-i18next.config.js'; // ✅ Sửa lại đúng cho Cloudflare
 
 function App({ Component, pageProps }: AppProps) {
   return (
