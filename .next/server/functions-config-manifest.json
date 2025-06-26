@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "functions": {
+    "/": {},
+    "/truyen/[slug]/chapters/[id]": {},
+    "/truyen/[slug]": {},
+    "/truyen/[slug]/toc": {}
+  }
+}

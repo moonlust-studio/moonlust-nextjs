@@ -1,9 +1,14 @@
 {
   "/_app": "pages/_app.js",
+  "/checklist": "pages/checklist.js",
   "/_error": "pages/_error.js",
-  "/_document": "pages/_document.js",
-  "/truyen/[slug]/chapters/[id]": "pages/truyen/[slug]/chapters/[id].js",
+  "/art": "pages/art.js",
+  "/health": "pages/health.js",
+  "/languages": "pages/languages.js",
+  "/stories": "pages/stories.js",
+  "/truyen/[slug]/toc": "pages/truyen/[slug]/toc.js",
   "/": "pages/index.js",
-  "/truyen/[slug]": "pages/truyen/[slug].js",
-  "/truyen/[slug]/toc": "pages/truyen/[slug]/toc.js"
+  "/truyen/[slug]/chapters/[id]": "pages/truyen/[slug]/chapters/[id].js",
+  "/_document": "pages/_document.js",
+  "/truyen/[slug]": "pages/truyen/[slug].js"
 }
