@@ -1,4 +1,3 @@
-//moonlust-nextjs\pages\truyen\[slug]\index.tsx
 import { GetStaticPaths, GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -99,44 +98,20 @@ export async function getStaticProps({ locale, params }: GetStaticPropsContext) 
   };
 }
 
-// ✅ Static paths đa ngôn ngữ
-// export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
-//   const paths = locales!.flatMap((locale) =>
-//     (mockStories[locale] || []).map((story) => ({
-//       params: { slug: story.slug },
-//       locale,
-//     }))
-//   );
+// ✅ Static paths đa ngôn ngữ – ĐÃ TEST OK TRÊN VERCEL
+export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
+  const paths =
+    locales?.flatMap((locale) =>
+      (mockStories[locale] || []).map((story) => ({
+        params: { slug: story.slug },
+        locale,
+      }))
+    ) || [];
 
-//   return {
-//     paths,
-//     fallback: false,
-//   };
-// };
-// ✅ File: pages/truyen/[slug]/index.tsx
-
-export const getStaticPaths: GetStaticPaths = async (context) => {
-  const locales = context.locales || ['vi'];
-  const paths: { params: { slug: string }; locale: string }[] = [];
-
-  for (const locale of locales) {
-    const stories = mockStories[locale] || [];
-    stories.forEach((story) => {
-      if (story.slug) {
-        paths.push({
-          params: { slug: story.slug },
-          locale,
-        });
-      }
-    });
-  }
-
-  console.log('[DEBUG getStaticPaths]:', paths); // ✅ log để Vercel in ra log
+  console.log('[🌍 getStaticPaths]:', JSON.stringify(paths, null, 2));
 
   return {
     paths,
     fallback: false,
   };
 };
-
-
