@@ -1,3 +1,4 @@
+//moonlust-nextjs\pages\truyen\[slug]\index.tsx
 import { GetStaticPaths, GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';

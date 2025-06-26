@@ -1,3 +1,4 @@
+//moonlust-nextjs\lib\mock\mockStories.en.ts
 import { Story } from './mockStories.vi';
 
 const mockStoriesEn: Story[] = [

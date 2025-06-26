@@ -1,11 +1,15 @@
-// ✅ File: lib/mock/mockChapters.ts
-import vi from './mockChapters.vi';
-import en from './mockChapters.en';
-import ja from './mockChapters.ja';
+import mockChaptersVi from './mockChapters.vi';
+import mockChaptersEn from './mockChapters.en';
+import mockChaptersJa from './mockChapters.ja';
 import fs from 'fs';
 import path from 'path';
 
-const chaptersMap = { vi, en, ja };
+const chaptersMap: { [locale: string]: any } = {
+  vi: mockChaptersVi,
+  en: mockChaptersEn,
+  ja: mockChaptersJa,
+};
+
 export default chaptersMap;
 
 /**

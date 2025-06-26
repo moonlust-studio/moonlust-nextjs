@@ -1,3 +1,4 @@
+//moonlust-nextjs\pages\truyen\[slug]\chapters\[id].tsx
 import { GetStaticPaths, GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
