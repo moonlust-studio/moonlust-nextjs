@@ -1,6 +1,5 @@
-// ✅ File: pages/index.tsx – Trang chủ Moonlust tối ưu SEO + i18n
+// ✅ File: pages/index.tsx – Trang chủ Moonlust dùng i18n client-side (static export ok)
 import Head from 'next/head';
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -48,15 +47,15 @@ export default function Home() {
         {/* Bộ lọc và tìm kiếm */}
         <div className="flex flex-col md:flex-row items-center justify-between mb-6 gap-4">
           <select
-  value={selectedCategory}
-  onChange={(e) => setSelectedCategory(e.target.value)}
-  className="border rounded px-3 py-2"
->
-  <option value="all">{t('filter.all_categories')}</option>
-  {[...new Set(stories.flatMap((s) => s.genre))].map((g) => (
-    <option key={g as string} value={g as string}>{g as string}</option>
-  ))}
-</select>
+            value={selectedCategory}
+            onChange={(e) => setSelectedCategory(e.target.value)}
+            className="border rounded px-3 py-2"
+          >
+            <option value="all">{t('filter.all_categories')}</option>
+            {[...new Set(stories.flatMap((s) => s.genre))].map((g) => (
+              <option key={g as string} value={g as string}>{g as string}</option>
+            ))}
+          </select>
 
           <input
             type="text"
@@ -115,12 +114,3 @@ export default function Home() {
 Home.getLayout = function getLayout(page: React.ReactNode) {
   return <Layout>{page}</Layout>;
 };
-
-// ✅ Dùng i18n đa ngôn ngữ
-export async function getStaticProps({ locale }: { locale: string }) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ['common']))
-    }
-  };
-}
