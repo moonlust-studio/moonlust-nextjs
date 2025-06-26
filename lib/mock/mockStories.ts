@@ -1,15 +1,8 @@
-// ✅ File: lib/mock/mockStories.ts
+// ✅ FILE: lib/mock/mockStories.ts
 
 import mockStoriesVi from './mockStories.vi';
 import mockStoriesEn from './mockStories.en';
 import mockStoriesJa from './mockStories.ja';
-
-const mockStories = {
-  vi: mockStoriesVi,
-  en: mockStoriesEn,
-  ja: mockStoriesJa,
-};
-// ✅ FILE: lib/mock/mockStories.ts
 
 export interface Story {
   id: string;
@@ -21,5 +14,11 @@ export interface Story {
   status: 'completed' | 'ongoing';
   cover: string;
 }
+
+const mockStories: { [locale: string]: Story[] } = {
+  vi: mockStoriesVi,
+  en: mockStoriesEn,
+  ja: mockStoriesJa,
+};
 
 export default mockStories;
