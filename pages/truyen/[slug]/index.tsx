@@ -1,4 +1,6 @@
-import { GetStaticPaths, GetStaticPropsContext } from 'next';
+// ✅ FILE: pages/truyen/[slug]/index.tsx
+
+import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -86,7 +88,7 @@ StoryPage.getLayout = function getLayout(page: React.ReactNode) {
 };
 
 // ✅ Static props theo ngôn ngữ
-export async function getStaticProps({ locale, params }: GetStaticPropsContext) {
+export const getStaticProps: GetStaticProps = async ({ locale, params }: GetStaticPropsContext) => {
   const slug = params?.slug as string;
   const usedLocale = locale || 'vi';
 
@@ -107,12 +109,11 @@ export async function getStaticProps({ locale, params }: GetStaticPropsContext) 
       story,
     },
   };
-}
+};
 
-
-// ✅ Static paths đa ngôn ngữ – ĐÃ TEST OK TRÊN VERCEL
+// ✅ Static paths đa ngôn ngữ
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
-  const paths: { params: { slug: string }, locale: string }[] = [];
+  const paths: { params: { slug: string }; locale: string }[] = [];
 
   for (const locale of locales || []) {
     const stories = mockStories[locale];
@@ -134,4 +135,3 @@ export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
     fallback: false,
   };
 };
-

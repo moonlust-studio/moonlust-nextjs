@@ -15,7 +15,8 @@ export interface Story {
   cover: string;
 }
 
-const mockStories: { [locale: string]: Story[] } = {
+// ✅ Gộp theo chuẩn đa ngôn ngữ
+const mockStories: Record<string, Story[]> = {
   vi: mockStoriesVi,
   en: mockStoriesEn,
   ja: mockStoriesJa,

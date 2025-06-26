@@ -69,6 +69,7 @@ var stories = __webpack_require__(7008);
 // EXTERNAL MODULE: ./lib/mock/mockStories.ts
 var mockStories = __webpack_require__(6298);
 ;// CONCATENATED MODULE: ./pages/truyen/[slug]/index.tsx
+// ✅ FILE: pages/truyen/[slug]/index.tsx
 
 
 
@@ -221,7 +222,7 @@ StoryPage.getLayout = function getLayout(page) {
     });
 };
 // ✅ Static props theo ngôn ngữ
-async function getStaticProps({ locale, params }) {
+const getStaticProps = async ({ locale, params })=>{
     const slug = params?.slug;
     const usedLocale = locale || "vi";
     console.log(`[🟢 getStaticProps] locale="${usedLocale}", slug="${slug}"`);
@@ -240,8 +241,8 @@ async function getStaticProps({ locale, params }) {
             story
         }
     };
-}
-// ✅ Static paths đa ngôn ngữ – ĐÃ TEST OK TRÊN VERCEL
+};
+// ✅ Static paths đa ngôn ngữ
 const getStaticPaths = async ({ locales })=>{
     const paths = [];
     for (const locale of locales || []){

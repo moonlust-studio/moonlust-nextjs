@@ -1,5 +1,4 @@
-//moonlust-nextjs\pages\truyen\[slug]\chapters\[id].tsx
-import { GetStaticPaths, GetStaticPropsContext } from 'next';
+import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import Layout from '@/components/Layout';
@@ -10,7 +9,13 @@ import { getMockChapter, getMockChapterList } from '@/lib/api/chapters';
 import mockStories from '@/lib/mock/mockStories';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
-export default function ChapterPage({ story, chapter, chapterList }) {
+type ChapterPageProps = {
+  story: any;
+  chapter: { id: number; content: string };
+  chapterList: { id: number }[];
+};
+
+export default function ChapterPage({ story, chapter, chapterList }: ChapterPageProps) {
   const { t } = useTranslation('common');
 
   if (!story || !chapter) {
@@ -68,9 +73,7 @@ export default function ChapterPage({ story, chapter, chapterList }) {
             >
               <ArrowLeft className="w-4 h-4" /> {t('nav.prev')}
             </Link>
-          ) : (
-            <div />
-          )}
+          ) : <div />}
 
           {nextId ? (
             <Link
@@ -79,21 +82,19 @@ export default function ChapterPage({ story, chapter, chapterList }) {
             >
               {t('nav.next')} <ArrowRight className="w-4 h-4" />
             </Link>
-          ) : (
-            <div />
-          )}
+          ) : <div />}
         </div>
       </main>
     </>
   );
 }
 
-ChapterPage.getLayout = function getLayout(page) {
+ChapterPage.getLayout = function getLayout(page: React.ReactNode) {
   return <Layout>{page}</Layout>;
 };
 
-// ✅ Dữ liệu props chương
-export async function getStaticProps({ locale, params }: GetStaticPropsContext) {
+// ✅ getStaticProps – truyền đúng locale & params
+export const getStaticProps: GetStaticProps = async ({ locale, params }: GetStaticPropsContext) => {
   const slug = params?.slug as string;
   const id = Number(params?.id);
   const lang = locale || 'vi';
@@ -101,6 +102,11 @@ export async function getStaticProps({ locale, params }: GetStaticPropsContext) 
   const story = getMockStoryBySlug(slug, lang);
   const chapter = await getMockChapter(slug, id, lang);
   const chapterList = getMockChapterList(slug, lang) || [];
+
+  if (!story || !chapter) {
+    console.warn(`[❌ NOT FOUND] slug=${slug}, id=${id}, lang=${lang}`);
+    return { notFound: true };
+  }
 
   return {
     props: {
@@ -110,39 +116,22 @@ export async function getStaticProps({ locale, params }: GetStaticPropsContext) 
       chapterList,
     },
   };
-}
+};
 
-// ✅ Danh sách đường dẫn chương truyện cho từng ngôn ngữ
-// export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
-//   const paths =
-//     locales?.flatMap((locale) =>
-//       (mockStories[locale] || []).flatMap((story) =>
-//         Array.from({ length: story.chapters || 1 }, (_, i) => ({
-//           params: { slug: story.slug, id: String(i + 1) },
-//           locale,
-//         }))
-//       )
-//     ) || [];
-
-//   return {
-//     paths,
-//     fallback: false,
-//   };
-// };
+// ✅ getStaticPaths – tạo đúng paths cho từng locale
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
   const paths: { params: { slug: string; id: string }; locale: string }[] = [];
 
   for (const locale of locales || []) {
     const stories = mockStories[locale];
+    if (!stories) continue;
 
-    if (stories && Array.isArray(stories)) {
-      for (const story of stories) {
-        for (let i = 1; i <= story.chapters; i++) {
-          paths.push({
-            params: { slug: story.slug, id: i.toString() },
-            locale,
-          });
-        }
+    for (const story of stories) {
+      for (let i = 1; i <= story.chapters; i++) {
+        paths.push({
+          params: { slug: story.slug, id: String(i) },
+          locale,
+        });
       }
     }
   }
@@ -154,4 +143,3 @@ export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
     fallback: false,
   };
 };
-

@@ -96,6 +96,7 @@ const mockStoriesJa = [
 
 
 
+// ✅ Gộp theo chuẩn đa ngôn ngữ
 const mockStories = {
     vi: _mockStories_vi__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z,
     en: _mockStories_en__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z,

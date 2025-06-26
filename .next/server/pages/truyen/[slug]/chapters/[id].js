@@ -111,7 +111,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var modularize_import_loader_name_ArrowRight_from_default_as_default_join_esm_icons_arrow_right_lucide_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(6778);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_lib_api_chapters__WEBPACK_IMPORTED_MODULE_7__]);
 _lib_api_chapters__WEBPACK_IMPORTED_MODULE_7__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
-//moonlust-nextjs\pages\truyen\[slug]\chapters\[id].tsx
 
 
 
@@ -244,14 +243,20 @@ ChapterPage.getLayout = function getLayout(page) {
         children: page
     });
 };
-// ✅ Dữ liệu props chương
-async function getStaticProps({ locale, params }) {
+// ✅ getStaticProps – truyền đúng locale & params
+const getStaticProps = async ({ locale, params })=>{
     const slug = params?.slug;
     const id = Number(params?.id);
     const lang = locale || "vi";
     const story = (0,_lib_api_stories__WEBPACK_IMPORTED_MODULE_6__/* .getMockStoryBySlug */ .B)(slug, lang);
     const chapter = await (0,_lib_api_chapters__WEBPACK_IMPORTED_MODULE_7__/* .getMockChapter */ .H)(slug, id, lang);
     const chapterList = (0,_lib_api_chapters__WEBPACK_IMPORTED_MODULE_7__/* .getMockChapterList */ .v)(slug, lang) || [];
+    if (!story || !chapter) {
+        console.warn(`[❌ NOT FOUND] slug=${slug}, id=${id}, lang=${lang}`);
+        return {
+            notFound: true
+        };
+    }
     return {
         props: {
             ...await (0,next_i18next_serverSideTranslations__WEBPACK_IMPORTED_MODULE_4__.serverSideTranslations)(lang, [
@@ -262,38 +267,22 @@ async function getStaticProps({ locale, params }) {
             chapterList
         }
     };
-}
-// ✅ Danh sách đường dẫn chương truyện cho từng ngôn ngữ
-// export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
-//   const paths =
-//     locales?.flatMap((locale) =>
-//       (mockStories[locale] || []).flatMap((story) =>
-//         Array.from({ length: story.chapters || 1 }, (_, i) => ({
-//           params: { slug: story.slug, id: String(i + 1) },
-//           locale,
-//         }))
-//       )
-//     ) || [];
-//   return {
-//     paths,
-//     fallback: false,
-//   };
-// };
+};
+// ✅ getStaticPaths – tạo đúng paths cho từng locale
 const getStaticPaths = async ({ locales })=>{
     const paths = [];
     for (const locale of locales || []){
         const stories = _lib_mock_mockStories__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z[locale];
-        if (stories && Array.isArray(stories)) {
-            for (const story of stories){
-                for(let i = 1; i <= story.chapters; i++){
-                    paths.push({
-                        params: {
-                            slug: story.slug,
-                            id: i.toString()
-                        },
-                        locale
-                    });
-                }
+        if (!stories) continue;
+        for (const story of stories){
+            for(let i = 1; i <= story.chapters; i++){
+                paths.push({
+                    params: {
+                        slug: story.slug,
+                        id: String(i)
+                    },
+                    locale
+                });
             }
         }
     }
