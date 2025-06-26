@@ -111,7 +111,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var modularize_import_loader_name_ArrowRight_from_default_as_default_join_esm_icons_arrow_right_lucide_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(6778);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_lib_api_chapters__WEBPACK_IMPORTED_MODULE_7__]);
 _lib_api_chapters__WEBPACK_IMPORTED_MODULE_7__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
-// ✅ File: pages/truyen/[slug]/chapters/[id].tsx – Trang đọc chương hoàn chỉnh
 
 
 
@@ -141,7 +140,7 @@ function ChapterPage({ story, chapter, chapterList }) {
             ]
         });
     }
-    const { id: chapterId, content, title } = chapter;
+    const { id: chapterId, content } = chapter;
     const slug = story.slug;
     const sortedIds = chapterList.map((c)=>c.id).sort((a, b)=>a - b);
     const currentIndex = sortedIds.indexOf(chapterId);
@@ -244,6 +243,7 @@ ChapterPage.getLayout = function getLayout(page) {
         children: page
     });
 };
+// ✅ Dữ liệu props chương
 async function getStaticProps({ locale, params }) {
     const slug = params?.slug;
     const id = Number(params?.id);
@@ -262,6 +262,7 @@ async function getStaticProps({ locale, params }) {
         }
     };
 }
+// ✅ Danh sách đường dẫn chương truyện cho từng ngôn ngữ
 const getStaticPaths = async ({ locales })=>{
     const paths = locales?.flatMap((locale)=>(_lib_mock_mockStories__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z[locale] || []).flatMap((story)=>Array.from({
                 length: story.chapters || 1

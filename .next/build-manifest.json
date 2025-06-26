@@ -5,8 +5,8 @@
   "devFiles": [],
   "ampDevFiles": [],
   "lowPriorityFiles": [
-    "static/MYuKxmeiYJ37XUMr_a7Xa/_buildManifest.js",
-    "static/MYuKxmeiYJ37XUMr_a7Xa/_ssgManifest.js"
+    "static/dmGNxOoFW8xGfs8P1txeg/_buildManifest.js",
+    "static/dmGNxOoFW8xGfs8P1txeg/_ssgManifest.js"
   ],
   "rootMainFiles": [],
   "pages": {
@@ -77,7 +77,7 @@
       "static/chunks/framework-63157d71ad419e09.js",
       "static/chunks/main-daf67cc10f8a009e.js",
       "static/chunks/664-d32e4e6ee1468c97.js",
-      "static/chunks/pages/truyen/[slug]/chapters/[id]-595764a5f9c5f12c.js"
+      "static/chunks/pages/truyen/[slug]/chapters/[id]-99ee46221681135f.js"
     ],
     "/truyen/[slug]/toc": [
       "static/chunks/webpack-8fa1640cc84ba8fe.js",

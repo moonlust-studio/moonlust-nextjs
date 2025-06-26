@@ -1,5 +1,3 @@
-// ✅ File: pages/truyen/[slug]/chapters/[id].tsx – Trang đọc chương hoàn chỉnh
-
 import { GetStaticPaths, GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -25,7 +23,7 @@ export default function ChapterPage({ story, chapter, chapterList }) {
     );
   }
 
-  const { id: chapterId, content, title } = chapter;
+  const { id: chapterId, content } = chapter;
   const slug = story.slug;
 
   const sortedIds = chapterList.map((c) => c.id).sort((a, b) => a - b);
@@ -93,6 +91,7 @@ ChapterPage.getLayout = function getLayout(page) {
   return <Layout>{page}</Layout>;
 };
 
+// ✅ Dữ liệu props chương
 export async function getStaticProps({ locale, params }: GetStaticPropsContext) {
   const slug = params?.slug as string;
   const id = Number(params?.id);
@@ -112,6 +111,7 @@ export async function getStaticProps({ locale, params }: GetStaticPropsContext) 
   };
 }
 
+// ✅ Danh sách đường dẫn chương truyện cho từng ngôn ngữ
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
   const paths =
     locales?.flatMap((locale) =>
