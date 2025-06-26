@@ -113,22 +113,30 @@ export async function getStaticProps({ locale, params }: GetStaticPropsContext) 
 //     fallback: false,
 //   };
 // };
-export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
-  const { default: mockStories } = await import('@/lib/mock/mockStories');
+// ✅ File: pages/truyen/[slug]/index.tsx
 
-  const paths =
-    locales?.flatMap((locale) =>
-      (mockStories[locale] || []).map((story) => ({
-        params: { slug: story.slug },
-        locale,
-      }))
-    ) || [];
+export const getStaticPaths: GetStaticPaths = async (context) => {
+  const locales = context.locales || ['vi'];
+  const paths: { params: { slug: string }; locale: string }[] = [];
 
-  console.log('DEBUG index.tsx getStaticPaths:', paths); // 👈 check Vercel log
+  for (const locale of locales) {
+    const stories = mockStories[locale] || [];
+    stories.forEach((story) => {
+      if (story.slug) {
+        paths.push({
+          params: { slug: story.slug },
+          locale,
+        });
+      }
+    });
+  }
+
+  console.log('[DEBUG getStaticPaths]:', paths); // ✅ log để Vercel in ra log
 
   return {
     paths,
     fallback: false,
   };
 };
+
 
