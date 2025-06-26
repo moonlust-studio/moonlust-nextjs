@@ -223,10 +223,18 @@ StoryPage.getLayout = function getLayout(page) {
 // ✅ Static props theo ngôn ngữ
 async function getStaticProps({ locale, params }) {
     const slug = params?.slug;
-    const story = (0,stories/* getMockStoryBySlug */.B)(slug, locale || "vi");
+    const usedLocale = locale || "vi";
+    console.log(`[🟢 getStaticProps] locale="${usedLocale}", slug="${slug}"`);
+    const story = (0,stories/* getMockStoryBySlug */.B)(slug, usedLocale);
+    if (!story) {
+        console.warn(`[❌ NOT FOUND] story not found for locale="${usedLocale}" slug="${slug}"`);
+        return {
+            notFound: true
+        };
+    }
     return {
         props: {
-            ...await (0,serverSideTranslations_.serverSideTranslations)(locale || "vi", [
+            ...await (0,serverSideTranslations_.serverSideTranslations)(usedLocale, [
                 "common"
             ]),
             story

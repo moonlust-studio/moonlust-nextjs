@@ -88,15 +88,27 @@ StoryPage.getLayout = function getLayout(page: React.ReactNode) {
 // ✅ Static props theo ngôn ngữ
 export async function getStaticProps({ locale, params }: GetStaticPropsContext) {
   const slug = params?.slug as string;
-  const story = getMockStoryBySlug(slug, locale || 'vi');
+  const usedLocale = locale || 'vi';
+
+  console.log(`[🟢 getStaticProps] locale="${usedLocale}", slug="${slug}"`);
+
+  const story = getMockStoryBySlug(slug, usedLocale);
+
+  if (!story) {
+    console.warn(`[❌ NOT FOUND] story not found for locale="${usedLocale}" slug="${slug}"`);
+    return {
+      notFound: true,
+    };
+  }
 
   return {
     props: {
-      ...(await serverSideTranslations(locale || 'vi', ['common'])),
+      ...(await serverSideTranslations(usedLocale, ['common'])),
       story,
     },
   };
 }
+
 
 // ✅ Static paths đa ngôn ngữ – ĐÃ TEST OK TRÊN VERCEL
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
