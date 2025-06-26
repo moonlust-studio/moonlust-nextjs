@@ -1,3 +1,5 @@
+// ✅ File: lib/api/chapters.ts – Load chương & metadata chương theo ngôn ngữ
+
 import chaptersMap from '@/lib/mock/mockChapters';
 import loadMarkdownChapter from './loadMarkdownChapter';
 
@@ -10,13 +12,12 @@ export async function getMockChapter(slug: string, id: number, locale: string) {
 
   let contentHtml = metadata.content;
 
-  // ✅ Nếu chưa có nội dung HTML → cố gắng load từ file markdown
   if (!contentHtml) {
     try {
       contentHtml = await loadMarkdownChapter(slug, id, locale);
     } catch (error) {
       console.warn(`[getMockChapter] Không thể load file .md cho ${slug}/chapter-${id} (${locale})`);
-      contentHtml = '<p><em>Nội dung đang được cập nhật...</em></p>'; // ✅ fallback để không crash build
+      contentHtml = '<p><em>Nội dung đang được cập nhật...</em></p>';
     }
   }
 

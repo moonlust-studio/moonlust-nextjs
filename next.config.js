@@ -1,16 +1,13 @@
-// ✅ FILE: next.config.js – chuẩn static export, bỏ i18n & serverActions
+// ✅ Đây mới là nội dung đúng của `next.config.js`
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export', // Xuất static để dùng Cloudflare Pages
-  experimental: {
-    // ⚠️ Chỉ bật optimizeCss nếu cần (không bật nếu gây lỗi)
-    optimizeCss: true,
-    // serverActions: true, // ❌ BỎ nếu không dùng app router
+  i18n: {
+    locales: ['vi', 'en', 'ja'],
+    defaultLocale: 'vi',
+    localeDetection: false, // ✅ Tắt tự động chuyển locale
   },
-  // ⚠️ Nếu dùng image optimization, nên thêm:
-  images: {
-    unoptimized: true, // ⚠️ static export không hỗ trợ Image tối ưu
-  },
+  reactStrictMode: true,
 };
 
 module.exports = nextConfig;

@@ -3,12 +3,10 @@ import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import { appWithTranslation } from 'next-i18next';
 import Head from 'next/head';
-import nextI18NextConfig from '../next-i18next.config.js'; // ✅ Relative path an toàn cho Cloudflare
+import nextI18NextConfig from '@/next-i18next.config';
 
 type CustomAppProps = AppProps & {
-  Component: AppProps['Component'] & {
-    getLayout?: (page: React.ReactNode) => React.ReactNode;
-  };
+  Component: AppProps['Component'] & { getLayout?: (page: React.ReactNode) => React.ReactNode };
 };
 
 function App({ Component, pageProps }: CustomAppProps) {

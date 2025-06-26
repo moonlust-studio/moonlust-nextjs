@@ -1,12 +1,11 @@
-// ✅ File: lib/api/stories.ts – getMockStoryBySlug hỗ trợ đa ngôn ngữ + kiểu Story
+// ✅ File: lib/api/stories.ts – getMockStoryBySlug hỗ trợ đa ngôn ngữ
 
-import { Story } from '@/lib/types'; // ✅ do ba đang dùng file types.ts chung
 import mockStoriesVi from '../mock/mockStories.vi';
 import mockStoriesEn from '../mock/mockStories.en';
 import mockStoriesJa from '../mock/mockStories.ja';
 
-export function getMockStoryBySlug(slug: string, locale: string = 'vi'): Story | undefined {
-  const storiesByLocale: Record<string, Story[]> = {
+export function getMockStoryBySlug(slug: string, locale: string = 'vi') {
+  const storiesByLocale = {
     vi: mockStoriesVi,
     en: mockStoriesEn,
     ja: mockStoriesJa,

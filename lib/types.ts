@@ -1,12 +1,10 @@
-// ✅ FILE: lib/types.ts – sửa lại interface chuẩn
+// ✅ types.ts – Interface thống nhất cho dữ liệu truyện
 export interface Story {
-  id: string; // ✅ thêm dòng này!
   slug: string;
   title: string;
-  genre: string[];
-  status: string;
-  chapters: number;
-  cover?: string;
-  description?: string;
-  summary?: string;
+  description: string;
+  status: 'ongoing' | 'completed';
+  genre: string[]; // ✅ Thêm dòng này để hỗ trợ thể loại truyện
+  coverImage: string;
+  totalChapters: number;
 }

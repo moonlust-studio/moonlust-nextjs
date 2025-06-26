@@ -12,6 +12,11 @@
   ],
   "rootMainFiles": [],
   "pages": {
+    "/": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/index.js"
+    ],
     "/_app": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
@@ -22,25 +27,20 @@
       "static/chunks/main.js",
       "static/chunks/pages/_error.js"
     ],
-    "/en": [
+    "/truyen/[slug]": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/en.js"
+      "static/chunks/pages/truyen/[slug].js"
     ],
-    "/ja/truyen/[slug]/chapters/[id]": [
+    "/truyen/[slug]/chapters/[id]": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/ja/truyen/[slug]/chapters/[id].js"
+      "static/chunks/pages/truyen/[slug]/chapters/[id].js"
     ],
-    "/vi/truyen/[slug]": [
+    "/truyen/[slug]/toc": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",
-      "static/chunks/pages/vi/truyen/[slug].js"
-    ],
-    "/vi/truyen/[slug]/chapters/[id]": [
-      "static/chunks/webpack.js",
-      "static/chunks/main.js",
-      "static/chunks/pages/vi/truyen/[slug]/chapters/[id].js"
+      "static/chunks/pages/truyen/[slug]/toc.js"
     ]
   },
   "ampFirstPages": []

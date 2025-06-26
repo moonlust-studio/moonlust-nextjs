@@ -2,9 +2,8 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/vi": "pages/vi.js",
-  "/vi/truyen/[slug]/chapters/[id]": "pages/vi/truyen/[slug]/chapters/[id].js",
-  "/ja/truyen/[slug]/chapters/[id]": "pages/ja/truyen/[slug]/chapters/[id].js",
-  "/en": "pages/en.js",
-  "/vi/truyen/[slug]": "pages/vi/truyen/[slug].js"
+  "/": "pages/index.js",
+  "/truyen/[slug]": "pages/truyen/[slug].js",
+  "/truyen/[slug]/toc": "pages/truyen/[slug]/toc.js",
+  "/truyen/[slug]/chapters/[id]": "pages/truyen/[slug]/chapters/[id].js"
 }
