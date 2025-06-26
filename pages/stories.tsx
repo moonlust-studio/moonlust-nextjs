@@ -1,12 +1,19 @@
+// ✅ File: pages/stories.tsx – Danh Sách Truyện Moonlust
+
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import mockStories from '../lib/mock/mockStories'; // ✅ default export
 
+import type { Story } from '@/lib/mock/mockStories';
+
 export default function StoriesPage() {
   const { locale } = useRouter();
-  const stories = mockStories[locale as 'vi' | 'en' | 'ja'] || [];
+
+  // ✅ Ràng buộc locale an toàn
+  const lang = (locale as 'vi' | 'en' | 'ja') || 'vi';
+  const stories: Story[] = mockStories[lang] || [];
 
   return (
     <>

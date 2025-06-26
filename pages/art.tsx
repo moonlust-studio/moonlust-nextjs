@@ -1,4 +1,4 @@
-// ✅ File: pages/art.tsx – Nội dung nghệ thuật yêu
+// ✅ File: pages/art.tsx – Trang Nghệ Thuật Yêu
 
 import Head from 'next/head';
 import Image from 'next/image';
@@ -11,40 +11,38 @@ export default function ArtPage() {
         <title>Nghệ Thuật Yêu - Moonlust</title>
         <meta
           name="description"
-          content="Khám phá thế giới nghệ thuật yêu thương đầy tinh tế và cảm xúc tại Moonlust."
+          content="Khám phá những khía cạnh sâu sắc và tinh tế của nghệ thuật yêu đương tại Moonlust."
         />
       </Head>
-      <main className="max-w-5xl mx-auto px-4 py-8">
-        <h1 className="text-3xl font-bold mb-6 text-pink-600 text-center">
+      <main className="max-w-4xl mx-auto px-4 py-10">
+        <h1 className="text-3xl font-bold text-center text-pink-600 mb-8">
           Nghệ Thuật Yêu
         </h1>
         <div className="space-y-6 text-gray-800 leading-relaxed">
           <p>
-            Tình yêu không chỉ là cảm xúc – mà còn là nghệ thuật. Làm thế nào để
-            chạm đến nhau không chỉ bằng cơ thể, mà còn bằng tâm hồn?
+            Yêu không chỉ là bản năng. Đó còn là sự thấu cảm, tôn trọng, và nghệ thuật
+            của việc chạm đến tâm hồn nhau bằng những điều tinh tế nhất.
           </p>
           <p>
-            Moonlust mang đến những bài viết, hình ảnh, và câu chuyện truyền cảm hứng,
-            giúp bạn khám phá và hiểu hơn về bản thân – và người bạn yêu.
+            Moonlust mong muốn mang lại cho bạn những góc nhìn mới mẻ, những cảm hứng
+            yêu đương nhẹ nhàng, nhưng sâu sắc – để mỗi khoảnh khắc bên người mình yêu
+            là một tác phẩm nghệ thuật.
           </p>
-          <p className="italic text-sm text-gray-500">
-            "Yêu là khi chạm vào nhau mà cả thế giới như ngừng lại."
-          </p>
-          <div className="flex justify-center mt-8">
+          <div className="flex justify-center mt-6">
             <Image
               src="/images/art-of-love.jpg"
               alt="Nghệ thuật yêu"
-              width={600}
-              height={400}
-              className="rounded-xl shadow-lg object-cover"
+              width={640}
+              height={360}
+              className="rounded-lg shadow-md object-cover"
             />
           </div>
-          <div className="text-center mt-6">
+          <div className="text-center mt-8">
             <Link
               href="/"
-              className="text-pink-600 font-medium hover:underline"
+              className="text-pink-600 hover:underline text-sm font-medium"
             >
-              ← Về trang chủ
+              ← Quay lại Trang Chủ
             </Link>
           </div>
         </div>
