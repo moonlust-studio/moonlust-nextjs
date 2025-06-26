@@ -1,3 +1,5 @@
+// ✅ File: pages/vi/truyen/[slug]/toc.tsx – Danh sách chương tiếng Việt
+
 import { GetStaticPaths, GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -21,7 +23,7 @@ export default function ChapterListPage({ story, chapterList }: ChapterListPageP
     return (
       <div className="text-center py-20">
         <h1 className="text-xl text-red-600 font-semibold">{t('not_found')}</h1>
-        <Link href="/truyen" className="text-pink-600 underline mt-4 inline-block">
+        <Link href="/vi/truyen" className="text-pink-600 underline mt-4 inline-block">
           {t('button.back_to_list')}
         </Link>
       </div>
@@ -39,7 +41,7 @@ export default function ChapterListPage({ story, chapterList }: ChapterListPageP
       <Head>
         <title>{pageTitle}</title>
         <meta name="description" content={description} />
-        <meta name="keywords" content={`${story.title}, chapter list, Moonlust`} />
+        <meta name="keywords" content={`${story.title}, danh sách chương, Moonlust`} />
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={description} />
         <meta property="og:type" content="article" />
@@ -107,14 +109,13 @@ export async function getStaticProps({ locale, params }: GetStaticPropsContext) 
   };
 }
 
-export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
-  const paths =
-    locales?.flatMap((locale) =>
-      (mockStories[locale] || []).map((story) => ({
-        params: { slug: story.slug },
-        locale,
-      }))
-    ) || [];
+export const getStaticPaths: GetStaticPaths = async () => {
+  const lang = 'vi';
+  const stories = mockStories[lang] || [];
+
+  const paths = stories.map((story) => ({
+    params: { slug: story.slug },
+  }));
 
   return {
     paths,

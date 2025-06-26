@@ -1,15 +1,6 @@
 // ✅ FILE: lib/mock/mockStories.vi.ts
 
-export type Story = {
-  id: string;
-  slug: string;
-  title: string;
-  description: string;
-  genre: string[];
-  chapters: number;
-  status: 'ongoing' | 'completed';
-  cover: string;
-};
+import { Story } from '@/lib/types'; // Import chuẩn type chung
 
 const mockStoriesVi: Story[] = [
   {
@@ -20,7 +11,7 @@ const mockStoriesVi: Story[] = [
     genre: ['Tình cảm', 'Ngoại tình'],
     chapters: 13,
     status: 'ongoing',
-    cover: '/images/vangchong.jpg'
+    cover: '/images/vangchong.jpg',
   },
   {
     id: '2',
@@ -30,18 +21,18 @@ const mockStoriesVi: Story[] = [
     genre: ['Tâm lý', 'Người lớn'],
     chapters: 18,
     status: 'completed',
-    cover: '/covers/cam-do.jpg'
+    cover: '/covers/cam-do.jpg',
   },
   {
     id: '3',
     slug: 'co-gia-su',
-    title: 'Cô gia sư',
+    title: 'Cô Gia Sư',
     description: 'Câu chuyện nóng bỏng xoay quanh một đêm định mệnh thay đổi cả cuộc đời người phụ nữ trẻ.',
     genre: ['Erotic Drama'],
     chapters: 24,
     status: 'ongoing',
-    cover: '/covers/dem-nong.jpg'
-  }
+    cover: '/covers/dem-nong.jpg',
+  },
 ];
 
 export default mockStoriesVi;

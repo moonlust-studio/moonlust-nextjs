@@ -1,0 +1,52 @@
+{
+  "menu": {
+    "home": "Home",
+    "adult": "Adult Stories",
+    "art": "Love Art",
+    "health": "Sexual Health",
+    "multilang": "Languages"
+  },
+  "button": {
+    "login": "Login",
+    "register": "Register",
+    "back_to_list": "Back to story list",
+    "back_to_story": "← Back to story details",
+    "prev_chapter": "Previous Chapter",
+    "next_chapter": "Next Chapter"
+  },
+  "meta": {
+    "site_title": "Moonlust - Sensual Stories",
+    "site_description": "Explore deeply emotional and artistically sensual stories on Moonlust."
+  },
+  "section": {
+    "latest": "Latest Stories",
+    "hot": "Hottest Stories"
+  },
+  "status": {
+    "ongoing": "Ongoing",
+    "completed": "Completed"
+  },
+  "statusLabel": "Status",
+  "storyInfo": "Story Information",
+  "defaultStoryDescription": "Story info from Moonlust",
+  "summary": "Summary",
+  "genre": "Genres",
+  "chapters": "Chapters",
+  "readFromStart": "Read from beginning",
+  "not_found": "Not Found",
+  "no_chapters": "No chapters have been published yet.",
+  "chapter": "Chapter",
+  "chapter_list_desc": "Story {{title}} chapter list ({{count}} chapters) – read online for free on Moonlust",
+  "nav": {
+    "prev": "Previous chapter",
+    "next": "Next chapter"
+  },
+  "intro": {
+    "hero_title": "Welcome to Moonlust",
+    "hero_text": "Explore our deeply emotional and artistically sensual stories."
+  },
+  "filter": {
+    "all_categories": "All Categories",
+    "search_placeholder": "Search by title..."
+  }
+}

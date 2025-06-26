@@ -1,15 +1,14 @@
 // ✅ File: lib/api/loadMarkdownChapter.ts
-
 import fs from 'fs';
 import path from 'path';
 import { marked } from 'marked';
 
 /**
- * Load markdown chương truyện theo locale
- * @param slug - slug của truyện (vd: 'vang-chong')
- * @param id - số chương (vd: 1)
- * @param locale - ngôn ngữ (vi, en, ja)
- * @returns HTML đã render từ markdown
+ * ✅ Load nội dung chương truyện từ file markdown → HTML
+ * @param slug - Tên slug của truyện (vd: 'vang-chong')
+ * @param id - Số chương (vd: 1)
+ * @param locale - Ngôn ngữ (vi, en, ja)
+ * @returns Nội dung HTML đã render từ markdown
  */
 export default async function loadMarkdownChapter(
   slug: string,
@@ -17,9 +16,9 @@ export default async function loadMarkdownChapter(
   locale: string = 'vi'
 ): Promise<string> {
   try {
-    // ✅ Chuẩn hóa đường dẫn tới file markdown
     const fileName = `chapter-${id}.md`;
-    const chapterPath = path.resolve(
+
+    const chapterPath = path.join(
       process.cwd(),
       'content',
       slug,
@@ -27,17 +26,18 @@ export default async function loadMarkdownChapter(
       fileName
     );
 
-    // ✅ Kiểm tra tồn tại trước khi đọc
+    // ✅ Nếu file không tồn tại → trả về HTML báo lỗi nhẹ
     if (!fs.existsSync(chapterPath)) {
-      console.warn(`⚠️ File không tồn tại: ${chapterPath}`);
-      return '<p><em>Content not found.</em></p>';
+      console.warn(`⚠️ Không tìm thấy file: ${chapterPath}`);
+      return '<p><em>Nội dung đang được cập nhật...</em></p>';
     }
 
-    // ✅ Đọc file và chuyển sang HTML
     const rawMarkdown = fs.readFileSync(chapterPath, 'utf8');
-    return marked(rawMarkdown);
+    const renderedHtml = marked(rawMarkdown);
+
+    return renderedHtml;
   } catch (error) {
-    console.error(`❌ Lỗi load markdown tại ${slug}/${locale}/chapter-${id}.md`, error);
-    return '<p><em>Content not found.</em></p>';
+    console.error(`❌ Lỗi khi đọc chương: ${slug}/chapter-${id} (${locale})`, error);
+    return '<p><em>Đã xảy ra lỗi khi tải nội dung chương.</em></p>';
   }
 }

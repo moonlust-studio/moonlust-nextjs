@@ -1,4 +1,6 @@
-import { Story } from './mockStories.vi';
+// ✅ FILE: lib/mock/mockStories.en.ts
+
+import { Story } from '@/lib/types'; // Dùng type chung cho toàn project
 
 const mockStoriesEn: Story[] = [
   {
@@ -9,7 +11,7 @@ const mockStoriesEn: Story[] = [
     genre: ['Emotional', 'Infidelity'],
     chapters: 13,
     status: 'ongoing',
-    cover: '/images/vangchong.jpg'
+    cover: '/images/vangchong.jpg',
   },
   {
     id: '2',
@@ -19,7 +21,7 @@ const mockStoriesEn: Story[] = [
     genre: ['Psychological', 'Adult'],
     chapters: 18,
     status: 'completed',
-    cover: '/covers/cam-do.jpg'
+    cover: '/covers/cam-do.jpg',
   },
   {
     id: '3',
@@ -29,8 +31,8 @@ const mockStoriesEn: Story[] = [
     genre: ['Erotic Drama'],
     chapters: 24,
     status: 'ongoing',
-    cover: '/covers/dem-nong.jpg'
-  }
+    cover: '/covers/dem-nong.jpg',
+  },
 ];
 
 export default mockStoriesEn;

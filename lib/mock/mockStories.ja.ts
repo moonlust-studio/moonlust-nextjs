@@ -1,6 +1,6 @@
 // ✅ FILE: lib/mock/mockStories.ja.ts
 
-import { Story } from './mockStories.vi';
+import { Story } from '@/lib/types'; // dùng chuẩn interface toàn cục
 
 const mockStoriesJa: Story[] = [
   {
@@ -11,7 +11,7 @@ const mockStoriesJa: Story[] = [
     genre: ['不倫', '感情', 'ドラマ'],
     chapters: 13,
     status: 'ongoing',
-    cover: '/images/vang-chong/cover.jpg'
+    cover: '/images/vangchong.jpg',
   }
 ];
 

@@ -3,20 +3,10 @@
 import mockStoriesVi from './mockStories.vi';
 import mockStoriesEn from './mockStories.en';
 import mockStoriesJa from './mockStories.ja';
+import { Story } from '@/lib/types'; // Import chuẩn type Story
 
-export interface Story {
-  id: string;
-  slug: string;
-  title: string;
-  description: string;
-  genre: string[];
-  chapters: number;
-  status: 'completed' | 'ongoing';
-  cover: string;
-}
-
-// ✅ Tập hợp các mock truyện theo locale
-const mockStories = {
+// ✅ Chuẩn hóa theo định dạng đa ngôn ngữ
+const mockStories: Record<string, Story[]> = {
   vi: mockStoriesVi,
   en: mockStoriesEn,
   ja: mockStoriesJa,
