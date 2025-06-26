@@ -21,7 +21,7 @@ _loadMarkdownChapter__WEBPACK_IMPORTED_MODULE_1__ = (__webpack_async_dependencie
 /**
  * ✅ Lấy nội dung chương từ mock + file markdown đã render HTML
  */ async function getMockChapter(slug, id, locale) {
-    const metadata = _lib_mock_mockChapters__WEBPACK_IMPORTED_MODULE_0__["default"]?.[locale]?.[slug]?.[id];
+    const metadata = _lib_mock_mockChapters__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .ZP?.[locale]?.[slug]?.[id];
     if (!metadata) return null;
     let contentHtml = metadata.content;
     if (!contentHtml) {
@@ -42,7 +42,7 @@ _loadMarkdownChapter__WEBPACK_IMPORTED_MODULE_1__ = (__webpack_async_dependencie
 /**
  * ✅ Lấy danh sách metadata của các chương truyện (dùng cho TOC, nav...)
  */ function getMockChapterList(slug, locale = "vi") {
-    const chapters = _lib_mock_mockChapters__WEBPACK_IMPORTED_MODULE_0__["default"]?.[locale]?.[slug];
+    const chapters = _lib_mock_mockChapters__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .ZP?.[locale]?.[slug];
     if (!chapters) return [];
     return Object.entries(chapters).map(([id, meta])=>{
         const m = meta;
@@ -139,7 +139,7 @@ function getMockStoryBySlug(slug, locale = "vi") {
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "default": () => (/* binding */ mock_mockChapters)
+  ZP: () => (/* binding */ mock_mockChapters)
 });
 
 // UNUSED EXPORTS: getChapterById, getChapterList, getMockChapter, getMockChapterList

@@ -120,21 +120,27 @@ export async function getStaticProps({ locale, params }: GetStaticPropsContext) 
 // };
 
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
-  const { default: mockStories } = await import('@/lib/mock/mockStories');
+  const paths: { params: { slug: string }, locale: string }[] = [];
 
-  const paths =
-    locales?.flatMap((locale) =>
-      (mockStories[locale] || []).map((story) => ({
-        params: { slug: story.slug },
-        locale,
-      }))
-    ) || [];
+  for (const locale of locales || []) {
+    const stories = mockStories[locale];
+    console.log(`[🌐 ${locale}]`, stories);
 
-  console.log('DEBUG toc.tsx getStaticPaths:', paths); // 👈 check Vercel log
+    if (stories && Array.isArray(stories)) {
+      for (const story of stories) {
+        paths.push({ params: { slug: story.slug }, locale });
+      }
+    } else {
+      console.warn(`[⚠️ NO STORIES FOUND FOR LOCALE ${locale}]`);
+    }
+  }
+
+  console.log('[✅ Final paths]', paths);
 
   return {
     paths,
     fallback: false,
   };
 };
+
 

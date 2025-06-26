@@ -106,10 +106,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_i18next_serverSideTranslations__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_i18next_serverSideTranslations__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _lib_api_stories__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(7008);
 /* harmony import */ var _lib_api_chapters__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(7367);
-/* harmony import */ var modularize_import_loader_name_BookOpen_from_default_as_default_join_esm_icons_book_open_lucide_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(2597);
+/* harmony import */ var _lib_mock_mockStories__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(6298);
+/* harmony import */ var modularize_import_loader_name_BookOpen_from_default_as_default_join_esm_icons_book_open_lucide_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(2597);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_lib_api_chapters__WEBPACK_IMPORTED_MODULE_7__]);
 _lib_api_chapters__WEBPACK_IMPORTED_MODULE_7__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 // ✅ File: pages/truyen/[slug]/toc.tsx – UI danh sách chương đa ngôn ngữ hoàn chỉnh
+
 
 
 
@@ -206,7 +208,7 @@ function ChapterListPage({ story, chapterList }) {
                                             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("span", {
                                                 className: "font-semibold text-lg text-pink-800 group-hover:text-pink-600",
                                                 children: [
-                                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(modularize_import_loader_name_BookOpen_from_default_as_default_join_esm_icons_book_open_lucide_react__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {
+                                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(modularize_import_loader_name_BookOpen_from_default_as_default_join_esm_icons_book_open_lucide_react__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z, {
                                                         className: "inline-block w-5 h-5 mr-2 text-pink-400 group-hover:text-pink-600"
                                                     }),
                                                     t("chapter"),
@@ -265,14 +267,24 @@ async function getStaticProps({ locale, params }) {
 //   };
 // };
 const getStaticPaths = async ({ locales })=>{
-    const { default: mockStories } = await __webpack_require__.e(/* import() */ 298).then(__webpack_require__.bind(__webpack_require__, 6298));
-    const paths = locales?.flatMap((locale)=>(mockStories[locale] || []).map((story)=>({
-                params: {
-                    slug: story.slug
-                },
-                locale
-            }))) || [];
-    console.log("DEBUG toc.tsx getStaticPaths:", paths); // 👈 check Vercel log
+    const paths = [];
+    for (const locale of locales || []){
+        const stories = _lib_mock_mockStories__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z[locale];
+        console.log(`[🌐 ${locale}]`, stories);
+        if (stories && Array.isArray(stories)) {
+            for (const story of stories){
+                paths.push({
+                    params: {
+                        slug: story.slug
+                    },
+                    locale
+                });
+            }
+        } else {
+            console.warn(`[⚠️ NO STORIES FOUND FOR LOCALE ${locale}]`);
+        }
+    }
+    console.log("[✅ Final paths]", paths);
     return {
         paths,
         fallback: false
@@ -511,7 +523,7 @@ const BookOpen = (0,_createLucideIcon_mjs__WEBPACK_IMPORTED_MODULE_0__/* ["defau
 var __webpack_require__ = require("../../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [940,815,664,142,178,469,845,114], () => (__webpack_exec__(6445)));
+var __webpack_exports__ = __webpack_require__.X(0, [940,815,664,142,178,298,845,114], () => (__webpack_exec__(6445)));
 module.exports = __webpack_exports__;
 
 })();

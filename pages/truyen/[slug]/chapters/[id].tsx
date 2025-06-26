@@ -130,26 +130,28 @@ export async function getStaticProps({ locale, params }: GetStaticPropsContext) 
 //   };
 // };
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
-  const { default: mockStories } = await import('@/lib/mock/mockStories');
-  const { default: mockChapters } = await import('@/lib/mock/mockChapters');
+  const paths: { params: { slug: string; id: string }; locale: string }[] = [];
 
-  const paths =
-    locales?.flatMap((locale) =>
-      (mockStories[locale] || []).flatMap((story) => {
-        const totalChapters = mockChapters[locale]?.[story.slug];
-        if (!totalChapters) return [];
+  for (const locale of locales || []) {
+    const stories = mockStories[locale];
 
-        return Object.keys(totalChapters).map((id) => ({
-          params: { slug: story.slug, id: String(id) },
-          locale,
-        }));
-      })
-    ) || [];
+    if (stories && Array.isArray(stories)) {
+      for (const story of stories) {
+        for (let i = 1; i <= story.chapters; i++) {
+          paths.push({
+            params: { slug: story.slug, id: i.toString() },
+            locale,
+          });
+        }
+      }
+    }
+  }
 
-  console.log('DEBUG chapters/[id].tsx getStaticPaths:', paths); // 👈 check Vercel log
+  console.log('[🧩 getStaticPaths for chapters]', JSON.stringify(paths, null, 2));
 
   return {
     paths,
     fallback: false,
   };
 };
+

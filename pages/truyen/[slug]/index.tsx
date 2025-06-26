@@ -112,18 +112,26 @@ export async function getStaticProps({ locale, params }: GetStaticPropsContext) 
 
 // ✅ Static paths đa ngôn ngữ – ĐÃ TEST OK TRÊN VERCEL
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
-  const paths =
-    locales?.flatMap((locale) =>
-      (mockStories[locale] || []).map((story) => ({
-        params: { slug: story.slug },
-        locale,
-      }))
-    ) || [];
+  const paths: { params: { slug: string }, locale: string }[] = [];
 
-  console.log('[🌍 getStaticPaths]:', JSON.stringify(paths, null, 2));
+  for (const locale of locales || []) {
+    const stories = mockStories[locale];
+    console.log(`[🌐 ${locale}]`, stories);
+
+    if (stories && Array.isArray(stories)) {
+      for (const story of stories) {
+        paths.push({ params: { slug: story.slug }, locale });
+      }
+    } else {
+      console.warn(`[⚠️ NO STORIES FOUND FOR LOCALE ${locale}]`);
+    }
+  }
+
+  console.log('[✅ Final paths]', paths);
 
   return {
     paths,
     fallback: false,
   };
 };
+

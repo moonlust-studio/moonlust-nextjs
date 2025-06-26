@@ -2,7 +2,7 @@
 (() => {
 var exports = {};
 exports.id = 729;
-exports.ids = [729,660,298];
+exports.ids = [729,660];
 exports.modules = {
 
 /***/ 3394:
@@ -243,13 +243,24 @@ async function getStaticProps({ locale, params }) {
 }
 // ✅ Static paths đa ngôn ngữ – ĐÃ TEST OK TRÊN VERCEL
 const getStaticPaths = async ({ locales })=>{
-    const paths = locales?.flatMap((locale)=>(mockStories["default"][locale] || []).map((story)=>({
-                params: {
-                    slug: story.slug
-                },
-                locale
-            }))) || [];
-    console.log("[\uD83C\uDF0D getStaticPaths]:", JSON.stringify(paths, null, 2));
+    const paths = [];
+    for (const locale of locales || []){
+        const stories = mockStories/* default */.Z[locale];
+        console.log(`[🌐 ${locale}]`, stories);
+        if (stories && Array.isArray(stories)) {
+            for (const story of stories){
+                paths.push({
+                    params: {
+                        slug: story.slug
+                    },
+                    locale
+                });
+            }
+        } else {
+            console.warn(`[⚠️ NO STORIES FOUND FOR LOCALE ${locale}]`);
+        }
+    }
+    console.log("[✅ Final paths]", paths);
     return {
         paths,
         fallback: false
@@ -327,29 +338,6 @@ function getMockStoryBySlug(slug, locale = "vi") {
     const stories = storiesByLocale[locale] || _mock_mockStories_vi__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z;
     return stories.find((story)=>story.slug === slug);
 }
-
-
-/***/ }),
-
-/***/ 6298:
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _mockStories_vi__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(8707);
-/* harmony import */ var _mockStories_en__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(1949);
-/* harmony import */ var _mockStories_ja__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(6550);
-// ✅ FILE: lib/mock/mockStories.ts
-
-
-
-const mockStories = {
-    vi: _mockStories_vi__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z,
-    en: _mockStories_en__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z,
-    ja: _mockStories_ja__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (mockStories);
 
 
 /***/ }),
@@ -606,7 +594,7 @@ module.exports = require("path");
 var __webpack_require__ = require("../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [940,815,664,636,142,675,178,469,845], () => (__webpack_exec__(3394)));
+var __webpack_exports__ = __webpack_require__.X(0, [940,815,664,636,142,675,178,298,845], () => (__webpack_exec__(3394)));
 module.exports = __webpack_exports__;
 
 })();

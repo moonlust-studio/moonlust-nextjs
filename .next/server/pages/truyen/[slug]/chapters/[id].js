@@ -106,11 +106,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_i18next__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(next_i18next__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _lib_api_stories__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(7008);
 /* harmony import */ var _lib_api_chapters__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(7367);
-/* harmony import */ var modularize_import_loader_name_ArrowLeft_from_default_as_default_join_esm_icons_arrow_left_lucide_react__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(1590);
-/* harmony import */ var modularize_import_loader_name_ArrowRight_from_default_as_default_join_esm_icons_arrow_right_lucide_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(6778);
+/* harmony import */ var _lib_mock_mockStories__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(6298);
+/* harmony import */ var modularize_import_loader_name_ArrowLeft_from_default_as_default_join_esm_icons_arrow_left_lucide_react__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(1590);
+/* harmony import */ var modularize_import_loader_name_ArrowRight_from_default_as_default_join_esm_icons_arrow_right_lucide_react__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(6778);
 var __webpack_async_dependencies__ = __webpack_handle_async_dependencies__([_lib_api_chapters__WEBPACK_IMPORTED_MODULE_7__]);
 _lib_api_chapters__WEBPACK_IMPORTED_MODULE_7__ = (__webpack_async_dependencies__.then ? (await __webpack_async_dependencies__)() : __webpack_async_dependencies__)[0];
 //moonlust-nextjs\pages\truyen\[slug]\chapters\[id].tsx
+
 
 
 
@@ -212,7 +214,7 @@ function ChapterPage({ story, chapter, chapterList }) {
                                 href: `/truyen/${slug}/chapters/${prevId}`,
                                 className: "hover:underline flex items-center gap-1",
                                 children: [
-                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(modularize_import_loader_name_ArrowLeft_from_default_as_default_join_esm_icons_arrow_left_lucide_react__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {
+                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(modularize_import_loader_name_ArrowLeft_from_default_as_default_join_esm_icons_arrow_left_lucide_react__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z, {
                                         className: "w-4 h-4"
                                     }),
                                     " ",
@@ -225,7 +227,7 @@ function ChapterPage({ story, chapter, chapterList }) {
                                 children: [
                                     t("nav.next"),
                                     " ",
-                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(modularize_import_loader_name_ArrowRight_from_default_as_default_join_esm_icons_arrow_right_lucide_react__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z, {
+                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(modularize_import_loader_name_ArrowRight_from_default_as_default_join_esm_icons_arrow_right_lucide_react__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .Z, {
                                         className: "w-4 h-4"
                                     })
                                 ]
@@ -278,20 +280,24 @@ async function getStaticProps({ locale, params }) {
 //   };
 // };
 const getStaticPaths = async ({ locales })=>{
-    const { default: mockStories } = await __webpack_require__.e(/* import() */ 298).then(__webpack_require__.bind(__webpack_require__, 6298));
-    const { default: mockChapters } = await Promise.resolve(/* import() */).then(__webpack_require__.bind(__webpack_require__, 3603));
-    const paths = locales?.flatMap((locale)=>(mockStories[locale] || []).flatMap((story)=>{
-            const totalChapters = mockChapters[locale]?.[story.slug];
-            if (!totalChapters) return [];
-            return Object.keys(totalChapters).map((id)=>({
-                    params: {
-                        slug: story.slug,
-                        id: String(id)
-                    },
-                    locale
-                }));
-        })) || [];
-    console.log("DEBUG chapters/[id].tsx getStaticPaths:", paths); // 👈 check Vercel log
+    const paths = [];
+    for (const locale of locales || []){
+        const stories = _lib_mock_mockStories__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z[locale];
+        if (stories && Array.isArray(stories)) {
+            for (const story of stories){
+                for(let i = 1; i <= story.chapters; i++){
+                    paths.push({
+                        params: {
+                            slug: story.slug,
+                            id: i.toString()
+                        },
+                        locale
+                    });
+                }
+            }
+        }
+    }
+    console.log("[\uD83E\uDDE9 getStaticPaths for chapters]", JSON.stringify(paths, null, 2));
     return {
         paths,
         fallback: false
@@ -554,7 +560,7 @@ const ArrowRight = (0,_createLucideIcon_mjs__WEBPACK_IMPORTED_MODULE_0__/* ["def
 var __webpack_require__ = require("../../../../webpack-runtime.js");
 __webpack_require__.C(exports);
 var __webpack_exec__ = (moduleId) => (__webpack_require__(__webpack_require__.s = moduleId))
-var __webpack_exports__ = __webpack_require__.X(0, [940,815,664,142,178,469,845,114], () => (__webpack_exec__(4044)));
+var __webpack_exports__ = __webpack_require__.X(0, [940,815,664,142,178,298,845,114], () => (__webpack_exec__(4044)));
 module.exports = __webpack_exports__;
 
 })();
