@@ -1,8 +1,10 @@
+// ✅ Global App Wrapper with i18n support
+
 import '@/styles/globals.css';
 import type { AppProps } from 'next/app';
 import { appWithTranslation } from 'next-i18next';
 import Head from 'next/head';
-import nextI18NextConfig from '../../next-i18next.config.js';
+import nextI18NextConfig from '@/next-i18next.config.js'; // ✅ Đã sửa đúng alias
 
 function App({ Component, pageProps }: AppProps) {
   return (

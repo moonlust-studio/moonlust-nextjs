@@ -115,10 +115,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /*!********************************!*\
   !*** ./next-i18next.config.js ***!
   \********************************/
-/***/ ((module) => {
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 "use strict";
-eval("// next-i18next.config.js\n\nmodule.exports = {\n    i18n: {\n        defaultLocale: \"vi\",\n        locales: [\n            \"vi\",\n            \"en\",\n            \"ja\",\n            \"zh\"\n        ],\n        localeDetection: true\n    },\n    localePath: \"./public/locales\"\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9uZXh0LWkxOG5leHQuY29uZmlnLmpzIiwibWFwcGluZ3MiOiJBQUFBLHlCQUF5Qjs7QUFDekJBLE9BQU9DLE9BQU8sR0FBRztJQUNmQyxNQUFNO1FBQ0pDLGVBQWU7UUFDZkMsU0FBUztZQUFDO1lBQU07WUFBTTtZQUFNO1NBQUs7UUFDakNDLGlCQUFpQjtJQUNuQjtJQUNBQyxZQUFZO0FBQ2QiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly9tb29ubHVzdC8uL25leHQtaTE4bmV4dC5jb25maWcuanM/MWNiOSJdLCJzb3VyY2VzQ29udGVudCI6WyIvLyBuZXh0LWkxOG5leHQuY29uZmlnLmpzXHJcbm1vZHVsZS5leHBvcnRzID0ge1xyXG4gIGkxOG46IHtcclxuICAgIGRlZmF1bHRMb2NhbGU6ICd2aScsXHJcbiAgICBsb2NhbGVzOiBbJ3ZpJywgJ2VuJywgJ2phJywgJ3poJ10sXHJcbiAgICBsb2NhbGVEZXRlY3Rpb246IHRydWUsIC8vIOKchSBUaMOqbSBkw7JuZyBuw6B5IMSR4buDIGLhuq10IHThu7EgcGjDoXQgaGnhu4duIG5nw7RuIG5n4buvIHRyw6xuaCBkdXnhu4d0XHJcbiAgfSxcclxuICBsb2NhbGVQYXRoOiAnLi9wdWJsaWMvbG9jYWxlcycsXHJcbn07XHJcbiJdLCJuYW1lcyI6WyJtb2R1bGUiLCJleHBvcnRzIiwiaTE4biIsImRlZmF1bHRMb2NhbGUiLCJsb2NhbGVzIiwibG9jYWxlRGV0ZWN0aW9uIiwibG9jYWxlUGF0aCJdLCJzb3VyY2VSb290IjoiIn0=\n//# sourceURL=webpack-internal:///./next-i18next.config.js\n");
+eval("// ✅ File: next-i18next.config.js\n\nconst path = __webpack_require__(/*! path */ \"path\");\nmodule.exports = {\n    i18n: {\n        defaultLocale: \"vi\",\n        locales: [\n            \"vi\",\n            \"en\",\n            \"ja\",\n            \"zh\"\n        ]\n    },\n    localePath: path.resolve(\"./public/locales\")\n};\n//# sourceURL=[module]\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiLi9uZXh0LWkxOG5leHQuY29uZmlnLmpzIiwibWFwcGluZ3MiOiJBQUFBLGlDQUFpQzs7QUFDakMsTUFBTUEsT0FBT0MsbUJBQU9BLENBQUM7QUFFckJDLE9BQU9DLE9BQU8sR0FBRztJQUNmQyxNQUFNO1FBQ0pDLGVBQWU7UUFDZkMsU0FBUztZQUFDO1lBQU07WUFBTTtZQUFNO1NBQUs7SUFDbkM7SUFDQUMsWUFBWVAsS0FBS1EsT0FBTyxDQUFDO0FBQzNCIiwic291cmNlcyI6WyJ3ZWJwYWNrOi8vbW9vbmx1c3QvLi9uZXh0LWkxOG5leHQuY29uZmlnLmpzPzFjYjkiXSwic291cmNlc0NvbnRlbnQiOlsiLy8g4pyFIEZpbGU6IG5leHQtaTE4bmV4dC5jb25maWcuanNcclxuY29uc3QgcGF0aCA9IHJlcXVpcmUoJ3BhdGgnKTtcclxuXHJcbm1vZHVsZS5leHBvcnRzID0ge1xyXG4gIGkxOG46IHtcclxuICAgIGRlZmF1bHRMb2NhbGU6ICd2aScsXHJcbiAgICBsb2NhbGVzOiBbJ3ZpJywgJ2VuJywgJ2phJywgJ3poJ10sXHJcbiAgfSxcclxuICBsb2NhbGVQYXRoOiBwYXRoLnJlc29sdmUoJy4vcHVibGljL2xvY2FsZXMnKSwgLy8g4pyFIETDuW5nIHBhdGgucmVzb2x2ZSDEkeG7gyB0xrDGoW5nIHRow61jaCBWZXJjZWxcclxufTtcclxuIl0sIm5hbWVzIjpbInBhdGgiLCJyZXF1aXJlIiwibW9kdWxlIiwiZXhwb3J0cyIsImkxOG4iLCJkZWZhdWx0TG9jYWxlIiwibG9jYWxlcyIsImxvY2FsZVBhdGgiLCJyZXNvbHZlIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./next-i18next.config.js\n");
 
 /***/ }),
 
@@ -623,6 +623,17 @@ module.exports = require("next/router");
 
 "use strict";
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "path":
+/*!***********************!*\
+  !*** external "path" ***!
+  \***********************/
+/***/ ((module) => {
+
+"use strict";
+module.exports = require("path");
 
 /***/ }),
 
