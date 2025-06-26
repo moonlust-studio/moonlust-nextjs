@@ -119,28 +119,22 @@ export async function getStaticProps({ locale, params }: GetStaticPropsContext) 
 //   };
 // };
 
+// ✅ FILE: pages/truyen/[slug]/toc.tsx
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
-  const paths: { params: { slug: string }, locale: string }[] = [];
+  const paths: { params: { slug: string }; locale: string }[] = [];
 
   for (const locale of locales || []) {
     const stories = mockStories[locale];
-    console.log(`[🌐 ${locale}]`, stories);
-
-    if (stories && Array.isArray(stories)) {
+    if (stories) {
       for (const story of stories) {
         paths.push({ params: { slug: story.slug }, locale });
       }
-    } else {
-      console.warn(`[⚠️ NO STORIES FOUND FOR LOCALE ${locale}]`);
     }
   }
 
-  console.log('[✅ Final paths]', paths);
-
-  return {
-    paths,
-    fallback: false,
-  };
+  console.log('[📘 getStaticPaths toc]', paths);
+  return { paths, fallback: false };
 };
+
 
 

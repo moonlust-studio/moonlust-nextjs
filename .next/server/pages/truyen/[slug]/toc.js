@@ -266,12 +266,12 @@ async function getStaticProps({ locale, params }) {
 //     fallback: false,
 //   };
 // };
+// ✅ FILE: pages/truyen/[slug]/toc.tsx
 const getStaticPaths = async ({ locales })=>{
     const paths = [];
     for (const locale of locales || []){
         const stories = _lib_mock_mockStories__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z[locale];
-        console.log(`[🌐 ${locale}]`, stories);
-        if (stories && Array.isArray(stories)) {
+        if (stories) {
             for (const story of stories){
                 paths.push({
                     params: {
@@ -280,11 +280,9 @@ const getStaticPaths = async ({ locales })=>{
                     locale
                 });
             }
-        } else {
-            console.warn(`[⚠️ NO STORIES FOUND FOR LOCALE ${locale}]`);
         }
     }
-    console.log("[✅ Final paths]", paths);
+    console.log("[\uD83D\uDCD8 getStaticPaths toc]", paths);
     return {
         paths,
         fallback: false
