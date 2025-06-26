@@ -1,9 +1,10 @@
-// next-i18next.config.js
+// ✅ File: next-i18next.config.js
+
 module.exports = {
   i18n: {
     defaultLocale: 'vi',
     locales: ['vi', 'en', 'ja', 'zh'],
-    localeDetection: true, // ✅ Thêm dòng này để bật tự phát hiện ngôn ngữ trình duyệt
+    localeDetection: true, // ✅ Tự phát hiện ngôn ngữ trình duyệt (nên bật)
   },
-  localePath: './public/locales',
+  localePath: './public/locales', // ✅ Folder chứa file dịch đa ngôn ngữ
 };
