@@ -113,16 +113,40 @@ export async function getStaticProps({ locale, params }: GetStaticPropsContext) 
 }
 
 // ✅ Danh sách đường dẫn chương truyện cho từng ngôn ngữ
+// export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
+//   const paths =
+//     locales?.flatMap((locale) =>
+//       (mockStories[locale] || []).flatMap((story) =>
+//         Array.from({ length: story.chapters || 1 }, (_, i) => ({
+//           params: { slug: story.slug, id: String(i + 1) },
+//           locale,
+//         }))
+//       )
+//     ) || [];
+
+//   return {
+//     paths,
+//     fallback: false,
+//   };
+// };
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
+  const { default: mockStories } = await import('@/lib/mock/mockStories');
+  const { default: mockChapters } = await import('@/lib/mock/mockChapters');
+
   const paths =
     locales?.flatMap((locale) =>
-      (mockStories[locale] || []).flatMap((story) =>
-        Array.from({ length: story.chapters || 1 }, (_, i) => ({
-          params: { slug: story.slug, id: String(i + 1) },
+      (mockStories[locale] || []).flatMap((story) => {
+        const totalChapters = mockChapters[locale]?.[story.slug];
+        if (!totalChapters) return [];
+
+        return Object.keys(totalChapters).map((id) => ({
+          params: { slug: story.slug, id: String(id) },
           locale,
-        }))
-      )
+        }));
+      })
     ) || [];
+
+  console.log('DEBUG chapters/[id].tsx getStaticPaths:', paths); // 👈 check Vercel log
 
   return {
     paths,
