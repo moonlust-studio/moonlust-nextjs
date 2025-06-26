@@ -3,7 +3,7 @@
   "functions": {
     "/": {},
     "/truyen/[slug]/chapters/[id]": {},
-    "/truyen/[slug]": {},
-    "/truyen/[slug]/toc": {}
+    "/truyen/[slug]/toc": {},
+    "/truyen/[slug]": {}
   }
 }
