@@ -254,7 +254,7 @@ const getStaticProps = async ({ locale, params })=>{
     const id = Number(params?.id);
     const lang = locale || "vi";
     const story = (0,_lib_api_stories__WEBPACK_IMPORTED_MODULE_6__/* .getMockStoryBySlug */ .B)(slug, lang);
-    const chapter = (0,_lib_api_chapters__WEBPACK_IMPORTED_MODULE_7__/* .getMockChapter */ .H)(slug, id, lang);
+    const chapter = await (0,_lib_api_chapters__WEBPACK_IMPORTED_MODULE_7__/* .getMockChapter */ .H)(slug, id, locale);
     const chapterList = (0,_lib_api_chapters__WEBPACK_IMPORTED_MODULE_7__/* .getMockChapterList */ .v)(slug, lang) || [];
     if (!story || !chapter) {
         console.warn(`[❌ NOT FOUND] slug=${slug}, id=${id}, lang=${lang}`);

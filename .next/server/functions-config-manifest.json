@@ -3,8 +3,8 @@
   "functions": {
     "/404": {},
     "/": {},
-    "/truyen/[slug]/chapters/[id]": {},
+    "/truyen/[slug]/tocBK": {},
     "/truyen/[slug]": {},
-    "/truyen/[slug]/tocBK": {}
+    "/truyen/[slug]/chapters/[id]": {}
   }
 }

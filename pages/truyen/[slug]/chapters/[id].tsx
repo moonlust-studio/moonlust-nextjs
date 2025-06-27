@@ -109,7 +109,7 @@ export const getStaticProps: GetStaticProps = async ({ locale, params }: GetStat
   const lang = locale || 'vi';
 
   const story = getMockStoryBySlug(slug, lang);
-  const chapter = getMockChapter(slug, id, lang);
+  const chapter = await getMockChapter(slug, id, locale);
   const chapterList = getMockChapterList(slug, lang) || [];
 
   if (!story || !chapter) {
