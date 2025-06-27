@@ -10,7 +10,10 @@
     "login": "ログイン",
     "register": "登録する",
     "back_to_list": "物語一覧へ戻る",
-    "back_to_story": "← 物語の詳細へ戻る"
+    "back_to_story": "← 物語の詳細へ戻る",
+    "prev_chapter": "前のチャプター",
+    "next_chapter": "次のチャプター",
+    "back_home": "← ホームへ戻る"
   },
   "meta": {
     "site_title": "Moonlust - 官能的な物語",
@@ -32,8 +35,9 @@
   "chapters": "チャプター数",
   "readFromStart": "最初から読む",
   "not_found": "物語が見つかりません",
-  "no_chapters": "現在、チャプターはまだ公開されていません。",
+  "not_found_message": "お探しのページは存在しないか、削除されました。",
   "chapter": "チャプター",
+  "chapter_list_desc": "物語 {{title}} のチャプター一覧（{{count}}話） - Moonlustで無料で読む",
   "nav": {
     "prev": "前のチャプター",
     "next": "次のチャプター"
@@ -45,5 +49,11 @@
   "filter": {
     "all_categories": "すべてのカテゴリー",
     "search_placeholder": "タイトルで検索..."
+  },
+  "footer": {
+    "about": "About",
+    "contact": "Contact",
+    "policy": "Policy",
+    "copyright": "All rights reserved by Moonlust"
   }
 }

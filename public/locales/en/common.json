@@ -1,3 +1,4 @@
+
 {
   "menu": {
     "home": "Home",
@@ -12,7 +13,8 @@
     "back_to_list": "Back to story list",
     "back_to_story": "← Back to story details",
     "prev_chapter": "Previous Chapter",
-    "next_chapter": "Next Chapter"
+    "next_chapter": "Next Chapter",
+    "back_home": "← Back to Home"
   },
   "meta": {
     "site_title": "Moonlust - Sensual Stories",
@@ -34,7 +36,7 @@
   "chapters": "Chapters",
   "readFromStart": "Read from beginning",
   "not_found": "Not Found",
-  "no_chapters": "No chapters have been published yet.",
+  "not_found_message": "The page you are looking for does not exist or has been removed.",
   "chapter": "Chapter",
   "chapter_list_desc": "Story {{title}} chapter list ({{count}} chapters) – read online for free on Moonlust",
   "nav": {

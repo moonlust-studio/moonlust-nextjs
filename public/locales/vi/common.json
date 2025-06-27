@@ -10,7 +10,10 @@
     "login": "Đăng nhập",
     "register": "Đăng ký",
     "back_to_list": "Quay lại danh sách truyện",
-    "back_to_story": "← Trở về chi tiết truyện"
+    "back_to_story": "← Trở về chi tiết truyện",
+    "prev_chapter": "Chương trước",
+    "next_chapter": "Chương sau",
+    "back_home": "← Về trang chủ"
   },
   "meta": {
     "site_title": "Moonlust - Truyện Người Lớn Tinh Tế",
@@ -32,8 +35,9 @@
   "chapters": "Số chương",
   "readFromStart": "Đọc từ đầu",
   "not_found": "Không tìm thấy truyện",
-  "no_chapters": "Hiện chưa có chương nào được đăng.",
+  "not_found_message": "Trang bạn tìm kiếm không tồn tại hoặc đã bị gỡ.",
   "chapter": "Chương",
+  "chapter_list_desc": "Danh sách chương truyện {{title}} ({{count}} chương) – đọc miễn phí trên Moonlust",
   "nav": {
     "prev": "Chương trước",
     "next": "Chương sau"
@@ -47,10 +51,9 @@
     "search_placeholder": "Tìm theo tiêu đề..."
   },
   "footer": {
-  "about": "About",
-  "contact": "Contact",
-  "policy": "Policy",
-  "copyright": "All rights reserved by Moonlust"
-}
-
+    "about": "About",
+    "contact": "Contact",
+    "policy": "Policy",
+    "copyright": "All rights reserved by Moonlust"
+  }
 }
