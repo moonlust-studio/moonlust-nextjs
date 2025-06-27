@@ -58,6 +58,29 @@
   },
   "hero": {
     "cta_featured": "✨ おすすめの物語を読む"
-  }
+  },
+"languages_page": {
+  "title": "多言語対応",
+  "description": "Moonlustは英語、日本語、中国語などの多言語ストーリーを展開し、世界中の読者に洗練された魅力を届けています。"
+},
+"health_page": {
+  "title": "感情の健康",
+  "description": "恋愛・結婚・官能的な暮らしにおける心のつながりやメンタルケアをテーマにした小さな癒しのコーナー。"
+},
+"art_page": {
+  "title": "愛の芸術",
+  "description": "愛は本能だけではなく、共感と尊重、そして心を繊細に触れ合う芸術でもある。Moonlustは、優しくて官能的な愛のインスピレーションを届け、あなたの愛の時間をまるで芸術作品のように彩ります。"
+},
+
+
+  "vungtrom_meta_title": "秘めた関係 – 近日公開 | Moonlust",
+  "vungtrom_meta_description": "『秘めた関係』という物語は現在制作中です。Moonlustでの公開をお楽しみに。",
+  "coming_soon_title": "📖 近日公開の作品",
+  "coming_soon_story": "この物語は現在制作中です。公開された際にはMoonlustでお楽しみください。",
+  "back_to_home": "← ホームに戻る",
+
+  "thuky_meta_title": "家庭教師 – 近日公開 | Moonlust",
+"thuky_meta_description": "『家庭教師』という物語は現在制作中です。Moonlustでの公開をお楽しみに。"
+
 
 }

@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://moonlust-site-v1.vercel.app/sitemap.xml

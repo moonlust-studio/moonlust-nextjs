@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
+  <url><loc>https://moonlust-site-v1.vercel.app/</loc></url>
+
+  <!-- Story main pages -->
+  <url><loc>https://moonlust-site-v1.vercel.app/vi/truyen/vang-chong</loc></url>
+  <url><loc>https://moonlust-site-v1.vercel.app/en/truyen/vang-chong</loc></url>
+  <url><loc>https://moonlust-site-v1.vercel.app/ja/truyen/vang-chong</loc></url>
+
+  <!-- TOC pages -->
+  <url><loc>https://moonlust-site-v1.vercel.app/vi/truyen/vang-chong/toc</loc></url>
+  <url><loc>https://moonlust-site-v1.vercel.app/en/truyen/vang-chong/toc</loc></url>
+  <url><loc>https://moonlust-site-v1.vercel.app/ja/truyen/vang-chong/toc</loc></url>
+
+  <!-- Chapters -->
+  <!-- VI -->
+  <url><loc>https://moonlust-site-v1.vercel.app/vi/truyen/vang-chong/chapters/1</loc></url>
+  <url><loc>https://moonlust-site-v1.vercel.app/vi/truyen/vang-chong/chapters/2</loc></url>
+  <!-- ... tới 13 -->
+
+  <!-- EN -->
+  <url><loc>https://moonlust-site-v1.vercel.app/en/truyen/vang-chong/chapters/1</loc></url>
+  <url><loc>https://moonlust-site-v1.vercel.app/en/truyen/vang-chong/chapters/2</loc></url>
+  <!-- ... tới 13 -->
+
+  <!-- JA -->
+  <url><loc>https://moonlust-site-v1.vercel.app/ja/truyen/vang-chong/chapters/1</loc></url>
+  <url><loc>https://moonlust-site-v1.vercel.app/ja/truyen/vang-chong/chapters/2</loc></url>
+  <!-- ... tới 13 -->
+</urlset>

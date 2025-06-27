@@ -7,6 +7,7 @@ import Link from 'next/link';
 import mockStories from '../lib/mock/mockStories'; // ✅ default export
 
 import type { Story } from '@/lib/mock/mockStories';
+import Layout from '@/components/Layout'; // ✅ import Layout
 
 export default function StoriesPage() {
   const { locale } = useRouter();
@@ -16,7 +17,7 @@ export default function StoriesPage() {
   const stories: Story[] = mockStories[lang] || [];
 
   return (
-    <>
+    <Layout>
       <Head>
         <title>Danh Sách Truyện - Moonlust</title>
         <meta
@@ -59,6 +60,6 @@ export default function StoriesPage() {
           ))}
         </div>
       </main>
-    </>
+    </Layout>
   );
 }

@@ -58,5 +58,28 @@
   },
   "hero": {
   "cta_featured": "✨ Khám phá truyện nổi bật"
-}
+},
+
+"languages_page": {
+  "title": "Đa Ngôn Ngữ",
+  "description": "Moonlust đang phát triển hệ thống truyện đa ngôn ngữ như tiếng Anh, Nhật, Trung... để phục vụ độc giả toàn cầu một cách tinh tế và gần gũi nhất."
+},
+"health_page": {
+  "title": "Sức Khỏe Cảm Xúc",
+  "description": "Góc nhỏ dành cho những chủ đề về tâm lý, gắn kết cảm xúc, chăm sóc tinh thần trong tình yêu, hôn nhân và đời sống gợi cảm."
+},
+"art_page": {
+  "title": "Nghệ Thuật Yêu",
+  "description": "Yêu không chỉ là bản năng. Đó còn là sự thấu cảm, tôn trọng, và nghệ thuật của việc chạm đến tâm hồn nhau bằng những điều tinh tế nhất. Moonlust mong muốn mang lại cho bạn những góc nhìn mới mẻ, cảm hứng yêu đương nhẹ nhàng, sâu sắc – để mỗi khoảnh khắc bên người mình yêu là một tác phẩm nghệ thuật."
+},
+
+"vungtrom_meta_title": "Vụng Trộm – Đang Xuất Bản | Moonlust",
+  "vungtrom_meta_description": "Truyện Vụng Trộm đang trong quá trình hoàn thiện. Sẽ sớm ra mắt trên Moonlust.",
+  "coming_soon_title": "📖 Truyện đang xuất bản",
+  "coming_soon_story": "Câu chuyện này đang trong quá trình hoàn thiện. Mời bạn theo dõi Moonlust để đón đọc khi ra mắt.",
+  "back_to_home": "← Quay lại trang chủ",
+
+  "thuky_meta_title": "Cô Gia Sư – Đang Xuất Bản | Moonlust",
+"thuky_meta_description": "Truyện Cô Gia Sư đang trong quá trình hoàn thiện. Sẽ sớm ra mắt trên Moonlust."
+
 }

@@ -1,3 +1,4 @@
+//pages\truyen\[slug]\index.tsx
 // ✅ Gộp chi tiết truyện + danh sách chương – chuẩn UX hiện đại
 import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from 'next';
 import Head from 'next/head';
@@ -38,6 +39,7 @@ export default function StoryPage({ story, chapters }: StoryPageProps) {
         <meta property="og:title" content={pageTitle} />
         <meta property="og:description" content={description} />
         <meta property="og:type" content="article" />
+        <meta property="og:image" content={story.cover} />
       </Head>
 
       <main className="max-w-5xl mx-auto py-10 px-4">
