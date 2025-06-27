@@ -125,7 +125,6 @@ _lib_api_chapters__WEBPACK_IMPORTED_MODULE_7__ = (__webpack_async_dependencies__
 
 function ChapterPage({ story, chapter, chapterList }) {
     const { t } = (0,next_i18next__WEBPACK_IMPORTED_MODULE_5__.useTranslation)("common");
-    // ✅ Fallback nếu không tìm thấy chương
     if (!story || !chapter) {
         return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
             className: "text-center py-20",
@@ -149,7 +148,6 @@ function ChapterPage({ story, chapter, chapterList }) {
     const currentIndex = sortedIds.indexOf(chapterId);
     const prevId = currentIndex > 0 ? sortedIds[currentIndex - 1] : null;
     const nextId = currentIndex < sortedIds.length - 1 ? sortedIds[currentIndex + 1] : null;
-    // ✅ Meta title
     const pageTitle = `${t("chapter")} ${chapterId} – ${story.title} | Moonlust`;
     return /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
         children: [
@@ -184,7 +182,7 @@ function ChapterPage({ story, chapter, chapterList }) {
                 className: "max-w-3xl mx-auto px-4 py-10",
                 children: [
                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                        className: "text-center mb-6",
+                        className: "text-center mb-8",
                         children: [
                             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_2___default()), {
                                 href: `/truyen/${slug}`,
@@ -195,7 +193,7 @@ function ChapterPage({ story, chapter, chapterList }) {
                                 ]
                             }),
                             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h1", {
-                                className: "text-2xl font-bold text-pink-700",
+                                className: "text-3xl font-bold text-pink-700 tracking-tight",
                                 children: [
                                     t("chapter"),
                                     " ",
@@ -205,13 +203,13 @@ function ChapterPage({ story, chapter, chapterList }) {
                         ]
                     }),
                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("article", {
-                        className: "prose prose-pink max-w-none text-justify leading-loose",
+                        className: "prose prose-pink max-w-none text-justify leading-relaxed text-base md:text-lg",
                         dangerouslySetInnerHTML: {
                             __html: content
                         }
                     }),
                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                        className: "flex justify-between items-center mt-12 border-t pt-6 text-sm text-pink-600",
+                        className: "flex justify-between items-center mt-12 pt-6 border-t border-gray-100 text-sm text-pink-600",
                         children: [
                             prevId ? /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_2___default()), {
                                 href: `/truyen/${slug}/chapters/${prevId}`,
@@ -242,13 +240,11 @@ function ChapterPage({ story, chapter, chapterList }) {
         ]
     });
 }
-// ✅ Gắn layout để có Header/Footer
 ChapterPage.getLayout = function getLayout(page) {
     return /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx(_components_Layout__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {
         children: page
     });
 };
-// ✅ Tạo static props cho từng chương
 const getStaticProps = async ({ locale, params })=>{
     const slug = params?.slug;
     const id = Number(params?.id);
@@ -273,7 +269,6 @@ const getStaticProps = async ({ locale, params })=>{
         }
     };
 };
-// ✅ Tạo static paths cho từng chương và ngôn ngữ
 const getStaticPaths = async ({ locales })=>{
     const paths = [];
     for (const locale of locales || []){

@@ -40,43 +40,59 @@ export default function StoryPage({ story, chapters }: StoryPageProps) {
         <meta property="og:type" content="article" />
       </Head>
 
-      <main className="max-w-5xl mx-auto px-4 py-10">
+      <main className="max-w-5xl mx-auto py-10 px-4">
         {/* ✅ Chi tiết truyện */}
-        <div className="flex flex-col md:flex-row gap-6 items-start mb-8">
+        <div className="flex flex-col md:flex-row gap-6 items-start mb-10">
           <Image
             src={story.cover}
             alt={story.title}
             width={220}
             height={320}
-            className="rounded shadow w-full md:w-52 object-cover"
+            className="rounded shadow w-full md:w-52 object-cover transition duration-300"
           />
           <div className="flex-1">
             <h1 className="text-3xl font-bold text-pink-700 mb-2">{story.title}</h1>
             <p className="text-sm text-gray-500 mb-1">{story.genre.join(', ')}</p>
-            <p className="text-gray-700 text-base leading-relaxed">{description}</p>
+            <p className="text-gray-700 text-base leading-relaxed transition-all">{description}</p>
             <p className="text-xs text-gray-400 mt-2">
               {t('statusLabel')}: {t(`status.${story.status}`)} • {chapters.length} {t('chapters')}
             </p>
           </div>
         </div>
 
-        {/* ✅ Danh sách chương (ẩn tiêu đề, giữ chân độc giả) */}
+        {/* ✅ Danh sách chương – polished UI */}
+        {/* ✅ Danh sách chương (1 cột, cuộn mượt) */}
         <section>
-          <h2 className="text-lg font-semibold text-pink-600 mb-3">
-            {t('chapters')} ({chapters.length})
-          </h2>
-          <div className="rounded border border-pink-100 divide-y max-h-[400px] overflow-y-auto">
-            {chapters.map((ch) => (
-              <Link
-                key={ch.id}
-                href={`/truyen/${story.slug}/chapters/${ch.id}`}
-                className="block px-5 py-3 hover:bg-pink-50 text-sm transition-all"
-              >
-                {t('chapter')} {ch.id}
-              </Link>
-            ))}
-          </div>
-        </section>
+  <h2 className="text-xl font-bold text-pink-700 mb-4">
+    {t('chapters')} ({chapters.length})
+  </h2>
+
+  <div className="space-y-3 max-h-[480px] overflow-y-auto pr-2">
+    {chapters.map((ch) => (
+      <Link
+        key={ch.id}
+        href={`/truyen/${story.slug}/chapters/${ch.id}`}
+        className="group flex items-center justify-between px-5 py-4 bg-white hover:bg-pink-50 transition rounded-xl shadow-sm border border-pink-100"
+      >
+        <div className="flex items-center gap-2 text-pink-700 group-hover:text-pink-800 transition">
+          <span className="text-lg">📖</span>
+          <span className="font-semibold text-base">
+            {t('chapter')} {String(ch.id).padStart(2, '0')}
+          </span>
+        </div>
+
+        <span className="text-xs italic text-gray-400 group-hover:text-gray-600 transition hidden sm:inline">
+          {t('readNow')} <span className="ml-1 animate-pulse">→</span>
+        </span>
+      </Link>
+    ))}
+  </div>
+</section>
+
+
+
+
+
       </main>
     </>
   );
@@ -86,7 +102,6 @@ StoryPage.getLayout = function getLayout(page: React.ReactNode) {
   return <Layout>{page}</Layout>;
 };
 
-// ✅ Static props theo ngôn ngữ + chapter list
 export const getStaticProps: GetStaticProps = async ({ locale, params }: GetStaticPropsContext) => {
   const slug = params?.slug as string;
   const usedLocale = locale || 'vi';
@@ -108,7 +123,6 @@ export const getStaticProps: GetStaticProps = async ({ locale, params }: GetStat
   };
 };
 
-// ✅ Static paths đa ngôn ngữ
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
   const paths: { params: { slug: string }; locale: string }[] = [];
 

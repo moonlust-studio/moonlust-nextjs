@@ -1,4 +1,4 @@
-// ✅ File: pages/index.tsx – Trang chủ Moonlust dùng i18n client-side + fix SSR
+// ✅ File: pages/index.tsx – Trang chủ Moonlust dùng i18n client-side + fix SSR + polished UI
 
 import Head from 'next/head';
 import { useTranslation } from 'next-i18next';
@@ -39,7 +39,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>{t('meta.site_title')}</title>
+        <title>Moonlust – {t('meta.site_title')}</title>
         <meta name="description" content={t('meta.site_description')} />
         <meta name="keywords" content="truyện người lớn, truyện 18+, truyện gợi cảm, Moonlust, truyện tâm lý" />
         <meta property="og:title" content={t('meta.site_title')} />
@@ -47,16 +47,43 @@ export default function Home() {
         <meta property="og:type" content="website" />
       </Head>
 
-      <main className="max-w-5xl mx-auto px-4 py-10">
-        <h1 className="text-3xl font-bold text-pink-700 text-center mb-6">
-          {t('intro.hero_title')}
-        </h1>
-        <p className="text-center text-gray-600 mb-8">
-          {t('intro.hero_text')}
-        </p>
+      <main className="max-w-5xl mx-auto px-4 py-20 pt-32">
+        {/* ✅ HERO SECTION – Moonlust kế hoạch cấp 3 */}
+<section className="text-center max-w-3xl mx-auto mb-12">
+  <p className="text-sm italic text-gray-500 mb-2">
+    “Where desire meets emotion, and stories leave a mark...”
+  </p>
+  <h1 className="text-5xl md:text-6xl font-extrabold text-pink-700 mb-5 drop-shadow-sm">
+    Moonlust
+  </h1>
+  <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+    {t('meta.site_description')}
+  </p>
+  <div className="mt-8">
+    <Link
+  href="/truyen/vang-chong"
+  className="inline-block bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-full font-semibold shadow-lg transition-all"
+>
+  {t('hero.cta_featured')}
+</Link>
+  </div>
+</section>
 
-        {/* Bộ lọc và tìm kiếm */}
-        <div className="flex flex-col md:flex-row items-center justify-between mb-6 gap-4">
+
+        {/* 🔁 BỎ PHẦN CŨ – BUTTON KHÔNG LIÊN KẾT */}
+        {/*
+        <div className="mt-6 text-center">
+          <Link
+            href="/truyen/vang-chong"
+            className="inline-block bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-full font-semibold shadow-lg transition-all"
+          >
+            {t('readFromStart')} →
+          </Link>
+        </div>
+        */}
+
+        {/* ✅ FILTER BAR */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4 max-w-4xl mx-auto mt-10 w-full">
           <select
             value={selectedCategory}
             onChange={(e) => setSelectedCategory(e.target.value)}
@@ -77,8 +104,8 @@ export default function Home() {
           />
         </div>
 
-        {/* Truyện mới cập nhật */}
-        <section className="mb-10">
+        {/* ✅ TRUYỆN MỚI */}
+        <section className="max-w-5xl mx-auto w-full mt-10">
           <h2 className="text-xl font-semibold text-pink-700 mb-4">{t('section.latest')}</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             {latestStories.map((story) => (
@@ -97,8 +124,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Truyện hot */}
-        <section>
+        {/* ✅ TRUYỆN HOT */}
+        <section className="max-w-5xl mx-auto w-full mt-12">
           <h2 className="text-xl font-semibold text-pink-700 mb-4">{t('section.hot')}</h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
             {hotStories.map((story) => (
@@ -121,12 +148,10 @@ export default function Home() {
   );
 }
 
-// ✅ Bọc layout để có header/footer
 Home.getLayout = function getLayout(page: React.ReactNode) {
   return <Layout>{page}</Layout>;
 };
 
-// ✅ Bắt buộc để preload i18n từ server khi truy cập trực tiếp /en, /ja, ...
 import { GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 

@@ -19,7 +19,6 @@ type ChapterPageProps = {
 export default function ChapterPage({ story, chapter, chapterList }: ChapterPageProps) {
   const { t } = useTranslation('common');
 
-  // ✅ Fallback nếu không tìm thấy chương
   if (!story || !chapter) {
     return (
       <div className="text-center py-20">
@@ -40,12 +39,10 @@ export default function ChapterPage({ story, chapter, chapterList }: ChapterPage
   const prevId = currentIndex > 0 ? sortedIds[currentIndex - 1] : null;
   const nextId = currentIndex < sortedIds.length - 1 ? sortedIds[currentIndex + 1] : null;
 
-  // ✅ Meta title
   const pageTitle = `${t('chapter')} ${chapterId} – ${story.title} | Moonlust`;
 
   return (
     <>
-      {/* ✅ SEO meta tags */}
       <Head>
         <title>{pageTitle}</title>
         <meta name="description" content={story.description || story.summary} />
@@ -56,24 +53,24 @@ export default function ChapterPage({ story, chapter, chapterList }: ChapterPage
       </Head>
 
       <main className="max-w-3xl mx-auto px-4 py-10">
-        {/* ✅ Điều hướng về chi tiết truyện */}
-        <div className="text-center mb-6">
+        {/* ✅ Header */}
+        <div className="text-center mb-8">
           <Link href={`/truyen/${slug}`} className="text-sm text-pink-600 underline mb-2 block">
             ← {t('button.back_to_story')}
           </Link>
-          <h1 className="text-2xl font-bold text-pink-700">
+          <h1 className="text-3xl font-bold text-pink-700 tracking-tight">
             {t('chapter')} {String(chapterId).padStart(2, '0')}
           </h1>
         </div>
 
         {/* ✅ Nội dung chương */}
         <article
-          className="prose prose-pink max-w-none text-justify leading-loose"
+          className="prose prose-pink max-w-none text-justify leading-relaxed text-base md:text-lg"
           dangerouslySetInnerHTML={{ __html: content }}
         />
 
-        {/* ✅ Điều hướng chương kế tiếp / trước */}
-        <div className="flex justify-between items-center mt-12 border-t pt-6 text-sm text-pink-600">
+        {/* ✅ Điều hướng chương */}
+        <div className="flex justify-between items-center mt-12 pt-6 border-t border-gray-100 text-sm text-pink-600">
           {prevId ? (
             <Link
               href={`/truyen/${slug}/chapters/${prevId}`}
@@ -97,12 +94,10 @@ export default function ChapterPage({ story, chapter, chapterList }: ChapterPage
   );
 }
 
-// ✅ Gắn layout để có Header/Footer
 ChapterPage.getLayout = function getLayout(page: React.ReactNode) {
   return <Layout>{page}</Layout>;
 };
 
-// ✅ Tạo static props cho từng chương
 export const getStaticProps: GetStaticProps = async ({ locale, params }: GetStaticPropsContext) => {
   const slug = params?.slug as string;
   const id = Number(params?.id);
@@ -127,7 +122,6 @@ export const getStaticProps: GetStaticProps = async ({ locale, params }: GetStat
   };
 };
 
-// ✅ Tạo static paths cho từng chương và ngôn ngữ
 export const getStaticPaths: GetStaticPaths = async ({ locales }) => {
   const paths: { params: { slug: string; id: string }; locale: string }[] = [];
 

@@ -1,6 +1,6 @@
 {
-  "/_error": "pages/_error.js",
   "/_app": "pages/_app.js",
+  "/_error": "pages/_error.js",
   "/404": "pages/404.js",
   "/truyen/[slug]": "pages/truyen/[slug].js",
   "/": "pages/index.js",
@@ -13,16 +13,16 @@
   "/vi/languages": "pages/vi/languages.html",
   "/en/languages": "pages/en/languages.html",
   "/ja/languages": "pages/ja/languages.html",
-  "/vi/health": "pages/vi/health.html",
-  "/en/health": "pages/en/health.html",
-  "/ja/health": "pages/ja/health.html",
   "/vi/checklist": "pages/vi/checklist.html",
   "/en/checklist": "pages/en/checklist.html",
   "/ja/checklist": "pages/ja/checklist.html",
+  "/vi/art": "pages/vi/art.html",
+  "/en/art": "pages/en/art.html",
+  "/ja/art": "pages/ja/art.html",
   "/vi/stories": "pages/vi/stories.html",
   "/en/stories": "pages/en/stories.html",
   "/ja/stories": "pages/ja/stories.html",
-  "/vi/art": "pages/vi/art.html",
-  "/en/art": "pages/en/art.html",
-  "/ja/art": "pages/ja/art.html"
+  "/vi/health": "pages/vi/health.html",
+  "/en/health": "pages/en/health.html",
+  "/ja/health": "pages/ja/health.html"
 }

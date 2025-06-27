@@ -67,7 +67,7 @@ var mockStories = __webpack_require__(519);
 // EXTERNAL MODULE: external "next-i18next/serverSideTranslations"
 var serverSideTranslations_ = __webpack_require__(5460);
 ;// CONCATENATED MODULE: ./pages/index.tsx
-// ✅ File: pages/index.tsx – Trang chủ Moonlust dùng i18n client-side + fix SSR
+// ✅ File: pages/index.tsx – Trang chủ Moonlust dùng i18n client-side + fix SSR + polished UI
 
 
 
@@ -110,8 +110,11 @@ function Home() {
         children: [
             /*#__PURE__*/ (0,jsx_runtime.jsxs)((head_default()), {
                 children: [
-                    /*#__PURE__*/ jsx_runtime.jsx("title", {
-                        children: t("meta.site_title")
+                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("title", {
+                        children: [
+                            "Moonlust – ",
+                            t("meta.site_title")
+                        ]
                     }),
                     /*#__PURE__*/ jsx_runtime.jsx("meta", {
                         name: "description",
@@ -136,18 +139,35 @@ function Home() {
                 ]
             }),
             /*#__PURE__*/ (0,jsx_runtime.jsxs)("main", {
-                className: "max-w-5xl mx-auto px-4 py-10",
+                className: "max-w-5xl mx-auto px-4 py-20 pt-32",
                 children: [
-                    /*#__PURE__*/ jsx_runtime.jsx("h1", {
-                        className: "text-3xl font-bold text-pink-700 text-center mb-6",
-                        children: t("intro.hero_title")
-                    }),
-                    /*#__PURE__*/ jsx_runtime.jsx("p", {
-                        className: "text-center text-gray-600 mb-8",
-                        children: t("intro.hero_text")
+                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("section", {
+                        className: "text-center max-w-3xl mx-auto mb-12",
+                        children: [
+                            /*#__PURE__*/ jsx_runtime.jsx("p", {
+                                className: "text-sm italic text-gray-500 mb-2",
+                                children: "“Where desire meets emotion, and stories leave a mark...”"
+                            }),
+                            /*#__PURE__*/ jsx_runtime.jsx("h1", {
+                                className: "text-5xl md:text-6xl font-extrabold text-pink-700 mb-5 drop-shadow-sm",
+                                children: "Moonlust"
+                            }),
+                            /*#__PURE__*/ jsx_runtime.jsx("p", {
+                                className: "text-lg md:text-xl text-gray-700 leading-relaxed",
+                                children: t("meta.site_description")
+                            }),
+                            /*#__PURE__*/ jsx_runtime.jsx("div", {
+                                className: "mt-8",
+                                children: /*#__PURE__*/ jsx_runtime.jsx((link_default()), {
+                                    href: "/truyen/vang-chong",
+                                    className: "inline-block bg-pink-600 hover:bg-pink-700 text-white px-6 py-3 rounded-full font-semibold shadow-lg transition-all",
+                                    children: t("hero.cta_featured")
+                                })
+                            })
+                        ]
                     }),
                     /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
-                        className: "flex flex-col md:flex-row items-center justify-between mb-6 gap-4",
+                        className: "flex flex-col md:flex-row items-center justify-between gap-4 max-w-4xl mx-auto mt-10 w-full",
                         children: [
                             /*#__PURE__*/ (0,jsx_runtime.jsxs)("select", {
                                 value: selectedCategory,
@@ -176,7 +196,7 @@ function Home() {
                         ]
                     }),
                     /*#__PURE__*/ (0,jsx_runtime.jsxs)("section", {
-                        className: "mb-10",
+                        className: "max-w-5xl mx-auto w-full mt-10",
                         children: [
                             /*#__PURE__*/ jsx_runtime.jsx("h2", {
                                 className: "text-xl font-semibold text-pink-700 mb-4",
@@ -212,6 +232,7 @@ function Home() {
                         ]
                     }),
                     /*#__PURE__*/ (0,jsx_runtime.jsxs)("section", {
+                        className: "max-w-5xl mx-auto w-full mt-12",
                         children: [
                             /*#__PURE__*/ jsx_runtime.jsx("h2", {
                                 className: "text-xl font-semibold text-pink-700 mb-4",
@@ -251,7 +272,6 @@ function Home() {
         ]
     });
 }
-// ✅ Bọc layout để có header/footer
 Home.getLayout = function getLayout(page) {
     return /*#__PURE__*/ jsx_runtime.jsx(Layout/* default */.Z, {
         children: page

@@ -45,13 +45,22 @@ function Header() {
     const [showLangs, setShowLangs] = (0,external_react_.useState)(false);
     const [showMobileMenu, setShowMobileMenu] = (0,external_react_.useState)(false);
     const [canRender, setCanRender] = (0,external_react_.useState)(false);
-    // ✅ Đợi cả router & i18n ready trước khi render thực sự
+    const [isScrolled, setIsScrolled] = (0,external_react_.useState)(false);
+    // Đợi router & i18n sẵn sàng trước khi render
     (0,external_react_.useEffect)(()=>{
         if (isReady && ready) setCanRender(true);
     }, [
         isReady,
         ready
     ]);
+    // Hiệu ứng khi scroll → thu nhỏ header
+    (0,external_react_.useEffect)(()=>{
+        const handleScroll = ()=>{
+            setIsScrolled(window.scrollY > 10);
+        };
+        window.addEventListener("scroll", handleScroll);
+        return ()=>window.removeEventListener("scroll", handleScroll);
+    }, []);
     const handleChange = (newLocale)=>{
         setShowLangs(false);
         if (newLocale !== locale) {
@@ -61,10 +70,10 @@ function Header() {
         }
     };
     return /*#__PURE__*/ (0,jsx_runtime.jsxs)("header", {
-        className: "w-full bg-gradient-to-r from-pink-500 to-orange-400 text-white shadow",
+        className: `w-full fixed top-0 z-50 backdrop-blur transition-all duration-300 ${isScrolled ? "bg-white/90 shadow-sm py-2" : "bg-white/70 py-4"}`,
         children: [
             /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
-                className: "max-w-7xl mx-auto flex items-center justify-between px-4 py-3",
+                className: "max-w-7xl mx-auto flex items-center justify-between px-4",
                 children: [
                     /*#__PURE__*/ (0,jsx_runtime.jsxs)((link_default()), {
                         href: "/",
@@ -76,13 +85,13 @@ function Header() {
                                 className: "h-8 w-auto rounded-full shadow"
                             }),
                             /*#__PURE__*/ jsx_runtime.jsx("span", {
-                                className: "text-lg font-semibold",
+                                className: "text-lg font-semibold text-pink-600",
                                 children: "Moonlust"
                             })
                         ]
                     }),
                     /*#__PURE__*/ jsx_runtime.jsx("nav", {
-                        className: "hidden md:flex gap-5 text-sm font-medium",
+                        className: "hidden md:flex gap-5 text-sm font-medium text-gray-800",
                         children: canRender ? /*#__PURE__*/ (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
                             children: [
                                 /*#__PURE__*/ jsx_runtime.jsx((link_default()), {
@@ -116,7 +125,7 @@ function Header() {
                         children: [
                             /*#__PURE__*/ jsx_runtime.jsx("button", {
                                 onClick: ()=>setShowLangs(!showLangs),
-                                className: "p-2 rounded-full hover:bg-white/20",
+                                className: "p-2 rounded-full hover:bg-pink-100 text-pink-600",
                                 children: /*#__PURE__*/ jsx_runtime.jsx(globe/* default */.Z, {
                                     className: "w-5 h-5"
                                 })
@@ -136,7 +145,7 @@ function Header() {
                                         children: t("button.login")
                                     }),
                                     /*#__PURE__*/ jsx_runtime.jsx("button", {
-                                        className: "px-4 py-1 bg-white text-pink-600 rounded-xl text-sm font-semibold",
+                                        className: "px-4 py-1 bg-pink-600 text-white rounded-xl text-sm font-semibold shadow",
                                         children: t("button.register")
                                     })
                                 ]
@@ -150,7 +159,7 @@ function Header() {
                         className: "md:hidden",
                         children: /*#__PURE__*/ jsx_runtime.jsx("button", {
                             onClick: ()=>setShowMobileMenu(!showMobileMenu),
-                            className: "text-white",
+                            className: "text-pink-600",
                             children: showMobileMenu ? /*#__PURE__*/ jsx_runtime.jsx(x/* default */.Z, {
                                 className: "h-5 w-5"
                             }) : /*#__PURE__*/ jsx_runtime.jsx(menu/* default */.Z, {
@@ -161,7 +170,7 @@ function Header() {
                 ]
             }),
             canRender && showMobileMenu && /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
-                className: "md:hidden px-4 pb-4 flex flex-col gap-3 text-sm font-medium",
+                className: "md:hidden px-4 pb-4 flex flex-col gap-3 text-sm font-medium text-pink-700",
                 children: [
                     /*#__PURE__*/ jsx_runtime.jsx((link_default()), {
                         href: "/",
@@ -191,7 +200,7 @@ function Header() {
                                 children: t("button.login")
                             }),
                             /*#__PURE__*/ jsx_runtime.jsx("button", {
-                                className: "flex-1 bg-white text-pink-600 px-3 py-1 rounded-xl font-semibold",
+                                className: "flex-1 bg-pink-600 text-white px-3 py-1 rounded-xl font-semibold shadow",
                                 children: t("button.register")
                             })
                         ]
@@ -282,9 +291,12 @@ function Layout({ children }) {
     return /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
         className: "flex flex-col min-h-screen",
         children: [
-            /*#__PURE__*/ jsx_runtime.jsx(Header, {}),
+            /*#__PURE__*/ jsx_runtime.jsx("div", {
+                className: "sticky top-0 z-50 bg-white shadow-md",
+                children: /*#__PURE__*/ jsx_runtime.jsx(Header, {})
+            }),
             /*#__PURE__*/ jsx_runtime.jsx("main", {
-                className: "flex-grow",
+                className: "flex-grow pt-[80px] px-4",
                 children: children
             }),
             /*#__PURE__*/ jsx_runtime.jsx(Footer, {})

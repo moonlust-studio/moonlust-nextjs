@@ -1,4 +1,6 @@
 Chương 9: Mùi Vị Mới Của Cám Dỗ
+
+
 Buổi sáng hôm sau, ánh nắng xiên nhẹ qua rèm cửa, vàng nhạt như dư âm của đêm trước còn sót lại. Hà Anh mở mắt – trần trụi, tê dại và rối loạn. Có lẽ đã rất lâu rồi, cô chưa từng có một giấc ngủ sâu đến vậy – không mộng mị, không trằn trọc. Chỉ còn hơi ấm vương trên ga giường, và mùi da thịt quen thuộc len lỏi giữa những nếp gối nhàu.
 Cô khẽ xoay người – rồi khựng lại. Cơn tê âm ỉ giữa hai đùi khiến toàn thân cô co rút một cách vô thức. Mỗi lần cử động, từng thớ cơ như nhói lên âm ỉ.
 Trên gối bên cạnh là một mảnh giấy nhỏ, nét chữ đậm – quen thuộc:

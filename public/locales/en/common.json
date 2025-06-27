@@ -56,5 +56,8 @@
     "contact": "Contact",
     "policy": "Policy",
     "copyright": "All rights reserved by Moonlust"
+  },
+"hero": {
+    "cta_featured": "✨ Discover Our Featured Story"
   }
 }

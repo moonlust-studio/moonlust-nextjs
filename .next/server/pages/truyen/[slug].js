@@ -165,17 +165,17 @@ function StoryPage({ story, chapters }) {
                 ]
             }),
             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("main", {
-                className: "max-w-5xl mx-auto px-4 py-10",
+                className: "max-w-5xl mx-auto py-10 px-4",
                 children: [
                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
-                        className: "flex flex-col md:flex-row gap-6 items-start mb-8",
+                        className: "flex flex-col md:flex-row gap-6 items-start mb-10",
                         children: [
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx((next_image__WEBPACK_IMPORTED_MODULE_2___default()), {
                                 src: story.cover,
                                 alt: story.title,
                                 width: 220,
                                 height: 320,
-                                className: "rounded shadow w-full md:w-52 object-cover"
+                                className: "rounded shadow w-full md:w-52 object-cover transition duration-300"
                             }),
                             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
                                 className: "flex-1",
@@ -189,7 +189,7 @@ function StoryPage({ story, chapters }) {
                                         children: story.genre.join(", ")
                                     }),
                                     /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("p", {
-                                        className: "text-gray-700 text-base leading-relaxed",
+                                        className: "text-gray-700 text-base leading-relaxed transition-all",
                                         children: description
                                     }),
                                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("p", {
@@ -211,7 +211,7 @@ function StoryPage({ story, chapters }) {
                     /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("section", {
                         children: [
                             /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("h2", {
-                                className: "text-lg font-semibold text-pink-600 mb-3",
+                                className: "text-xl font-bold text-pink-700 mb-4",
                                 children: [
                                     t("chapters"),
                                     " (",
@@ -220,14 +220,39 @@ function StoryPage({ story, chapters }) {
                                 ]
                             }),
                             /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("div", {
-                                className: "rounded border border-pink-100 divide-y max-h-[400px] overflow-y-auto",
+                                className: "space-y-3 max-h-[480px] overflow-y-auto pr-2",
                                 children: chapters.map((ch)=>/*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)((next_link__WEBPACK_IMPORTED_MODULE_3___default()), {
                                         href: `/truyen/${story.slug}/chapters/${ch.id}`,
-                                        className: "block px-5 py-3 hover:bg-pink-50 text-sm transition-all",
+                                        className: "group flex items-center justify-between px-5 py-4 bg-white hover:bg-pink-50 transition rounded-xl shadow-sm border border-pink-100",
                                         children: [
-                                            t("chapter"),
-                                            " ",
-                                            ch.id
+                                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("div", {
+                                                className: "flex items-center gap-2 text-pink-700 group-hover:text-pink-800 transition",
+                                                children: [
+                                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
+                                                        className: "text-lg",
+                                                        children: "\uD83D\uDCD6"
+                                                    }),
+                                                    /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("span", {
+                                                        className: "font-semibold text-base",
+                                                        children: [
+                                                            t("chapter"),
+                                                            " ",
+                                                            String(ch.id).padStart(2, "0")
+                                                        ]
+                                                    })
+                                                ]
+                                            }),
+                                            /*#__PURE__*/ (0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("span", {
+                                                className: "text-xs italic text-gray-400 group-hover:text-gray-600 transition hidden sm:inline",
+                                                children: [
+                                                    t("readNow"),
+                                                    " ",
+                                                    /*#__PURE__*/ react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx("span", {
+                                                        className: "ml-1 animate-pulse",
+                                                        children: "→"
+                                                    })
+                                                ]
+                                            })
                                         ]
                                     }, ch.id))
                             })
@@ -243,7 +268,6 @@ StoryPage.getLayout = function getLayout(page) {
         children: page
     });
 };
-// ✅ Static props theo ngôn ngữ + chapter list
 const getStaticProps = async ({ locale, params })=>{
     const slug = params?.slug;
     const usedLocale = locale || "vi";
@@ -265,7 +289,6 @@ const getStaticProps = async ({ locale, params })=>{
         }
     };
 };
-// ✅ Static paths đa ngôn ngữ
 const getStaticPaths = async ({ locales })=>{
     const paths = [];
     for (const locale of locales || []){

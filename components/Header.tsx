@@ -10,14 +10,25 @@ export default function Header() {
   const router = useRouter();
   const { locale, locales, asPath, isReady } = router;
   const { t, ready } = useTranslation('common');
+
   const [showLangs, setShowLangs] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
   const [canRender, setCanRender] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
-  // ✅ Đợi cả router & i18n ready trước khi render thực sự
+  // Đợi router & i18n sẵn sàng trước khi render
   useEffect(() => {
     if (isReady && ready) setCanRender(true);
   }, [isReady, ready]);
+
+  // Hiệu ứng khi scroll → thu nhỏ header
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const handleChange = (newLocale: string) => {
     setShowLangs(false);
@@ -27,15 +38,20 @@ export default function Header() {
   };
 
   return (
-    <header className="w-full bg-gradient-to-r from-pink-500 to-orange-400 text-white shadow">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-4 py-3">
+    <header
+      className={`w-full fixed top-0 z-50 backdrop-blur transition-all duration-300 ${
+        isScrolled ? 'bg-white/90 shadow-sm py-2' : 'bg-white/70 py-4'
+      }`}
+    >
+      <div className="max-w-7xl mx-auto flex items-center justify-between px-4">
+        {/* Logo */}
         <Link href="/" className="flex items-center gap-2">
           <img src="/moonlust-logo.png" alt="Moonlust Logo" className="h-8 w-auto rounded-full shadow" />
-          <span className="text-lg font-semibold">Moonlust</span>
+          <span className="text-lg font-semibold text-pink-600">Moonlust</span>
         </Link>
 
         {/* Desktop menu */}
-        <nav className="hidden md:flex gap-5 text-sm font-medium">
+        <nav className="hidden md:flex gap-5 text-sm font-medium text-gray-800">
           {canRender ? (
             <>
               <Link href="/">{t('menu.home')}</Link>
@@ -51,7 +67,11 @@ export default function Header() {
 
         {/* Desktop buttons */}
         <div className="hidden md:flex items-center gap-3 relative">
-          <button onClick={() => setShowLangs(!showLangs)} className="p-2 rounded-full hover:bg-white/20">
+          {/* Language */}
+          <button
+            onClick={() => setShowLangs(!showLangs)}
+            className="p-2 rounded-full hover:bg-pink-100 text-pink-600"
+          >
             <Globe className="w-5 h-5" />
           </button>
 
@@ -73,12 +93,13 @@ export default function Header() {
             </div>
           )}
 
+          {/* Auth buttons */}
           {canRender ? (
             <>
               <button className="px-4 py-1 bg-white text-pink-600 rounded-xl text-sm font-semibold">
                 {t('button.login')}
               </button>
-              <button className="px-4 py-1 bg-white text-pink-600 rounded-xl text-sm font-semibold">
+              <button className="px-4 py-1 bg-pink-600 text-white rounded-xl text-sm font-semibold shadow">
                 {t('button.register')}
               </button>
             </>
@@ -89,7 +110,7 @@ export default function Header() {
 
         {/* Mobile menu toggle */}
         <div className="md:hidden">
-          <button onClick={() => setShowMobileMenu(!showMobileMenu)} className="text-white">
+          <button onClick={() => setShowMobileMenu(!showMobileMenu)} className="text-pink-600">
             {showMobileMenu ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
         </div>
@@ -97,7 +118,7 @@ export default function Header() {
 
       {/* Mobile menu items */}
       {canRender && showMobileMenu && (
-        <div className="md:hidden px-4 pb-4 flex flex-col gap-3 text-sm font-medium">
+        <div className="md:hidden px-4 pb-4 flex flex-col gap-3 text-sm font-medium text-pink-700">
           <Link href="/">{t('menu.home')}</Link>
           <Link href="/stories">{t('menu.adult')}</Link>
           <Link href="/art">{t('menu.art')}</Link>
@@ -108,7 +129,7 @@ export default function Header() {
             <button className="flex-1 bg-white text-pink-600 px-3 py-1 rounded-xl font-semibold">
               {t('button.login')}
             </button>
-            <button className="flex-1 bg-white text-pink-600 px-3 py-1 rounded-xl font-semibold">
+            <button className="flex-1 bg-pink-600 text-white px-3 py-1 rounded-xl font-semibold shadow">
               {t('button.register')}
             </button>
           </div>

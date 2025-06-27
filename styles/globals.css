@@ -17,3 +17,12 @@ h1, h2, h3 {
 article {
   font-family: 'Lora', serif;
 }
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(203, 213, 225, 0.3);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(203, 213, 225, 0.5);
+}
+
