@@ -45,5 +45,12 @@
   "filter": {
     "all_categories": "Tất cả thể loại",
     "search_placeholder": "Tìm theo tiêu đề..."
-  }
+  },
+  "footer": {
+  "about": "About",
+  "contact": "Contact",
+  "policy": "Policy",
+  "copyright": "All rights reserved by Moonlust"
+}
+
 }

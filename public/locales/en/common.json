@@ -48,5 +48,11 @@
   "filter": {
     "all_categories": "All Categories",
     "search_placeholder": "Search by title..."
+  },
+  "footer": {
+    "about": "About",
+    "contact": "Contact",
+    "policy": "Policy",
+    "copyright": "All rights reserved by Moonlust"
   }
 }

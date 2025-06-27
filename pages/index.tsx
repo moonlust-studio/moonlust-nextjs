@@ -1,29 +1,40 @@
-// ✅ File: pages/index.tsx – Trang chủ Moonlust dùng i18n client-side (static export ok)
+// ✅ File: pages/index.tsx – Trang chủ Moonlust dùng i18n client-side + fix SSR
+
 import Head from 'next/head';
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { useRouter } from 'next/router';
 import Layout from '@/components/Layout';
 import mockStories from '@/lib/mock/mockStories';
 
 export default function Home() {
   const { t } = useTranslation('common');
-  const { locale = 'vi' } = useRouter();
+  const router = useRouter();
+  const [isReady, setIsReady] = useState(false);
+
+  useEffect(() => {
+    if (router.isReady) setIsReady(true);
+  }, [router.isReady]);
+
+  const locale = router.locale || 'vi';
+  const stories = useMemo(() => (isReady ? mockStories[locale] || [] : []), [isReady, locale]);
 
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [searchTerm, setSearchTerm] = useState('');
 
-  const stories = mockStories[locale] || [];
-
-  const filteredStories = stories.filter((story) => {
-    const matchCategory = selectedCategory === 'all' || story.genre.includes(selectedCategory);
-    const matchSearch = story.title.toLowerCase().includes(searchTerm.toLowerCase());
-    return matchCategory && matchSearch;
-  });
+  const filteredStories = useMemo(() => {
+    return stories.filter((story) => {
+      const matchCategory = selectedCategory === 'all' || story.genre.includes(selectedCategory);
+      const matchSearch = story.title.toLowerCase().includes(searchTerm.toLowerCase());
+      return matchCategory && matchSearch;
+    });
+  }, [stories, selectedCategory, searchTerm]);
 
   const latestStories = filteredStories.slice(0, 6);
   const hotStories = filteredStories.slice(6, 12);
+
+  if (!isReady) return null;
 
   return (
     <>
@@ -110,7 +121,19 @@ export default function Home() {
   );
 }
 
-// ✅ Gắn layout để có Header/Footer
+// ✅ Bọc layout để có header/footer
 Home.getLayout = function getLayout(page: React.ReactNode) {
   return <Layout>{page}</Layout>;
+};
+
+// ✅ Bắt buộc để preload i18n từ server khi truy cập trực tiếp /en, /ja, ...
+import { GetStaticProps } from 'next';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale ?? 'vi', ['common'])),
+    },
+  };
 };

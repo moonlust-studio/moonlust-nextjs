@@ -40,11 +40,18 @@ var external_react_ = __webpack_require__(6689);
 
 function Header() {
     const router = (0,router_.useRouter)();
-    const { locale, locales, asPath } = router;
+    const { locale, locales, asPath, isReady } = router;
     const { t, ready } = (0,external_next_i18next_.useTranslation)("common");
     const [showLangs, setShowLangs] = (0,external_react_.useState)(false);
     const [showMobileMenu, setShowMobileMenu] = (0,external_react_.useState)(false);
-    if (!ready) return null;
+    const [canRender, setCanRender] = (0,external_react_.useState)(false);
+    // ✅ Đợi cả router & i18n ready trước khi render thực sự
+    (0,external_react_.useEffect)(()=>{
+        if (isReady && ready) setCanRender(true);
+    }, [
+        isReady,
+        ready
+    ]);
     const handleChange = (newLocale)=>{
         setShowLangs(false);
         if (newLocale !== locale) {
@@ -74,30 +81,35 @@ function Header() {
                             })
                         ]
                     }),
-                    /*#__PURE__*/ (0,jsx_runtime.jsxs)("nav", {
+                    /*#__PURE__*/ jsx_runtime.jsx("nav", {
                         className: "hidden md:flex gap-5 text-sm font-medium",
-                        children: [
-                            /*#__PURE__*/ jsx_runtime.jsx((link_default()), {
-                                href: "/",
-                                children: t("menu.home")
-                            }),
-                            /*#__PURE__*/ jsx_runtime.jsx((link_default()), {
-                                href: "/stories",
-                                children: t("menu.adult")
-                            }),
-                            /*#__PURE__*/ jsx_runtime.jsx((link_default()), {
-                                href: "/art",
-                                children: t("menu.art")
-                            }),
-                            /*#__PURE__*/ jsx_runtime.jsx((link_default()), {
-                                href: "/health",
-                                children: t("menu.health")
-                            }),
-                            /*#__PURE__*/ jsx_runtime.jsx((link_default()), {
-                                href: "/languages",
-                                children: t("menu.multilang")
-                            })
-                        ]
+                        children: canRender ? /*#__PURE__*/ (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
+                            children: [
+                                /*#__PURE__*/ jsx_runtime.jsx((link_default()), {
+                                    href: "/",
+                                    children: t("menu.home")
+                                }),
+                                /*#__PURE__*/ jsx_runtime.jsx((link_default()), {
+                                    href: "/stories",
+                                    children: t("menu.adult")
+                                }),
+                                /*#__PURE__*/ jsx_runtime.jsx((link_default()), {
+                                    href: "/art",
+                                    children: t("menu.art")
+                                }),
+                                /*#__PURE__*/ jsx_runtime.jsx((link_default()), {
+                                    href: "/health",
+                                    children: t("menu.health")
+                                }),
+                                /*#__PURE__*/ jsx_runtime.jsx((link_default()), {
+                                    href: "/languages",
+                                    children: t("menu.multilang")
+                                })
+                            ]
+                        }) : /*#__PURE__*/ jsx_runtime.jsx("span", {
+                            className: "invisible",
+                            children: "..."
+                        })
                     }),
                     /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
                         className: "hidden md:flex items-center gap-3 relative",
@@ -109,7 +121,7 @@ function Header() {
                                     className: "w-5 h-5"
                                 })
                             }),
-                            showLangs && /*#__PURE__*/ jsx_runtime.jsx("div", {
+                            canRender && showLangs && /*#__PURE__*/ jsx_runtime.jsx("div", {
                                 className: "absolute top-10 right-0 bg-white text-pink-600 rounded shadow p-2 z-50 flex gap-2",
                                 children: locales?.map((lng)=>/*#__PURE__*/ jsx_runtime.jsx("button", {
                                         onClick: ()=>handleChange(lng),
@@ -117,13 +129,20 @@ function Header() {
                                         children: lng.toUpperCase()
                                     }, lng))
                             }),
-                            /*#__PURE__*/ jsx_runtime.jsx("button", {
-                                className: "px-4 py-1 bg-white text-pink-600 rounded-xl text-sm font-semibold",
-                                children: t("button.login")
-                            }),
-                            /*#__PURE__*/ jsx_runtime.jsx("button", {
-                                className: "px-4 py-1 bg-white text-pink-600 rounded-xl text-sm font-semibold",
-                                children: t("button.register")
+                            canRender ? /*#__PURE__*/ (0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
+                                children: [
+                                    /*#__PURE__*/ jsx_runtime.jsx("button", {
+                                        className: "px-4 py-1 bg-white text-pink-600 rounded-xl text-sm font-semibold",
+                                        children: t("button.login")
+                                    }),
+                                    /*#__PURE__*/ jsx_runtime.jsx("button", {
+                                        className: "px-4 py-1 bg-white text-pink-600 rounded-xl text-sm font-semibold",
+                                        children: t("button.register")
+                                    })
+                                ]
+                            }) : /*#__PURE__*/ jsx_runtime.jsx("span", {
+                                className: "invisible",
+                                children: "buttons"
                             })
                         ]
                     }),
@@ -141,7 +160,7 @@ function Header() {
                     })
                 ]
             }),
-            showMobileMenu && /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
+            canRender && showMobileMenu && /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
                 className: "md:hidden px-4 pb-4 flex flex-col gap-3 text-sm font-medium",
                 children: [
                     /*#__PURE__*/ jsx_runtime.jsx((link_default()), {
@@ -192,12 +211,26 @@ function Header() {
 }
 
 ;// CONCATENATED MODULE: ./components/Footer.tsx
+// ✅ File: components/Footer.tsx – đã fix Hydration + dịch đúng
+
+
 
 
 
 function Footer() {
     const { t, ready } = (0,external_next_i18next_.useTranslation)("common");
-    if (!ready) return null;
+    const { isReady } = (0,router_.useRouter)();
+    const [canRender, setCanRender] = (0,external_react_.useState)(false);
+    (0,external_react_.useEffect)(()=>{
+        if (ready && isReady) {
+            setCanRender(true);
+        }
+    }, [
+        ready,
+        isReady
+    ]);
+    // ✅ Tránh hydration mismatch
+    if (!canRender) return null;
     return /*#__PURE__*/ jsx_runtime.jsx("footer", {
         className: "w-full bg-pink-50 border-t border-pink-100 text-center py-6 text-sm text-gray-700 mt-10",
         children: /*#__PURE__*/ (0,jsx_runtime.jsxs)("div", {
@@ -208,15 +241,15 @@ function Footer() {
                     children: [
                         /*#__PURE__*/ jsx_runtime.jsx((link_default()), {
                             href: "/about",
-                            children: t("footer.about", "Giới thiệu")
+                            children: t("footer.about")
                         }),
                         /*#__PURE__*/ jsx_runtime.jsx((link_default()), {
                             href: "/contact",
-                            children: t("footer.contact", "Li\xean hệ")
+                            children: t("footer.contact")
                         }),
                         /*#__PURE__*/ jsx_runtime.jsx((link_default()), {
                             href: "/policy",
-                            children: t("footer.policy", "Ch\xednh s\xe1ch")
+                            children: t("footer.policy")
                         })
                     ]
                 }),
@@ -231,7 +264,7 @@ function Footer() {
                         /*#__PURE__*/ (0,jsx_runtime.jsxs)("span", {
                             children: [
                                 "\xa9 Moonlust 2025. ",
-                                t("footer.copyright", "Bản quyền thuộc Moonlust")
+                                t("footer.copyright")
                             ]
                         })
                     ]

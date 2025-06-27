@@ -4,16 +4,20 @@ import Link from 'next/link';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import { Globe, Menu, X } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 export default function Header() {
   const router = useRouter();
-  const { locale, locales, asPath } = router;
+  const { locale, locales, asPath, isReady } = router;
   const { t, ready } = useTranslation('common');
   const [showLangs, setShowLangs] = useState(false);
   const [showMobileMenu, setShowMobileMenu] = useState(false);
+  const [canRender, setCanRender] = useState(false);
 
-  if (!ready) return null;
+  // ✅ Đợi cả router & i18n ready trước khi render thực sự
+  useEffect(() => {
+    if (isReady && ready) setCanRender(true);
+  }, [isReady, ready]);
 
   const handleChange = (newLocale: string) => {
     setShowLangs(false);
@@ -32,11 +36,17 @@ export default function Header() {
 
         {/* Desktop menu */}
         <nav className="hidden md:flex gap-5 text-sm font-medium">
-          <Link href="/">{t('menu.home')}</Link>
-          <Link href="/stories">{t('menu.adult')}</Link>
-          <Link href="/art">{t('menu.art')}</Link>
-          <Link href="/health">{t('menu.health')}</Link>
-          <Link href="/languages">{t('menu.multilang')}</Link>
+          {canRender ? (
+            <>
+              <Link href="/">{t('menu.home')}</Link>
+              <Link href="/stories">{t('menu.adult')}</Link>
+              <Link href="/art">{t('menu.art')}</Link>
+              <Link href="/health">{t('menu.health')}</Link>
+              <Link href="/languages">{t('menu.multilang')}</Link>
+            </>
+          ) : (
+            <span className="invisible">...</span>
+          )}
         </nav>
 
         {/* Desktop buttons */}
@@ -45,7 +55,7 @@ export default function Header() {
             <Globe className="w-5 h-5" />
           </button>
 
-          {showLangs && (
+          {canRender && showLangs && (
             <div className="absolute top-10 right-0 bg-white text-pink-600 rounded shadow p-2 z-50 flex gap-2">
               {locales?.map((lng) => (
                 <button
@@ -63,12 +73,18 @@ export default function Header() {
             </div>
           )}
 
-          <button className="px-4 py-1 bg-white text-pink-600 rounded-xl text-sm font-semibold">
-            {t('button.login')}
-          </button>
-          <button className="px-4 py-1 bg-white text-pink-600 rounded-xl text-sm font-semibold">
-            {t('button.register')}
-          </button>
+          {canRender ? (
+            <>
+              <button className="px-4 py-1 bg-white text-pink-600 rounded-xl text-sm font-semibold">
+                {t('button.login')}
+              </button>
+              <button className="px-4 py-1 bg-white text-pink-600 rounded-xl text-sm font-semibold">
+                {t('button.register')}
+              </button>
+            </>
+          ) : (
+            <span className="invisible">buttons</span>
+          )}
         </div>
 
         {/* Mobile menu toggle */}
@@ -80,7 +96,7 @@ export default function Header() {
       </div>
 
       {/* Mobile menu items */}
-      {showMobileMenu && (
+      {canRender && showMobileMenu && (
         <div className="md:hidden px-4 pb-4 flex flex-col gap-3 text-sm font-medium">
           <Link href="/">{t('menu.home')}</Link>
           <Link href="/stories">{t('menu.adult')}</Link>
