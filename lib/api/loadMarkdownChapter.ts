@@ -1,15 +1,15 @@
-// ✅ File: lib/api/loadMarkdownChapter.ts
+// ✅ FILE: lib/api/loadMarkdownChapter.ts
 
 import fs from 'fs';
 import path from 'path';
 import { marked } from 'marked';
 
 /**
- * Load markdown chương truyện theo locale
- * @param slug - slug của truyện (vd: 'vang-chong')
- * @param id - số chương (vd: 1)
- * @param locale - ngôn ngữ (vi, en, ja)
- * @returns HTML đã render từ markdown
+ * ✅ Load nội dung chương từ file markdown → HTML
+ * @param slug - Slug của truyện (ví dụ: 'vang-chong')
+ * @param id - Số chương (ví dụ: 1)
+ * @param locale - Ngôn ngữ ('vi', 'en', 'ja')
+ * @returns HTML đã được render từ file markdown
  */
 export default async function loadMarkdownChapter(
   slug: string,
@@ -17,27 +17,19 @@ export default async function loadMarkdownChapter(
   locale: string = 'vi'
 ): Promise<string> {
   try {
-    // ✅ Chuẩn hóa đường dẫn tới file markdown
-    const fileName = `chapter-${id}.md`;
-    const chapterPath = path.resolve(
-      process.cwd(),
-      'content',
-      slug,
-      locale,
-      fileName
-    );
+    // 📁 Đường dẫn tới file markdown
+    const filePath = path.resolve(process.cwd(), 'content', slug, locale, `chapter-${id}.md`);
 
-    // ✅ Kiểm tra tồn tại trước khi đọc
-    if (!fs.existsSync(chapterPath)) {
-      console.warn(`⚠️ File không tồn tại: ${chapterPath}`);
-      return '<p><em>Content not found.</em></p>';
+    if (!fs.existsSync(filePath)) {
+      console.warn(`⚠️ Không tìm thấy file: ${filePath}`);
+      return '<p><em>Nội dung đang được cập nhật...</em></p>';
     }
 
-    // ✅ Đọc file và chuyển sang HTML
-    const rawMarkdown = fs.readFileSync(chapterPath, 'utf8');
-    return marked(rawMarkdown);
+    // 📄 Đọc và render HTML
+    const raw = fs.readFileSync(filePath, 'utf8').trim();
+    return marked(raw);
   } catch (error) {
-    console.error(`❌ Lỗi load markdown tại ${slug}/${locale}/chapter-${id}.md`, error);
-    return '<p><em>Content not found.</em></p>';
+    console.error(`❌ Lỗi khi load markdown: ${slug}/${locale}/chapter-${id}.md`, error);
+    return '<p><em>Nội dung đang được cập nhật...</em></p>';
   }
 }

@@ -1,0 +1,10 @@
+{
+  "version": 1,
+  "functions": {
+    "/404": {},
+    "/": {},
+    "/truyen/[slug]/chapters/[id]": {},
+    "/truyen/[slug]": {},
+    "/truyen/[slug]/tocBK": {}
+  }
+}

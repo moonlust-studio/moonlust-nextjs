@@ -1,9 +1,11 @@
+// ✅ File: lib/api/chapters.ts – API layer lấy dữ liệu chương từ mock theo ngôn ngữ
 import mockChaptersVi from './mockChapters.vi';
 import mockChaptersEn from './mockChapters.en';
 import mockChaptersJa from './mockChapters.ja';
 import fs from 'fs';
 import path from 'path';
 
+// ✅ Map dữ liệu chương theo locale
 const chaptersMap: { [locale: string]: any } = {
   vi: mockChaptersVi,
   en: mockChaptersEn,
@@ -13,7 +15,11 @@ const chaptersMap: { [locale: string]: any } = {
 export default chaptersMap;
 
 /**
- * ✅ Load nội dung từ markdown nếu chưa có content
+ * ✅ Đọc nội dung markdown thủ công nếu chương không có content
+ * @param slug - slug truyện
+ * @param id - số chương
+ * @param locale - ngôn ngữ
+ * @returns nội dung HTML đã format
  */
 function loadMarkdown(slug: string, id: number, locale: string): string {
   try {
@@ -27,7 +33,9 @@ function loadMarkdown(slug: string, id: number, locale: string): string {
 }
 
 /**
- * ✅ Lấy nội dung chương cụ thể
+ * ✅ Trả về nội dung chương cụ thể
+ * - Ưu tiên lấy từ mock
+ * - Nếu không có, sẽ đọc file markdown hoặc file chỉ định trong `filepath`
  */
 export function getChapterById(slug: string, id: number, locale: string = 'vi') {
   const story = chaptersMap[locale]?.[slug];
@@ -35,6 +43,8 @@ export function getChapterById(slug: string, id: number, locale: string = 'vi') 
   if (!chapter) return null;
 
   let content = chapter.content;
+
+  // ✅ Nếu có filepath (dẫn tới file .md), load nội dung từ đó
   if (!content && chapter.filepath) {
     try {
       const filePath = path.join(process.cwd(), chapter.filepath);
@@ -44,15 +54,22 @@ export function getChapterById(slug: string, id: number, locale: string = 'vi') 
       console.warn(`[mockChapters] Không thể đọc file: ${chapter.filepath}`);
       content = '<p><em>Nội dung đang được cập nhật...</em></p>';
     }
-  } else if (!content) {
+  }
+
+  // ✅ Nếu không có content và không có filepath → thử đọc file markdown mặc định
+  if (!content) {
     content = loadMarkdown(slug, id, locale);
   }
 
-  return { id, ...chapter, content };
+  return {
+    id,
+    ...chapter,
+    content,
+  };
 }
 
 /**
- * ✅ Lấy danh sách metadata các chương
+ * ✅ Trả về danh sách metadata chương để hiển thị TOC
  */
 export function getChapterList(slug: string, locale: string = 'vi') {
   const story = chaptersMap[locale]?.[slug];
@@ -68,5 +85,6 @@ export function getChapterList(slug: string, locale: string = 'vi') {
   });
 }
 
+// ✅ Export lại hàm đúng chuẩn Moonlust API
 export const getMockChapter = getChapterById;
 export const getMockChapterList = getChapterList;
