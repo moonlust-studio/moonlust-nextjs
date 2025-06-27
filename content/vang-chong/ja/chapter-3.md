@@ -1,108 +1,196 @@
+第三章：夢と現、揺れる肉体と記憶
 
-She had no idea when she drifted off that night — her mind a whirlpool of tangled emotions. Her heart, a knotted mess. Her body, strangely hollow… and damp.
+📖 概要：
+忘れかけていた感覚が、夢の中で再燃する。
+欲望と記憶が交差する朝、抑えていた本能が静かに目を覚ます。
 
-Outside, the night breeze rustled through the trees, whispering like voices from a long-lost memory. Streetlights cast blurred shadows across the ceiling, as hazy as her thoughts.
+---
 
-In her dream, she was making love to her husband — wild, intense. Yet the man’s face began to blur… until it wasn’t her husband anymore. It was Quan. His deep, burning eyes seared through her.
+その夜、ハーアインはいつ眠りに落ちたのか覚えていなかった。
+頭の中はぐるぐると渦巻き、心はかき乱され、身体はどこか空っぽで——そして、妙に湿っていた。
 
-She tried to resist, but her body followed each breath, each longing moan.
+外では夜風が木々をかすめ、ざわめきは遠い記憶のささやきのように響いていた。
+街灯の光が天井に滲み、まるで彼女の心そのもののように曖昧だった。
 
-She woke with sweat across her brow — and between her thighs. The dream had left its mark. A dream… or a buried desire clawing its way out?
+うつらうつらとした夢の中で——彼女は、夫と交わっていた。
+激しく、情熱的に。
 
-Morning crept in. Soft light filtered through the curtain slits, casting a gentle blush across her bedsheet. The lingering scent of fabric and her hair from the night before still clung to the air — faint and familiar, like the warmth of a dream that hadn’t yet faded.
+しかし、夢の中の男の顔がぼやける。
+その目は…夫のものではない。
+クアン。
 
-Quan’s message resurfaced in her mind:
+深く、熱く、焦がれるようなまなざし——
 
-“If you’re free this afternoon… I want to see you. Just once.”
+彼を振り払いたくても、
+身体はその吐息に従うように、震え、受け入れてしまう。
 
-She didn’t answer. Part of her wanted to delete it — to erase the past. But another part… wanted to see him. Not to rekindle anything, but to ask. To look into his eyes and see if something was still left unsaid.
+ハッと目を覚ます。
+心臓が早鐘を打ち、額には汗が滲んでいた。
 
-Sunlight filtered through the leaves outside, dancing across the swaying white curtain. The faint scent of jasmine from the diffuser floated in the air, thin as a memory. The room was so quiet, she could hear her own soft breathing.
+そして、脚の間は——ぬるく、熱を帯びていた。
 
-She picked up her phone, then set it down again. Her thoughts circled: I’m married… Would meeting him cross a line? Or is it just a conversation?
+夢の残り香がまだ離れない。
+自分は、誰と交わったのか。
 
-A moment’s hesitation. Then those eyes — Quan’s eyes — appeared clearly in her mind, the same eyes that once made her heart skip.
+朝日がカーテンの隙間から差し込み、
+シーツの上に柔らかな桃色の光を落とす。
 
-She couldn’t delete it. Not yet.
+昨夜の髪の香りとリネンの匂いが混ざり合い、
+まだ夢が終わっていないような温もりを残していた。
 
-She sat there in silence for a long while. Memories came flooding back. Their college days — a love once thought unbreakable. But distance, family, choices… had pulled them apart.
+クアンのメッセージが頭をよぎる：
+「今日の午後、会えないかな？ ただ一度でいい。」
 
-Tears welled in her eyes. Not sobbing — just quiet drops. Regret. Fear. Powerlessness. She knew that if she saw him again, it would be hard to keep her feelings in check.
+すぐには返事できなかった。
+一部は、その過去ごとすべてを消したかった。
 
-But then she whispered to herself, like a gentle self-convincing:
+でももう一部は——会いたかった。
+再び始めるためではなく、確かめるために。
 
-“It’s just an old friend, that’s all…”
+彼の目の奥に、
+まだ語られていない何かが残っているのかを。
 
-And then… she texted back:
+窓の外の葉に陽光が揺れ、
+カーテンに映るその影が、過去と現在の境界を曖昧にする。
 
-“Why do you still have my number?”
+ジャスミンのアロマが微かに漂い、
+それは、かすれた記憶のように肌を撫でた。
 
-The message sent. A moment later, her screen lit up.
+静かな部屋。
+彼女の呼吸音さえ、やけに響く。
 
-“I never deleted it.”
+スマホを手に取っては、また置く。
 
-Just four words. But they struck deep, tapping something inside her she thought long buried.
+「私は既婚者…会うだけで、境界を越える？ それともただの再会？」
 
-That afternoon, they met at a riverside café — the same one they used to frequent during college.
+逡巡。
+でも——クアンの目が、記憶の中よりも鮮明に浮かび上がった。
 
-It was a small place, carrying the scent of roasted coffee and aged wood. Rustic tables and chairs, paint chipped with time. A pot of bougainvillea fluttered gently in the breeze.
+彼女は、メッセージを消さなかった。
 
-Ha Anh arrived first. She chose a table on the patio. The setting sun cast a golden hue on her hair, on the rim of her glass as she slowly turned it in her hand.
+長く、静かに座っていた。
+思い出が、波のように押し寄せてくる。
 
-Then Quan appeared.
+あの頃の彼らは、熱く、真っ直ぐだった。
+けれど、家族、距離、選択がすべてを奪った。
 
-Still tall, with that quietly melancholic gaze. His white shirt slightly wrinkled. He paused when he saw her — as if afraid the moment might vanish.
+涙が浮かぶ。
+声を上げて泣くわけではない。
 
-Their eyes met. No words. Just heartbeats and silence.
+ただ、静かに。
 
-“It’s been a while…” — he finally said, voice low, almost lost in the wind.
+それは後悔。
+恐れ。
+そして、次に会った時に理性が通じなくなるという、
+予感に近い諦めだった。
 
-“Yeah… a long time.” — she replied, trying to keep her tone even.
+「ただの旧友との再会よ…」
+そう自分に言い聞かせながら、彼女は指を動かした。
 
-A breeze passed. The scent of coffee and wood stirred old memories.
+「なんで、私の番号をまだ持ってるの？」
 
-“I used to imagine… if we met again, I’d say so much. But now… I don’t know where to start.”
+数分後、返信が届く：
 
-“Just seeing you like this… I already understand,” she whispered, her voice trembling.
+「一度も消したことがないから。」
 
-Silence again.
+たった四文字。
+けれど、その言葉は、心の奥底の扉を静かに叩いた。
 
-“I was angry… at the world when you left. I buried myself in work, chasing things to forget. But the harder I tried, the clearer your memory became.”
+——その午後。
+彼らは、学生時代によく通っていた川辺のカフェで会う約束をした。
 
-She looked up at him. Something unnamed flickered in her eyes.
+こぢんまりとしたカフェ。
+焙煎したてのコーヒーの香りと、古木の匂いが交差する空間。
 
-“I promised myself — if I ever made it, I’d find you again. Now I’m the CEO of an IT company. I came back. But when I heard you got married… it felt like falling into an abyss.”
+テラス席に座るハーアイン。
+午後の光が、彼女の髪とグラスの水に金色を落とす。
 
-The wind brushed past. She shivered slightly.
+クアンが現れた。
+変わらぬ姿。
+少し皺のある白いシャツ。
 
-“It wasn’t a coincidence… me buying an apartment near yours,” Quan said softly. “I haven’t let go. I never truly did.”
+その視線が彼女をとらえた瞬間、
+時が止まったように彼は立ち尽くす。
 
-They sat a while longer. Talking little. Saying nothing deep. But their eyes kept meeting — enough to stir the heart, but not enough to close the distance.
+視線が交わる。
+言葉はない。
+鼓動だけが、空気を震わせた。
 
-When it was time to leave, Quan stood first. Ha Anh nodded, walking beside him toward the exit. The evening breeze cooled the air.
+「久しぶりだね…」
+風に混ざるように、彼が囁く。
 
-“I’ll walk you home?” — he asked gently.
+「そうね…ほんとに久しぶり。」
+彼女の声も、少しだけ震えていた。
 
-She shook her head with a faint smile. “No… I’ll walk a bit on my own. Clear my head.”
+風が吹き、コーヒーと古木の香りが、
+過去の断片を呼び起こす。
 
-“Alright…” — he nodded, the quiet disappointment unhidden.
+「もし、また会えたら…もっとたくさん話したいと思ってた。
+でも、今は何を言えばいいのか、わからなくなってしまった。」
 
-They stood there a few seconds. As if words lingered, unspoken. But in the end, silence won.
+「あなたの顔を見られただけで…十分よ。」
 
-A single nod — their farewell.
+沈黙。
 
-They turned. Each walking a different way.
+「君がいなくなって、世界に怒りすら覚えた。
+でも、仕事に打ち込むことで、忘れようとした。
+けど…忘れようとすればするほど、思い出してしまった。」
 
-The slanting sun stretched their shadows in opposite directions.
+彼女の目が彼を見つめる。
+そこに浮かぶのは、名前のない感情。
 
-On her way home, Ha Anh felt her heart beating faster than usual. A mix of relief… and hollowness.
+「いつか成功したら、君を探しに行くって決めてた。
+今、僕はIT会社のCEOになった。
+戻ってきたよ。
+でも…君が結婚していたと知った時、心が崩れた。」
 
-Nothing wrong had happened — but it wasn’t entirely right either.
+風が再び吹く。
+彼女は軽く身を震わせる。
 
-And Quan, hands in his pockets, eyes on the sun-speckled pavement. She was still as beautiful as ever. But now… she belonged to someone else.
+「偶然なんかじゃない。
+君の家の近くに部屋を借りたのは…僕の意思だった。
 
-A meeting that seemed harmless — but within them both, a dormant current had been stirred awake.
+まだ——
+僕は、君を手放していない。」
 
-A meeting that seemed harmless —  
-but within them both,  
-a dormant current had been stirred awake.
+その後の会話は少なかった。
+
+目と心が交わるだけで、言葉は要らなかった。
+
+カフェを出るとき、クアンが先に立ち上がった。
+ハーアインは軽く頷き、共に外へ。
+
+川風が心地よく吹き抜ける。
+
+「送ろうか？」
+
+「大丈夫。
+少し歩きたい気分なの。」
+
+「…そう。」
+その声に、言葉にできない切なさが滲んでいた。
+
+ふたりは数秒、立ち尽くす。
+言葉が出かかったが、何も言えなかった。
+
+ただの頷きだけが、別れの印。
+
+ふたりは、別々の方向へと歩き出す。
+
+傾いた日差しが、ふたりの影を長く引き伸ばす。
+
+帰り道、ハーアインの鼓動は、いつもよりも速かった。
+安堵と…ぽっかりとした空虚。
+
+間違いはなかった。
+でも、正解だったとも言い切れない。
+
+クアンはポケットに手を突っ込み、うつむいたまま歩いた。
+
+彼女は、今も変わらず美しかった。
+でも、もう…
+誰かのものだった。
+
+——無害に見えた再会。
+だが、ふたりの心には、眠っていた“何か”が
+確かに、目を覚ましたのだった。

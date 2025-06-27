@@ -4,7 +4,7 @@ Cánh cửa phòng 302 vừa khép lại sau lưng Hà Anh. Cô lao vào Quân n
 
 Tiếng thở của cả hai hoà vào nhau – nặng nề, cháy bỏng, gấp đến mức Quân phải đưa tay giữ chặt eo cô để không gục xuống vì choáng. Hà Anh bất ngờ siết cổ anh chặt hơn, rồi vít đầu Quân xuống, áp mặt anh vào bầu ngực trần vừa được giải thoát khỏi lớp áo.
 
-— "Hôn  em đi… mạnh vào…" – cô thì thầm như ra lệnh, mắt rực lên.
+— "Quân hôn  em đi… mạnh vào…" – cô thì thầm như ra lệnh, mắt rực lên.
 
 Quân úp mặt vào làn da thơm nồng mồ hôi ấy, đầu lưỡi mơn man bầu ngực đang phập phồng dữ dội. Tay anh run lên, ôm siết lấy lưng cô, còn Hà Anh thì rướn người, ấn sát anh hơn nữa – như thể muốn làm ngạt anh trong chính khát khao của mình.
 
@@ -18,7 +18,7 @@ Rồi cô từ từ quỳ xuống. Đôi mắt ướt long lanh, vừa đầu h�
 
 Nhịp hút của cô gấp gáp, dồn dập, như đang rút cạn nỗi u uất bằng khoang miệng nóng ẩm. Quân không thể đứng yên nữa, hai tay anh bất giác đặt lên đầu Hà Anh, rồi siết chặt, nhẹ nhàng nhưng dứt khoát, đẩy đầu cô về phía trước theo từng nhịp anh nín thở.
 
-— "Ngoan… bú sâu nữa đi… đúng rồi… Em biết anh nhớ em lắm không..."
+— "Hà Anh… bú sâu nữa đi… đúng rồi… Em biết anh nhớ em lắm không..."
 
 — "Em nhớ mùi này… nhớ cái cảm giác này phát điên lên…"
 
@@ -80,7 +80,7 @@ Một khoảng lặng bao trùm, chỉ còn tiếng tim đập và hơi thở đ
 
 — "Từ giờ… em sẽ là người cưỡi lên những ký ức cũ… để sống trọn với hiện tại này."
 
-(Nằm nghỉ ngơi một lát sau hai hiệp bốc lửa, họ ôm nhau trao những lời yêu thương say đắm. Bàn tay Hà Anh vẫn nắm lấy cậu nhỏ của Quân như thể sợ nó biến mất.
+Nằm nghỉ ngơi một lát sau hai hiệp bốc lửa, họ ôm nhau trao những lời yêu thương say đắm. Bàn tay Hà Anh vẫn nắm lấy cậu nhỏ của Quân như thể sợ nó biến mất.
 
 Một lúc sau, Hà Anh thì thầm:
 

@@ -1,4 +1,4 @@
-// ✅ File: lib/api/chapters.ts – API layer lấy dữ liệu chương từ mock theo ngôn ngữ
+// ✅ FILE: lib/api/chapters.ts – API layer lấy dữ liệu chương từ mock theo ngôn ngữ
 import mockChaptersVi from './mockChapters.vi';
 import mockChaptersEn from './mockChapters.en';
 import mockChaptersJa from './mockChapters.ja';

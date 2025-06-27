@@ -1,62 +1,166 @@
-<p><strong>📖 Teaser:</strong> A chance encounter at the supermarket reawakens a love Hà Anh thought she had buried. The eyes, the voice, the quiet tension — all come rushing back with just one message. And as rain falls outside her window, a long-forgotten part of her stirs awake. Maybe it was never really gone.</p>
+第二章：再会の予感、心の亀裂
 
-“Have you ever wondered... if a part of me was still waiting for you?”
-The thought drifted through Hà Anh’s mind like breath across warm tea — soft, fleeting, gone before it could linger.
+📖 概要：
+スーパーマーケットでの偶然の再会。
+静かに閉じ込めていた想いが、雨音に溶けてゆく。
 
-Quân.
+---
 
-His name echoed like a note from a song she hadn’t heard in years — low, familiar, buried under time, now quietly vibrating in her chest.
+「あなた、想像したことある？ 私の中の一部は、ずっとあなたの帰りを待っていたって…」
 
-It felt strange. Not frightening — but like an old breeze finding the back of your neck, reminding you how it once knew your skin by heart.
+その言葉が、ハーアインの心にふと浮かび、そして湯気のように消えていった。
 
-He looked the same. Tall. Lean. A face marked not by age, but by the pause of time.
+クアン。
+その名前が、記憶の奥から静かに響き、胸の奥を震わせた。
 
-But his eyes... they hadn’t changed. Still deep. Still soft enough to make you look away — not from discomfort, but to avoid falling into the ache of remembering.
+懐かしくもあり、どこか異国の風のような…
+あの首筋をかすめた、知っているようで知らない感触。
 
-She took a step back, fingers tightening around her purse strap — not from fear, but instinct. Like anchoring herself inside a moment too wide, too still.
+彼は変わっていなかった。
+背が高く、細身で、顔立ちには時の重みが静かに刻まれている。
+けれど…その目は昔のまま。
+深く、穏やかで、どこか見つめ返すのが怖くなるほど。
 
-“It’s been a while,” he said — voice husky, low, laced with that casual intimacy of someone who once lived inside your silence.
+ハーアインは無意識に半歩下がり、バッグのストラップをぎゅっと握った。
+まるで、この都会の中でかろうじて掴める拠り所のように。
 
-She nodded. A careful smile. Shy. Tilted. Like something once precious, now too delicate to hold.
+「久しぶりだね…」
+その声は低く、少し掠れていて、距離と時間を超えた微かなぬくもりを含んでいた。
 
-They had loved each other.
+彼女は軽く頷き、少し斜めに微笑んだ。
+その笑顔には、少しの戸惑いと、昔の傷がふと見え隠れする。
 
-The kind of love that blooms before the world gets too loud. Raw. Hopeful. Reckless in its honesty.
+——彼らは、かつて愛し合っていた。
 
-But love didn’t pay rent. Didn’t impress parents.
+それは、夏の初めの陽射しのような、
+まぶしくて、素直で、何も持たない若さゆえの恋。
 
-Her mother had said, “You can’t live off love. My daughter needs something real.”
+だが、現実は童話よりも冷たく。
 
-And Quân had nothing — except a tender voice and a heart too wide.
+ハーアインの家族は、田舎出身で貧しい青年を受け入れなかった。
+母は冷たく言った。
+「愛じゃ、生きていけない。感情で娘を養えると思ってるの？」
 
-He never blamed her. Only himself — for not having more to offer.
+クアンは誰も責めなかった。
+ただ、自分に力が足りなかったと、そう呟いた。
 
-And Hà Anh — though she ached — let go.
+ハーアインもまた、心が裂けるほど彼を愛していたが、
+運命に抗うほどの勇気を持っていなかった。
 
-Not because she wanted to. But because she was taught to.
+だから、別れた。
+愛が尽きたわけじゃなく、
+愛を閉じ込めなければならない状況が、彼らを引き裂いた。
 
-They didn’t fall out of love. They just ran out of the time they were allowed to stay in it.
+卒業の日、クアンは何も言わずに都市を離れた。
+メッセージも、別れの言葉もなかった。
 
-The day they graduated, he disappeared. No goodbye. No message. And she never chased him.
+ハーアインも探さなかった。
+もし再び会ってしまえば、離れる自信がなかったから。
 
-Because deep down, she knew: if they ever saw each other again, she wouldn’t leave him twice.
+——忘れたはずだった。
 
-She thought that chapter had closed.
+でも、その日。
+スーパーマーケットの野菜売り場で、ふと目が合った瞬間。
+あらゆる記憶が、初夏の突風のように押し寄せた。
 
-Until that night — under the neon lights of a supermarket, between the rustling of greens and polished tiles — their eyes met.
+愛？
+違う。
+後悔？
+それとも違う。
 
-And it all came back. Like wind slamming into a half-open window.
+——ただの一瞬。
+それだけで胸がきゅっと締めつけられるような感覚。
 
-Not love. Not regret.
+「最近この近くに引っ越したんだ、たった二棟先に。」
+彼は目を逸らさずに言った。
 
-But the ache of something unfinished. A pull between memory and instinct.
+ハーアインは、鼓動が乱れるのを隠すように笑みを浮かべた。
 
-“I just moved in,” he said. “Two buildings down.”
+そして、自然な別れの流れに身を任せるように、彼女はその場を離れた。
 
-His gaze didn’t leave hers.
+——けれど、彼の視線だけが、いつまでも背中に残っていた。
 
-She smiled — the kind that hides a stuttered heartbeat. Then turned away. Gracefully. Like nothing had happened.
+その夜。
+ハーアインはベッドの上で横になっていた。
+ナイトライトの柔らかな光が、白く滑らかな肩に静かに影を落としている。
 
-But his gaze… lingered.
+テレビも、スマホもつけていない。
+ただ、窓の外の灰色がかった静寂と、自分の吐息だけが、空間を満たしていた。
 
-That night, she curled under the covers. The bedside lamp spilled gold across her shoulder — skin soft as rain-warmed silk.
+外では雨がそっと降っていた。
+湿った土の香りが窓から入り込み、
+まるで記憶の残り香のように、部屋を包んでいく。
+
+髪に、首にまとわりつく夜の湿気。
+それは、かつて並んで歩いた雨の夜を思い出させた。
+
+どうして、あんな短い再会が、心をここまでかき乱すの？
+
+彼の目？
+声？
+それとも——
+
+ただ、私が孤独に疲れ果てているだけ…？
+
+胸の奥に、ひびのような感覚が広がる。
+
+理性は、結婚という肩に彼女を引き留めている。
+
+でも身体は、
+長く燃え尽きた灰の奥で、静かに息を吹き返し始めていた。
+
+ああ、私は——
+どれだけ、冷えていたのだろう。
+
+記憶は彼女を学生時代に連れ戻す。
+笑い、夢を見ていた、あの頃。
+
+クアンは、夜の街を手をつないで歩いた最初の人。
+
+そして、木の下で初めてのキスをくれた人だった。
+
+ほんの少しの指先の重なりが、心の全部を奪っていった。
+
+彼は言ったことがある：
+「僕には何もないけど、君を全力で愛する心だけはある。」
+
+それを思い出すたびに、
+心の奥にじわりと、塩のような痛みがにじんでくる。
+
+ハーアインは寝返りを打ち、小さな引き出しを開けた。
+
+そこには、古びた黒いベルベットの箱が入っていた。
+
+それに触れるたび、過去の鼓動が、また静かに響く。
+
+今夜、彼女はそれを開けた。
+
+懐かしさからではない。
+
+名もなき空白に、心が耐えきれなくなったから。
+
+蓋が開く音は、ささやきのように静かだった。
+
+スマートフォンが光った。
+クアンからのメッセージ：
+
+「明日、時間ある？
+この前のスーパーの件、コーヒーでお詫びしたいな。」
+
+画面を見つめる。
+心臓が跳ねる。
+一分…二分…
+まだ返信はしていない。
+
+けれど、脳裏には、懐かしい映像がすでに流れ始めていた。
+
+それは、ぼやけてもいなければ、色あせてもいない。
+
+——そして、過去でもなかった。
+
+これは、“今”だ。
+
+——そしてたぶん、
+心の奥で静かに目を覚ました、最初の風なのかもしれない。
+
+——新たな、溺れるような季節の幕開け。

@@ -1,28 +1,131 @@
+第一章：静寂の中で目覚める記憶
 
-Ha Anh eased the door open and stepped into her quiet apartment. Evening sunlight spilled across the tiles, casting a tired golden hue on the pale walls. She slipped off her shoes, hung up her coat, and slowly collapsed onto the sofa with a long, weary sigh — as if trying to shed the invisible weight she’d been carrying all day.
+📖 概要：
+夫が長期出張中のハーアインは、静かな夜の中で心の奥底に眠っていた記憶と欲望が、そっと目を覚ます瞬間を迎える。
 
-The clock struck six. Silence — the same kind she came home to every night — settled over the room.
+---
 
-Her husband had been working overseas for almost two years. The video calls had grown infrequent. The messages? Just a few clipped words: “Busy.” “In a meeting.” “Will call when I can.”
+ハーアインはそっと扉を押し開け、小さなアパートに足を踏み入れた。
+夕暮れの光がタイルの床にこぼれ、白い壁を淡く、切ない金色に染めていた。
+彼女は靴を脱ぎ、コートをフックに掛けて、静かにソファへ身を沈める。
+深いため息がひとつ——まるで、まとわりつく静かな疲れを、そっと解き放つように。
 
-At first, she told herself it was temporary — for their future, their family, their dreams.
+時計が午後六時を告げる。
+部屋は、いつも通りの静寂に包まれていた。
+夫は今、海外での長期出張中。
+もう二年近く帰っていない。
 
-But the emptiness had a quiet way of creeping in — during meals eaten alone, on sleepless nights staring at the ceiling, in the cold space beside her in bed.
+最初の頃は、ビデオ通話やメッセージのやり取りもあった。
+だが、それも次第に減っていき、今では「忙しい」「また連絡する」といった短い言葉だけが届く。
 
-She didn’t complain. Didn’t blame him. She did everything right — went to work, picked up her son, called her mother-in-law, kept the house in order.
+「家族のため」「未来のため」——そう言い聞かせてきた。
+けれど、静寂はゆっくりと、確実に日常に入り込んできた。
 
-But some nights, her own reflection startled her. The sparkle in her eyes was gone. The smile felt... practiced. Something inside her had quietly slipped away — like a single strand of hair falling without a sound.
+一人で食べる食事。
+暗闇の中での孤独な夜。
+手を伸ばしても、そこに誰もいない冷たいシーツ。
 
-That night, after dinner, she made herself a cup of tea. She sat by the window, watching city lights flicker in the distance. The world was still alive. Still rushing. Still bright. But inside her, everything felt muted — like a song without lyrics drifting through the dark.
+彼女は不満を口にすることはなかった。
+非難もしなかった。
+理想的な妻であろうとした。
 
-Her phone lit up. Not him. Just an ad. She set it down. Closed her eyes.
+けれど、ある日ふと鏡に映る自分の目を見て、はっとした。
+その瞳には輝きがない。
+微笑みはどこか作り物のよう。
+何かが、彼女の中で、音もなくこぼれ落ちていた。
 
-A hush rose in her chest — soft, like a rising tide — but strong enough to make her heart flutter.
+夜。
+簡単な夕食のあと、ハーアインは温かいお茶を淹れ、窓辺に腰掛ける。
+遠くの街明かりを見つめながら、彼女の胸に、名もなきメロディのような寂しさが漂っていた。
 
-And then, uninvited but unmistakable, a name surfaced — distant, delicate, almost dreamlike — but enough to make her chest tighten with something she hadn’t felt in a very long time.
+スマートフォンが光る。
+——夫ではない。
+ただの広告通知。
 
-Just then, the doorbell rang.
+彼女はそれをそっと伏せ、目を閉じた。
 
-She froze.
+そのとき、不意に、ある名前が記憶の底から浮かび上がる。
 
-Standing on the other side was her neighbor — holding a small box of pastries…
+淡く、儚く、まるで湯気のように消えゆく名前。
+けれど、心がわずかに震えた。
+
+その瞬間——
+チャイムの音が鳴る。
+
+誰かを待っていたわけではない。
+
+ドアの向こうに立っていたのは、隣人の女性だった。
+手には小さな焼き菓子の箱。
+にこやかな笑顔でこう言った：
+
+「ケーキを作りすぎちゃって…よかったらどうぞ。ひとり暮らし、大変でしょう？」
+
+礼を言って受け取った後、ハーアインは長く、そのまま立ち尽くした。
+
+“ひとり暮らし”
+
+その言葉が胸にゆっくりと、何度も反響する。
+
+——そう。
+彼女は、結婚という名前の関係の中で、たった一人で生きていた。
+
+夜。
+ハーアインは横になり、毛布を胸元まで引き上げる。
+寝返りを打ち、天井を見つめる。
+
+間接照明の柔らかな光が、静かに部屋を包む。
+
+けれど、それだけでは埋められない虚無が、彼女の心の隙間に忍び込む。
+
+彼女は夫を恋しく思った。
+
+——いや、愛されているという感覚が恋しかったのだ。
+
+誰かに触れられること。
+背中に腕を回されること。
+耳元に優しく吐息がかかること。
+
+その感覚は… いつからなかったのだろう。
+もう、数えることもやめてしまった。
+
+数えれば数えるほど、距離が広がる気がして。
+
+鼻の奥がつんと痛む。
+それは弱さではない。
+
+どんなに強い心でも、長く続く孤独には、いつか疲れてしまう。
+
+一筋の涙が、枕に静かに染みていく。
+彼女はそれを拭わなかった。
+
+その涙に、長く閉ざしてきた感情が、静かに溶け出していく。
+
+そして——
+
+浅い呼吸の狭間、ぼんやりと現れた一つの面影。
+
+優しい眼差し。
+低く響く声。
+あの雨の放課後、寮の屋根の下で過ごした時間。
+
+指先が触れ合うたび、胸が震えた、あの青春。
+
+それはただの懐かしさではなかった。
+
+それは、
+忘れたことのなかった "何か" の、静かな再生だった。
+
+明日が来れば、また普通の日々が始まる。
+彼女は口紅をひき、やさしい色のワンピースを選び、笑顔でエレベーターに乗るだろう。
+
+——でも、今夜だけは。
+
+風の音だけが聞こえるこの部屋で、
+ハーアインは、自分の弱さを許した。
+
+ほんの少しだけ。
+
+そしてきっと、心のどこかで、
+古い記憶が静かに目を覚ましたのだった。
+
+明日には、また強く、穏やかな妻に戻るために。
