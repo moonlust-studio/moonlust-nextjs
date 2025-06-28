@@ -1,11 +1,11 @@
 {
   "version": 1,
   "functions": {
-    "/art": {},
-    "/404": {},
     "/health": {},
+    "/404": {},
     "/": {},
     "/languages": {},
+    "/art": {},
     "/truyen/[slug]/chapters/[id]": {},
     "/truyen/[slug]": {},
     "/truyen/[slug]/tocBK": {}
