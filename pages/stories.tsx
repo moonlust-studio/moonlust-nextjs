@@ -1,33 +1,40 @@
-// ✅ File: pages/stories.tsx – Danh Sách Truyện Moonlust
+// ✅ File: pages/stories.tsx – Đa ngôn ngữ danh sách truyện
 
 import { useRouter } from 'next/router';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import mockStories from '../lib/mock/mockStories'; // ✅ default export
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import { useTranslation } from 'next-i18next';
 
+import mockStories from '../lib/mock/mockStories';
 import type { Story } from '@/lib/mock/mockStories';
-import Layout from '@/components/Layout'; // ✅ import Layout
+import Layout from '@/components/Layout';
+
+export async function getStaticProps({ locale }: { locale: string }) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+    },
+  };
+}
 
 export default function StoriesPage() {
   const { locale } = useRouter();
-
-  // ✅ Ràng buộc locale an toàn
   const lang = (locale as 'vi' | 'en' | 'ja') || 'vi';
   const stories: Story[] = mockStories[lang] || [];
+
+  const { t } = useTranslation('common');
 
   return (
     <Layout>
       <Head>
-        <title>Danh Sách Truyện - Moonlust</title>
-        <meta
-          name="description"
-          content="Khám phá các truyện hot nhất hiện nay trên Moonlust."
-        />
+        <title>{t('story_list_title')} - Moonlust</title>
+        <meta name="description" content={t('story_list_description')} />
       </Head>
       <main className="max-w-7xl mx-auto px-4 py-8">
         <h1 className="text-3xl font-bold mb-6 text-center text-pink-600">
-          Danh Sách Truyện
+          {t('story_list_title')}
         </h1>
         <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
           {stories.map((story) => (
@@ -46,14 +53,14 @@ export default function StoriesPage() {
                 <h2 className="text-lg font-semibold text-pink-700">{story.title}</h2>
                 <p className="text-sm text-gray-600">{story.genre.join(', ')}</p>
                 <p className="text-xs mt-1 text-gray-500">
-                  {story.chapters} chương •{' '}
-                  {story.status === 'completed' ? 'Hoàn thành' : 'Đang ra'}
+                  {story.chapters} {t('chapter_unit')} •{' '}
+                  {story.status === 'completed' ? t('status_completed') : t('status_ongoing')}
                 </p>
                 <Link
                   href={`/truyen/${story.slug}`}
                   className="inline-block mt-3 text-sm text-pink-600 hover:underline font-medium"
                 >
-                  Đọc ngay →
+                  {t('read_now')} →
                 </Link>
               </div>
             </div>

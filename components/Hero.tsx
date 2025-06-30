@@ -1,11 +1,16 @@
 // =============================================
-// ✅ File: components/Hero.tsx
-// ✅ Description: Hero section trang chủ - tiêu đề, mô tả, CTA
+// ✅ File: components/Hero.tsx (Final Version)
 // =============================================
 
 import Link from 'next/link';
+import { TFunction } from 'i18next'; // ✅ Dùng đúng type từ i18next
 
-export default function Hero({ t }) {
+interface HeroProps {
+  t: TFunction<'common'>;         // ✅ Đúng kiểu mà useTranslation trả về
+  locale?: string;                // ✅ Optional nếu muốn dùng
+}
+
+export default function Hero({ t, locale }: HeroProps) {
   return (
     <section className="w-full bg-gradient-to-r from-pink-500 to-orange-400 text-white text-center py-16 px-4 relative overflow-hidden">
       <div className="max-w-5xl mx-auto z-10 relative">
